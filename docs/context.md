@@ -10,6 +10,7 @@ Nesse cenário, este projeto propõe o desenvolvimento de um sistema web voltado
 
 A relevância deste estudo está na contribuição para a modernização desses negócios, promovendo maior organização, produtividade e qualidade nos serviços prestados.
 
+
 ## Problema
 
 As pequenas oficinas mecânicas enfrentam dificuldades significativas na gestão de processos administrativos e operacionais, como atendimento ao cliente, controle de estoque, organização de ordens de serviço e acompanhamento financeiro.
@@ -25,12 +26,24 @@ Como consequência, há impacto direto na produtividade, na organização intern
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+**Objetivo geral:**
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+Desenvolver um sistema web que auxilie pequenas oficinas mecânicas na gestão integrada de processos administrativos e operacionais, promovendo organização, controle e eficiência.
+
+**Objetivos específicos:**
+
+- Melhorar a organização das informações administrativas e operacionais da oficina;
+
+- Apoiar o controle e acompanhamento dos serviços realizados;
+
+- Facilitar o acesso e a consulta de dados de clientes e veículos;
+
+- Reduzir erros e retrabalho nos processos da oficina;
+
+- Tornar o sistema simples, acessível e fácil de usar para diferentes perfis de usuários;
+
+- Auxiliar na tomada de decisão por meio de informações organizadas.
+
 
 ## Justificativa
 
