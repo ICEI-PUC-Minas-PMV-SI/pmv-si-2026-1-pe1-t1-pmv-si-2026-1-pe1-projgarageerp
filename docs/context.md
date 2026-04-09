@@ -12,16 +12,16 @@ A relevância deste estudo está na contribuição para a modernização desses 
 
 ## Problema
 
-Nesse momento você deve apresentar o problema que a sua aplicação deve resolver. No entanto, **não** é a hora de comentar sobre a solução/aplicação.
+As pequenas oficinas mecânicas enfrentam dificuldades significativas na gestão de processos administrativos e operacionais, como atendimento ao cliente, controle de estoque, organização de ordens de serviço e acompanhamento financeiro.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de fato existir, pois ainda não é a hora de apresentar requisitos detalhados ou projetos.
+Esses problemas estão relacionados à limitação de recursos e à ausência de sistemas informatizados adequados, sendo comum o uso de métodos manuais ou planilhas descentralizadas, o que aumenta a ocorrência de erros, perda de informações e retrabalho.
 
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
+Como consequência, há impacto direto na produtividade, na organização interna e na qualidade do atendimento ao cliente.
 
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+**Diante desse cenário, levanta-se a seguinte questão-problema:**
+
+*Como desenvolver uma solução digital acessível, simples e eficiente que auxilie pequenas oficinas mecânicas na gestão integrada de suas atividades administrativas e operacionais?*
+
 
 ## Objetivos
 
