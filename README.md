@@ -1,4 +1,4 @@
-# Título do Projeto
+# GarageERP
 
 `CURSO: Sistemas de Informação`
 
@@ -6,7 +6,10 @@
 
 `SEMESTRE: 1º`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O GarageERP é um sistema web desenvolvido para modernizar a gestão integrada de micro e pequenas oficinas mecânicas, substituindo métodos manuais por uma solução digital acessível e intuitiva. O projeto foca em otimizar processos essenciais, como o cadastro de clientes e veículos, a organização de ordens de serviço e o acompanhamento do histórico de manutenções. 
+
+Projetado com foco em usabilidade e inclusão digital, o sistema atende desde o proprietário que busca controle administrativo até o mecânico que necessita de agilidade no registro técnico. A solução visa aumentar a produtividade e a qualidade do atendimento, garantindo que usuários com diferentes níveis de familiaridade tecnológica possam operar a plataforma de forma eficiente.
+
 
 ## Integrantes
 
@@ -22,6 +25,7 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 
 * Marco Rodrigo Costa
 
+
 # Planejamento
 
 | Etapa         | Atividades |
@@ -32,9 +36,11 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 | ETAPA 4        |[Programação de Funcionalidades - Javascript](docs/development.md) <br> [Testes de Software ](docs/tests.md) |
 | ETAPA 5         | [Apresentação](presentation/README.md) |
 
+
 # Código
 
 <li><a href="src/README.md"> Código Fonte</a></li>
+
 
 # Apresentação
 
