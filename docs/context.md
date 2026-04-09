@@ -1,12 +1,14 @@
 # Introdução
 
-Imagine que você deseja apresentar este projeto para investidores que deverão decidir se investem ou não no desenvolvimento da sua ferramenta.
+No contexto das micro e pequenas oficinas mecânicas no Brasil, a gestão de processos operacionais e administrativos representa um desafio significativo, especialmente devido à limitação de recursos tecnológicos, financeiros e organizacionais.
 
-A **Introdução** consiste das etapas: *Contextualização -- Definição do problema -- Definição dos Objetivos -- Justificativa*, e tem como função situar o seu trabalho dentro de um contexto de mercado e mostrar a importância da sua proposta para resolver a dor de um usuário.
+A utilização de métodos manuais ou ferramentas inadequadas compromete a eficiência das atividades, gerando inconsistências, perda de informações e retrabalho, impactando diretamente a qualidade do serviço prestado e a competitividade desses negócios.
 
-A Contextualização deve situar sem projeto em um determinado contexto de mercado, a fim de fornecer informações adicionais que possam ajudar a entender melhor o assunto que você irá abordar. Serve também para definir a relevância do seu assunto, uma vez que mostra o tamanho do mercado em que se está inserido. Ela pode envolver a análise de vários aspectos, como o ambiente histórico, cultural, político e social em que o problema a ser atacado surgiu.
+Além disso, a crescente digitalização do mercado exige soluções tecnológicas que considerem aspectos como usabilidade, acessibilidade, segurança da informação e inclusão digital, garantindo que diferentes perfis de usuários possam utilizar o sistema de forma eficiente.
 
-Escreva de 2 a 3 parágrafos para contetualizar o seu projeto.
+Nesse cenário, este projeto propõe o desenvolvimento de um sistema web voltado à gestão integrada de oficinas mecânicas de pequeno porte, com foco em simplicidade, acessibilidade e eficiência operacional.
+
+A relevância deste estudo está na contribuição para a modernização desses negócios, promovendo maior organização, produtividade e qualidade nos serviços prestados.
 
 ## Problema
 
