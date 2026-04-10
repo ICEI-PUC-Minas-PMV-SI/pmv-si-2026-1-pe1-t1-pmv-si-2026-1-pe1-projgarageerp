@@ -45,25 +45,23 @@ Desenvolver um sistema web que auxilie pequenas oficinas mecânicas na gestão i
 - Auxiliar na tomada de decisão por meio de informações organizadas.
 
 
-## Justificativa
+# Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
+A gestão de serviços em oficinas de pequeno porte ainda é realizada, em muitos casos, por meio de **registros manuais ou planilhas**, o que gera inconsistências, atrasos e perda de informações.
 
-Lembre-se de pesquisar e utilizar números que justifiquem por que é importante que tal problema seja resolvido ou que mostrem o impacto do problema na vida das pessoas.
+Embora existam sistemas disponíveis no mercado, como o Oficina Integrada e o AsterAuto, essas soluções apresentam limitações relacionadas ao custo, à complexidade ou à experiência do usuário, tornando-se pouco acessíveis para pequenos empreendedores.
+Nesse contexto, justifica-se o desenvolvimento de uma solução digital acessível e intuitiva, capaz de atender às necessidades específicas desse público.
 
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
+Do ponto de vista social e econômico, o projeto contribui para a modernização de pequenos negócios, promovendo maior organização, aumento da produtividade e melhoria na qualidade dos serviços prestados.
 
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+Além disso, o sistema proposto busca favorecer a inclusão digital, permitindo que usuários com diferentes níveis de conhecimento tecnológico possam utilizá-lo de forma eficiente.
 
-## Público-Alvo
+# Público-alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações hierárquicas, etc.
+Sendo assim, o público-alvo do sistema proposto é composto por profissionais e organizações que atuam no setor de manutenção veicular e que necessitam gerenciar informações relacionadas aos serviços realizados, ao histórico de veículos e ao controle das atividades operacionais.
 
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
+De forma geral, esse público é responsável pela **organização dos processos, tomada de decisões e acompanhamento das atividades realizadas**, sendo diretamente impactados pela forma como as informações são registradas e gerenciadas.
 
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
+Além disso, o sistema também se destina a profissionais operacionais que executam os serviços de manutenção e necessitam acessar informações de forma rápida e precisa para a realização de suas atividades. Da mesma forma, inclui colaboradores administrativos, responsáveis pelo atendimento ao cliente, registro de dados e organização das ordens de serviço.
+
+De modo geral, o público-alvo apresenta níveis variados de familiaridade com tecnologias digitais, o que reforça a necessidade de soluções acessíveis, intuitivas e que facilitem a organização das informações no ambiente de trabalho.
