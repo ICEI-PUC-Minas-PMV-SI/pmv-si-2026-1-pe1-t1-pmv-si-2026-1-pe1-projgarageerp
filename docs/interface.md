@@ -1,38 +1,159 @@
 
 # Projeto de Interface
 
-Visão geral da interação do usuário pelas telas do sistema e protótipo interativo das telas com as funcionalidades que fazem parte do sistema (wireframes).
+O fluxo de navegação do sistema foi projetado para ser simples, intuitivo e eficiente, reduzindo a curva de aprendizado e facilitando o uso por todos os colaboradores da oficina.
 
- Apresente as principais interfaces da plataforma. Discuta como ela foi elaborada de forma a atender os requisitos funcionais, não funcionais e histórias de usuário abordados nas <a href="2-Especificação do Projeto.md"> Documentação de Especificação</a>.
+### 1. Autenticação
+
+O usuário inicia sua jornada realizando o login no sistema.  
+Após a autenticação bem-sucedida, ele é direcionado ao **Dashboard**.
+
+---
+
+### 2. Dashboard
+
+No painel principal, o usuário pode visualizar:
+
+- Ordens de serviço em andamento  
+- Serviços finalizados  
+- Indicadores operacionais  
+- Informações gerais do sistema  
+
+O Dashboard funciona como ponto central de navegação.
+
+---
+
+### 3. Módulos do Sistema
+
+A partir do painel principal, o usuário pode acessar os seguintes módulos:
+
+#### Clientes e Veículos
+- Cadastro de clientes  
+- Cadastro de veículos  
+- Consulta e edição de informações  
+
+#### Ordens de Serviço
+- Criação de novas ordens  
+- Atualização de status  
+- Registro de serviços realizados  
+
+#### Histórico de Manutenção
+- Consulta detalhada dos serviços executados  
+- Visualização de histórico por veículo   
+
+---
+
+### Objetivo do Fluxo
+
+O fluxo foi estruturado para:
+
+- Garantir facilidade de acesso às informações  
+- Reduzir etapas desnecessárias  
+- Organizar os módulos de forma lógica  
+- Proporcionar rapidez na execução das tarefas diárias  
+
+O sistema busca auxiliar a gestão da oficina de forma prática, organizada e eficiente.
+
+---
 
 ## User Flow
 
-![Exemplo de UserFlow](img/userflow.jpg)
+### User Flow Perfil Mecânico
 
-Fluxo de usuário (User Flow) é uma técnica que permite ao desenvolvedor mapear todo fluxo de telas do site ou app. Essa técnica funciona para alinhar os caminhos e as possíveis ações que o usuário pode fazer junto com os membros de sua equipe.
+![UserFlow mecânico](img/wireframe/userflow/Mecanico.png)
 
-> **Links Úteis**:
-> - [User Flow: O Quê É e Como Fazer?](https://medium.com/7bits/fluxo-de-usu%C3%A1rio-user-flow-o-que-%C3%A9-como-fazer-79d965872534)
-> - [User Flow vs Site Maps](http://designr.com.br/sitemap-e-user-flow-quais-as-diferencas-e-quando-usar-cada-um/)
-> - [Top 25 User Flow Tools & Templates for Smooth](https://www.mockplus.com/blog/post/user-flow-tools)
+---
 
+### User Flow Perfil Administrativo
+
+![UserFlow administrativo](img/wireframe/userflow/ADM_cliente.png)
+
+![UserFlow administrativo](img/wireframe/userflow/ADM_veiculo.png)
+
+![UserFlow administrativo](img/wireframe/userflow/ADM_OS.png)
+
+---
+
+### User Flow Perfil Proprietário
+
+![UserFlow propritário](img/wireframe/userflow/Dono_cliente.png)
+
+![UserFlow propritário](img/wireframe/userflow/Dono_veiculo.png)
+
+![UserFlow propritário](img/wireframe/userflow/Dono_OS.png)
+
+![UserFlow propritário](img/wireframe/userflow/relatorio.png)
+
+---
 
 ## Wireframes
 
-São protótipos usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante do layout de elementos fundamentais na interface e é fundamental sempre relacionar cada wireframe com o(s) requisito(s) que ele atende.
+### Perfil Mecânico
 
-### Exemplo
+![Wireframe mecanico](img/wireframe/mecanico/main.png)
 
-A tela inicial apresenta um menu lateral com as principais seções do portal, enquanto a navigation bar, ao topo, apresenta informações de envio de imagens ou navegação pela galeria de fotos. A área central apresenta a galeria de fotos na forma de uma grade. Nesta tela, são apresentados os seguintes requisitos
+![Wireframe mecanico](img/wireframe/mecanico/lista_os.png)
 
-![Exemplo de Wireframe](img/wireframe-example.png)
+![Wireframe mecanico](img/wireframe/mecanico/editar_os.png)
 
- 
-> **Links Úteis**:
-> - [Protótipos vs Wireframes](https://www.nngroup.com/videos/prototypes-vs-wireframes-ux-projects/)
-> - [Ferramentas de Wireframes](https://rockcontent.com/blog/wireframes/)
-> - [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
-> - [Figma](https://www.figma.com/)
-> - [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
-> - [Axure](https://www.axure.com/edu) (Licença Educacional)
-> - [InvisionApp](https://www.invisionapp.com/) (Licença Educacional)
+---
+
+### Perfil Administrativo
+
+![Wireframe administrativo](img/wireframe/Administrador/main.png)
+
+![Wireframe administrativo](img/wireframe/Administrador/lista_cliente.png)
+
+![Wireframe administrativo](img/wireframe/Administrador/novo_cliente.png)
+
+![Wireframe administrativo](img/wireframe/Administrador/editar_cliente.png)
+
+![Wireframe administrativo](img/wireframe/Administrador/perfil_cliente.png)
+
+![Wireframe administrativo](img/wireframe/Administrador/lista_veiculos.png)
+
+![Wireframe administrativo](img/wireframe/Administrador/novo_veiculo.png)
+
+![Wireframe administrativo](img/wireframe/Administrador/editar_veiculo.png)
+
+![Wireframe administrativo](img/wireframe/Administrador/perfil_veiculo.png)
+
+![Wireframe administrativo](img/wireframe/Administrador/lista_os.png)
+
+![Wireframe administrativo](img/wireframe/Administrador/criar_os.png)
+
+![Wireframe administrativo](img/wireframe/Administrador/editar_os.png)
+
+![Wireframe administrativo](img/wireframe/Administrador/info_os.png)
+
+---
+
+## Perfil Proprietário
+
+![Wireframe proprietário](img/wireframe/proprietario/main.png)
+
+![Wireframe proprietário](img/wireframe/proprietario/lista_clientes.png)
+
+![Wireframe proprietário](img/wireframe/proprietario/novo_cliente.png)
+
+![Wireframe proprietário](img/wireframe/proprietario/edita_cliente.png)
+
+![Wireframe proprietário](img/wireframe/proprietario/perfil_cliente.png)
+
+![Wireframe proprietário](img/wireframe/proprietario/lista_veiculos.png)
+
+![Wireframe proprietário](img/wireframe/proprietario/novo_veiculo.png)
+
+![Wireframe proprietário](img/wireframe/proprietario/editar_veiculo.png)
+
+![Wireframe proprietário](img/wireframe/proprietario/perfil_veiculos.png)
+
+![Wireframe proprietário](img/wireframe/proprietario/lista_os.png)
+
+![Wireframe proprietário](img/wireframe/proprietario/criar_os.png)
+
+![Wireframe proprietário1](img/wireframe/proprietario/editar_os.png)
+
+![Wireframe proprietário](img/wireframe/proprietario/info_os.png)
+
+![Wireframe proprietário](img/wireframe/proprietario/relatorio.png)
