@@ -1,0 +1,13 @@
+# IDEs e Editores
+.vscode/
+
+# Sistema Operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Arquivos de ambiente/segredos
+.env
