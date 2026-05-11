@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="shortcut icon" href="../../assets/img/logo-garageerp.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/pages/administrativo/adm-index.css">
+</head>
+<body>
+    <div class="app-layout">
+        <!-- AQUI A MÁGICA ACONTECE -->
+        <ge-sidebar user-name="Gisele Almeida" role="Atendente" type="admin">
+        </ge-sidebar>
+
+        <div class="principal">
+            <header>
+                <div class="header-text">
+                    <h2>Painel Administrativo</h2>
+                    <p>Olá Gisele! Gerencie o atendimento da oficina.</p> <!--Alterar para Javascript-->
+                </div>
+                <div class="header-buttons">
+                    <a href="#" class="header-newclient">
+                        <img src="../../assets/icons/icon-gray-users.svg" alt="Novo Cliente">
+                        <p>Novo Cliente</p>
+                    </a>
+                    <a href="#" class="header-neworder">
+                        <img src="../../assets/icons/icon-white-clipboard-list.svg" alt="Nova Ordem">
+                        <p>Nova Ordem</p>
+                    </a>
+                </div>
+            </header>
+            <main class="main-content">
+                <!--Alert-Container-->
+                <div class="alert-container">
+                    <div class="alert-icon">
+                        <img src="../../assets/icons/icon-red-warning-circle-big.svg" alt="Atrasados" class="alert-img">
+                    </div>
+                    <div class="alert-text">
+                        <p class="alert-title">1 Ordem Atrasada</p>
+                        <p class="alert-detail">Você tem ordens atrasada</p>
+                        <a href="#">Ver Ordens Atrasadas</a>
+                    </div>
+                </div>
+                <!--Alert-Container-->
+
+                <!--Card-Container-->
+                <div class="card-container">
+                    <div class="card">
+                        <a href="#" class="card-body">
+                            <div class="card-text">
+                                <p class="card-title">Clientes</p>
+                                <p class="card-number">6</p>
+                            </div>
+                            <div class="card-img">
+                                <img src="../../assets/icons/icon-blue-users.svg" alt="Clientes">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#" class="card-body">
+                            <div class="card-text">
+                                <p class="card-title">Veículos</p>
+                                <p class="card-number">6</p>
+                            </div>
+                            <div class="card-img">
+                                <img src="../../assets/icons/icon-car-big.svg" alt="Veículos">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!--Card-Container-->
+
+                <!--Order-list-->
+                <div class="list-container">
+                    <div class="order-list">
+                        <div class="order-title">
+                            <h2>Ordens Recentes</h2>
+                            <a href="#" class="order-button">Ver todos</a>
+                        </div>
+                        <div class="order-container">
+                            <div class="order-card">
+                                <div class="order-info">
+                                    <p class="order-client">Maria Santos</p> <!--Alterar Javascript-->
+                                    <p class="order-car">Fiat Uno - DEF-5678</p> <!--Alterar Javascript-->
+                                </div>
+                                <div class="order-status" id="andamento">
+                                    <img src="../../assets/icons/icon-orange-clock.svg" alt="Andamento">
+                                    <p>Em Andamento</p>
+                                </div> <!--Alterar Javascript-->
+                            </div>
+                            <div class="order-card">
+                                <div class="order-info">
+                                    <p class="order-client">Pedro Oliveira</p> <!--Alterar Javascript-->
+                                    <p class="order-car">Chevrolet Onix - GHI-9012</p> <!--Alterar Javascript-->
+                                </div>
+                                <div class="order-status" id="pendente">
+                                    <img src="../../assets/icons/icon-blue-file.svg" alt="Pendente">
+                                    <p>Pendente</p>
+                                </div> <!--Alterar Javascript-->
+                            </div>
+                            <div class="order-card">
+                                <div class="order-info">
+                                    <p class="order-client">Caio Rocha</p> <!--Alterar Javascript-->
+                                    <p class="order-car">Honda Civic - JKL-3456</p> <!--Alterar Javascript-->
+                                </div>
+                                <div class="order-status" id="atrasado">
+                                    <img src="../../assets/icons/icon-red-warning-circle.svg" alt="Atrasado">
+                                    <p>Atrasado</p>
+                                </div> <!--Alterar Javascript-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="status-list">
+                        <div class="order-title">
+                                <h2>Status das Ordens</h2>
+                        </div>
+                        <div class="status-container">
+                            <div class="status-card" id="status-card-concluido">
+                                <div class="status-text">
+                                    <div class="status-img" id="status-img-concluido">
+                                        <img src="../../assets/icons/icon-green-check-circle.svg" alt="Concluidas">
+                                    </div>
+                                    <div class="status-info">
+                                        <p class="status-title">Concluidas</p>
+                                        <p class="status-detail">Ordens finalizadas</p>
+                                    </div>
+                                </div>
+                                <div class="status-number" id="status-number-concluido">
+                                    <p class="status-subnumber">2</p> <!--Alterar Javascript-->
+                                </div>
+                            </div>
+                            <div class="status-card" id="status-card-andamento">
+                                <div class="status-text">
+                                    <div class="status-img" id="status-img-andamento">
+                                        <img src="../../assets/icons/icon-orange-clock.svg" alt="Andamento">
+                                    </div>
+                                    <div class="status-info">
+                                        <p class="status-title">Em Andamento</p>
+                                        <p class="status-detail">Sendo executadas</p>
+                                    </div>
+                                </div>
+                                <div class="status-number" id="status-number-andamento">
+                                    <p class="status-subnumber">2</p> <!--Alterar Javascript-->
+                                </div>
+                            </div>
+                            <div class="status-card" id="status-card-pendente">
+                                <div class="status-text">
+                                    <div class="status-img" id="status-img-pendente">
+                                        <img src="../../assets/icons/icon-blue-file.svg" alt="Pendentes">
+                                    </div>
+                                    <div class="status-info">
+                                        <p class="status-title">Pendentes</p>
+                                        <p class="status-detail">Aguardando início</p>
+                                    </div>
+                                </div>
+                                <div class="status-number" id="status-number-pendente">
+                                    <p class="status-subnumber">2</p> <!--Alterar Javascript-->
+                                </div>
+                            </div>
+                            <div class="status-card" id="status-card-atrasado">
+                                <div class="status-text">
+                                    <div class="status-img" id="status-img-atrasado">
+                                        <img src="../../assets/icons/icon-red-warning-circle.svg" alt="Atrasadas">
+                                    </div>
+                                    <div class="status-info">
+                                        <p class="status-title">Atrasadas</p>
+                                        <p class="status-detail">Requerem atenção</p>
+                                    </div>
+                                </div>
+                                <div class="status-number" id="status-number-atrasado">
+                                    <p class="status-subnumber">2</p> <!--Alterar Javascript-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="../../js/components/Sidebar.js"></script>
+</body>
+</html>
