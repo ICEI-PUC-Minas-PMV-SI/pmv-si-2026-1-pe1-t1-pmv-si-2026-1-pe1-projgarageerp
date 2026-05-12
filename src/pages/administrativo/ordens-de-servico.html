@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="../../css/pages/administrativo/ordens-de-servico.css"
+        />
+        <title>Document</title>
+    </head>
+    <body>
+        <!--
+            Container principal da aplicação.
+            Divide a tela na proporção Sidebar (Web Component) e Main Content da Página.
+        -->
+        <div class="app-layout">
+            <!--
+                Componente Customizado da Barra Lateral.
+                - user-name: Nome do perfil a ser exibido (Mockup).
+                - role: Função do funcionário.
+                - type: Usado pelo script interno da Sidebar para determinar o conjunto de rotas ("mecanico", "admin", "proprietario").
+            -->
+            <ge-sidebar
+                user-name="Maria Santos"
+                role="Administrativo"
+                type="admin"
+            >
+            </ge-sidebar>
+
+            <!-- Área delimitada para o conteúdo principal, contém transbordo (overflow) vertical nativo -->
+            <main class="main-content">
+                <div class="content-header">
+                    <div class="header-titles">
+                        <h1 class="page-title">Ordens de Serviço</h1>
+                        <p class="page-subtitle">
+                            Gerencie as ordens de serviço
+                        </p>
+                    </div>
+                    <button
+                        class="btn-primary"
+                        onclick="window.location.href = 'nova-ordem.html'"
+                    >
+                        <span class="desktop-only-inline"
+                            ><img
+                                src="../../assets/icons/icon-white-plus.svg"
+                                alt="+"
+                            />
+                            Nova Ordem</span
+                        >
+                        <span class="mobile-only-inline"
+                            ><img
+                                src="../../assets/icons/icon-white-plus.svg"
+                                alt="+"
+                            />
+                            Nova Ordem</span
+                        >
+                    </button>
+                </div>
+
+                <div class="card">
+                    <!--
+                        Header do conteúdo: Agrupa a Barra de Busca e as Opções de Status (Filtro).
+                    -->
+                    <div class="card-header">
+                        <!-- Campo visual de busca por texto livre (Atuará no front ou back futuramente) -->
+                        <div class="search-input">
+                            <img
+                                src="../../assets/icons/icon-search.svg"
+                                alt="Search"
+                            />
+                            <input
+                                type="text"
+                                placeholder="Buscar por cliente, placa ou serviço..."
+                            />
+                        </div>
+
+                        <!--
+                            Dropdown de fltro de status de OS.
+                            Truque CSS: <select> renderizado por cima deste elemento pai com `opacity: 0`.
+                            Isso invoca o widget nativo de opções nativo de cada SO ao invés de codificar um do zero.
+                        -->
+                        <div class="filter-dropdown">
+                            <select class="filter-select">
+                                <option value="">Situação (Todos)</option>
+                                <option value="Em Andamento">
+                                    Em Andamento
+                                </option>
+                                <option value="Atrasado">Atrasado</option>
+                                <option value="Pendente">Pendente</option>
+                                <option value="Concluído">Concluído</option>
+                            </select>
+                            <img
+                                src="../../assets/icons/icon-filter.svg"
+                                alt="Filter"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="card-content">
+                        <!--
+                            Listagem formato Tabela - Desktop (Largura > 760px).
+                            Exibição condensada em linha que prioriza múltiplas colunas informativas.
+                        -->
+                        <div class="table-container desktop-only">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th style="width: 80px">ID</th>
+                                        <th style="width: 216px">Cliente</th>
+                                        <th style="width: 238px">Veículo</th>
+                                        <th style="width: 481px">Serviços</th>
+                                        <th style="width: 187px">Data</th>
+                                        <th style="width: 112px">Status</th>
+                                        <th style="width: 48px"></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="clickable-rows">
+                                    <!--
+                                        MOCKUP DE ROTAS INTERNAS:
+                                        Propagamos artificialmente ?id=1, ?id=2 na url, para que a tela
+                                        de detalhes `ordem-de-servico.html` extraia pela query string
+                                        o identificador e exiba a informação correspondente sem backend/SGBD presente.
+                                    -->
+                                    <tr
+                                        onclick="
+                                            window.location.href =
+                                                'ordem-de-servico.html?id=1'
+                                        "
+                                        style="cursor: pointer"
+                                    >
+                                        <td class="text-secondary">#1</td>
+                                        <td class="text-primary">João Silva</td>
+                                        <td>
+                                            <div class="vehicle-info">
+                                                <p class="text-primary m-0">
+                                                    Volkswagen Gol
+                                                </p>
+                                                <p
+                                                    class="text-secondary m-0 text-sm"
+                                                >
+                                                    ABC-1234
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td class="text-primary">
+                                            Troca de óleo e filtros
+                                        </td>
+                                        <td class="text-secondary">
+                                            01/03/2024
+                                        </td>
+                                        <td>
+                                            <div
+                                                class="status-badge status-concluido"
+                                            >
+                                                <img
+                                                    src="../../assets/icons/icon-check-circle.svg"
+                                                    alt="Concluído"
+                                                />
+                                                <span>Concluído</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button
+                                                class="btn-icon"
+                                                title="Excluir"
+                                                onclick="
+                                                    event.stopPropagation();
+                                                    alert('Excluir O.S.');
+                                                "
+                                            >
+                                                <img
+                                                    src="../../assets/icons/icon-gray-trash.svg"
+                                                    alt="Excluir"
+                                                />
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr
+                                        onclick="
+                                            window.location.href =
+                                                'ordem-de-servico.html?id=2'
+                                        "
+                                        style="cursor: pointer"
+                                    >
+                                        <td class="text-secondary">#2</td>
+                                        <td class="text-primary">
+                                            Maria Santos
+                                        </td>
+                                        <td>
+                                            <div class="vehicle-info">
+                                                <p class="text-primary m-0">
+                                                    Fiat Uno
+                                                </p>
+                                                <p
+                                                    class="text-secondary m-0 text-sm"
+                                                >
+                                                    DEF-5678
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td class="text-primary">
+                                            Alinhamento e balanceamento
+                                        </td>
+                                        <td class="text-secondary">
+                                            18/03/2024
+                                        </td>
+                                        <td>
+                                            <div
+                                                class="status-badge status-andamento"
+                                            >
+                                                <img
+                                                    src="../../assets/icons/icon-orange-clock.svg"
+                                                    alt="Em Andamento"
+                                                />
+                                                <span>Em Andamento</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button
+                                                class="btn-icon"
+                                                title="Excluir"
+                                                onclick="
+                                                    event.stopPropagation();
+                                                    alert('Excluir O.S.');
+                                                "
+                                            >
+                                                <img
+                                                    src="../../assets/icons/icon-gray-trash.svg"
+                                                    alt="Excluir"
+                                                />
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr
+                                        onclick="
+                                            window.location.href =
+                                                'ordem-de-servico.html?id=3'
+                                        "
+                                        style="cursor: pointer"
+                                    >
+                                        <td class="text-secondary">#3</td>
+                                        <td class="text-primary">
+                                            Pedro Oliveira
+                                        </td>
+                                        <td>
+                                            <div class="vehicle-info">
+                                                <p class="text-primary m-0">
+                                                    Chevrolet Onix
+                                                </p>
+                                                <p
+                                                    class="text-secondary m-0 text-sm"
+                                                >
+                                                    GHI-9012
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td class="text-primary">
+                                            Revisão completa dos freios
+                                        </td>
+                                        <td class="text-secondary">
+                                            20/03/2024
+                                        </td>
+                                        <td>
+                                            <div
+                                                class="status-badge status-pendente"
+                                            >
+                                                <img
+                                                    src="../../assets/icons/icon-blue-file.svg"
+                                                    alt="Pendente"
+                                                />
+                                                <span>Pendente</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button
+                                                class="btn-icon"
+                                                title="Excluir"
+                                                onclick="
+                                                    event.stopPropagation();
+                                                    alert('Excluir O.S.');
+                                                "
+                                            >
+                                                <img
+                                                    src="../../assets/icons/icon-gray-trash.svg"
+                                                    alt="Excluir"
+                                                />
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr
+                                        onclick="
+                                            window.location.href =
+                                                'ordem-de-servico.html?id=4'
+                                        "
+                                        style="cursor: pointer"
+                                    >
+                                        <td class="text-secondary">#4</td>
+                                        <td class="text-primary">João Silva</td>
+                                        <td>
+                                            <div class="vehicle-info">
+                                                <p class="text-primary m-0">
+                                                    Honda Civic
+                                                </p>
+                                                <p
+                                                    class="text-secondary m-0 text-sm"
+                                                >
+                                                    JKL-3456
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td class="text-primary">
+                                            Troca de pneus
+                                        </td>
+                                        <td class="text-secondary">
+                                            10/03/2024
+                                        </td>
+                                        <td>
+                                            <div
+                                                class="status-badge status-atrasado"
+                                            >
+                                                <img
+                                                    src="../../assets/icons/icon-red-warning-circle.svg"
+                                                    alt="Atrasado"
+                                                />
+                                                <span>Atrasado</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button
+                                                class="btn-icon"
+                                                title="Excluir"
+                                                onclick="
+                                                    event.stopPropagation();
+                                                    alert('Excluir O.S.');
+                                                "
+                                            >
+                                                <img
+                                                    src="../../assets/icons/icon-gray-trash.svg"
+                                                    alt="Excluir"
+                                                />
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr
+                                        onclick="
+                                            window.location.href =
+                                                'ordem-de-servico.html?id=5'
+                                        "
+                                        style="cursor: pointer"
+                                    >
+                                        <td class="text-secondary">#5</td>
+                                        <td class="text-primary">Caio Rocha</td>
+                                        <td>
+                                            <div class="vehicle-info">
+                                                <p class="text-primary m-0">
+                                                    Volkswagen Gol
+                                                </p>
+                                                <p
+                                                    class="text-secondary m-0 text-sm"
+                                                >
+                                                    ABC-1234
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td class="text-primary">
+                                            Troca de pastilhas de freio e
+                                            revisão do sistema de freios
+                                        </td>
+                                        <td class="text-secondary">
+                                            08/04/2026
+                                        </td>
+                                        <td>
+                                            <div
+                                                class="status-badge status-pendente"
+                                            >
+                                                <img
+                                                    src="../../assets/icons/icon-blue-file.svg"
+                                                    alt="Pendente"
+                                                />
+                                                <span>Pendente</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button
+                                                class="btn-icon"
+                                                title="Excluir"
+                                                onclick="
+                                                    event.stopPropagation();
+                                                    alert('Excluir O.S.');
+                                                "
+                                            >
+                                                <img
+                                                    src="../../assets/icons/icon-gray-trash.svg"
+                                                    alt="Excluir"
+                                                />
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr
+                                        onclick="
+                                            window.location.href =
+                                                'ordem-de-servico.html?id=6'
+                                        "
+                                        style="cursor: pointer"
+                                    >
+                                        <td class="text-secondary">#6</td>
+                                        <td class="text-primary">
+                                            Erick Barbosa
+                                        </td>
+                                        <td>
+                                            <div class="vehicle-info">
+                                                <p class="text-primary m-0">
+                                                    Fiat Uno
+                                                </p>
+                                                <p
+                                                    class="text-secondary m-0 text-sm"
+                                                >
+                                                    DEF-5678
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td class="text-primary">
+                                            Verificação do motor e troca de
+                                            velas
+                                        </td>
+                                        <td class="text-secondary">
+                                            09/04/2026
+                                        </td>
+                                        <td>
+                                            <div
+                                                class="status-badge status-andamento"
+                                            >
+                                                <img
+                                                    src="../../assets/icons/icon-orange-clock.svg"
+                                                    alt="Em Andamento"
+                                                />
+                                                <span>Em Andamento</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button
+                                                class="btn-icon"
+                                                title="Excluir"
+                                                onclick="
+                                                    event.stopPropagation();
+                                                    alert('Excluir O.S.');
+                                                "
+                                            >
+                                                <img
+                                                    src="../../assets/icons/icon-gray-trash.svg"
+                                                    alt="Excluir"
+                                                />
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!--
+                            Listagem formato Cards - Mobile (Largura <= 760px).
+                            Os componentes da tabela viram "Blocos de Informação Vertical" (.order-card).
+                        -->
+                        <div class="mobile-cards-container mobile-only">
+                            <!-- Compartilha da mesma lógica de redirecionamento (?id=X) -->
+                            <div
+                                class="order-card"
+                                onclick="
+                                    window.location.href =
+                                        'ordem-de-servico.html?id=1'
+                                "
+                                style="cursor: pointer"
+                            >
+                                <div class="order-card-header">
+                                    <div>
+                                        <p class="order-id">#1</p>
+                                        <h4 class="order-client">João Silva</h4>
+                                    </div>
+                                    <div class="status-badge status-concluido">
+                                        <img
+                                            src="../../assets/icons/icon-check-circle.svg"
+                                            alt="Concluído"
+                                        />
+                                        <span>Concluído</span>
+                                    </div>
+                                    <button
+                                        class="btn-icon"
+                                        title="Excluir"
+                                        onclick="
+                                            event.stopPropagation();
+                                            alert('Excluir O.S.');
+                                        "
+                                    >
+                                        <img
+                                            src="../../assets/icons/icon-gray-trash.svg"
+                                            alt="Excluir"
+                                        />
+                                    </button>
+                                </div>
+                                <div class="order-card-body">
+                                    <p>
+                                        <span class="label">Veículo: </span
+                                        ><span class="value"
+                                            >Volkswagen Gol - ABC-1234</span
+                                        >
+                                    </p>
+                                    <p class="text-truncate">
+                                        <span class="label">Serviços: </span
+                                        ><span class="value"
+                                            >Troca de óleo e filtros</span
+                                        >
+                                    </p>
+                                    <p class="order-date">01/03/2024</p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="order-card"
+                                onclick="
+                                    window.location.href =
+                                        'ordem-de-servico.html?id=2'
+                                "
+                                style="cursor: pointer"
+                            >
+                                <div class="order-card-header">
+                                    <div>
+                                        <p class="order-id">#2</p>
+                                        <h4 class="order-client">
+                                            Maria Santos
+                                        </h4>
+                                    </div>
+                                    <div class="status-badge status-andamento">
+                                        <img
+                                            src="../../assets/icons/icon-orange-clock.svg"
+                                            alt="Em Andamento"
+                                        />
+                                        <span>Em Andamento</span>
+                                    </div>
+                                    <button
+                                        class="btn-icon"
+                                        title="Excluir"
+                                        onclick="
+                                            event.stopPropagation();
+                                            alert('Excluir O.S.');
+                                        "
+                                    >
+                                        <img
+                                            src="../../assets/icons/icon-gray-trash.svg"
+                                            alt="Excluir"
+                                        />
+                                    </button>
+                                </div>
+                                <div class="order-card-body">
+                                    <p>
+                                        <span class="label">Veículo: </span
+                                        ><span class="value"
+                                            >Fiat Uno - DEF-5678</span
+                                        >
+                                    </p>
+                                    <p class="text-truncate">
+                                        <span class="label">Serviços: </span
+                                        ><span class="value"
+                                            >Alinhamento e balanceamento</span
+                                        >
+                                    </p>
+                                    <p class="order-date">18/03/2024</p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="order-card"
+                                onclick="
+                                    window.location.href =
+                                        'ordem-de-servico.html?id=3'
+                                "
+                                style="cursor: pointer"
+                            >
+                                <div class="order-card-header">
+                                    <div>
+                                        <p class="order-id">#3</p>
+                                        <h4 class="order-client">
+                                            Pedro Oliveira
+                                        </h4>
+                                    </div>
+                                    <div class="status-badge status-pendente">
+                                        <img
+                                            src="../../assets/icons/icon-blue-file.svg"
+                                            alt="Pendente"
+                                        />
+                                        <span>Pendente</span>
+                                    </div>
+                                    <button
+                                        class="btn-icon"
+                                        title="Excluir"
+                                        onclick="
+                                            event.stopPropagation();
+                                            alert('Excluir O.S.');
+                                        "
+                                    >
+                                        <img
+                                            src="../../assets/icons/icon-gray-trash.svg"
+                                            alt="Excluir"
+                                        />
+                                    </button>
+                                </div>
+                                <div class="order-card-body">
+                                    <p>
+                                        <span class="label">Veículo: </span
+                                        ><span class="value"
+                                            >Chevrolet Onix - GHI-9012</span
+                                        >
+                                    </p>
+                                    <p class="text-truncate">
+                                        <span class="label">Serviços: </span
+                                        ><span class="value"
+                                            >Revisão completa dos freios</span
+                                        >
+                                    </p>
+                                    <p class="order-date">20/03/2024</p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="order-card"
+                                onclick="
+                                    window.location.href =
+                                        'ordem-de-servico.html?id=4'
+                                "
+                                style="cursor: pointer"
+                            >
+                                <div class="order-card-header">
+                                    <div>
+                                        <p class="order-id">#4</p>
+                                        <h4 class="order-client">João Silva</h4>
+                                    </div>
+                                    <div class="status-badge status-atrasado">
+                                        <img
+                                            src="../../assets/icons/icon-red-warning-circle.svg"
+                                            alt="Atrasado"
+                                        />
+                                        <span>Atrasado</span>
+                                    </div>
+                                    <button
+                                        class="btn-icon"
+                                        title="Excluir"
+                                        onclick="
+                                            event.stopPropagation();
+                                            alert('Excluir O.S.');
+                                        "
+                                    >
+                                        <img
+                                            src="../../assets/icons/icon-gray-trash.svg"
+                                            alt="Excluir"
+                                        />
+                                    </button>
+                                </div>
+                                <div class="order-card-body">
+                                    <p>
+                                        <span class="label">Veículo: </span
+                                        ><span class="value"
+                                            >Honda Civic - JKL-3456</span
+                                        >
+                                    </p>
+                                    <p class="text-truncate">
+                                        <span class="label">Serviços: </span
+                                        ><span class="value"
+                                            >Troca de pneus</span
+                                        >
+                                    </p>
+                                    <p class="order-date">10/03/2024</p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="order-card"
+                                onclick="
+                                    window.location.href =
+                                        'ordem-de-servico.html?id=5'
+                                "
+                                style="cursor: pointer"
+                            >
+                                <div class="order-card-header">
+                                    <div>
+                                        <p class="order-id">#5</p>
+                                        <h4 class="order-client">Caio Rocha</h4>
+                                    </div>
+                                    <div class="status-badge status-pendente">
+                                        <img
+                                            src="../../assets/icons/icon-blue-file.svg"
+                                            alt="Pendente"
+                                        />
+                                        <span>Pendente</span>
+                                    </div>
+                                    <button
+                                        class="btn-icon"
+                                        title="Excluir"
+                                        onclick="
+                                            event.stopPropagation();
+                                            alert('Excluir O.S.');
+                                        "
+                                    >
+                                        <img
+                                            src="../../assets/icons/icon-gray-trash.svg"
+                                            alt="Excluir"
+                                        />
+                                    </button>
+                                </div>
+                                <div class="order-card-body">
+                                    <p>
+                                        <span class="label">Veículo: </span
+                                        ><span class="value"
+                                            >Volkswagen Gol - ABC-1234</span
+                                        >
+                                    </p>
+                                    <p class="text-truncate">
+                                        <span class="label">Serviços: </span
+                                        ><span class="value"
+                                            >Troca de pastilhas de freio e
+                                            revisão do sistema de freios</span
+                                        >
+                                    </p>
+                                    <p class="order-date">08/04/2026</p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="order-card"
+                                onclick="
+                                    window.location.href =
+                                        'ordem-de-servico.html?id=6'
+                                "
+                                style="cursor: pointer"
+                            >
+                                <div class="order-card-header">
+                                    <div>
+                                        <p class="order-id">#6</p>
+                                        <h4 class="order-client">
+                                            Erick Barbosa
+                                        </h4>
+                                    </div>
+                                    <div class="status-badge status-andamento">
+                                        <img
+                                            src="../../assets/icons/icon-orange-clock.svg"
+                                            alt="Em Andamento"
+                                        />
+                                        <span>Em Andamento</span>
+                                    </div>
+                                    <button
+                                        class="btn-icon"
+                                        title="Excluir"
+                                        onclick="
+                                            event.stopPropagation();
+                                            alert('Excluir O.S.');
+                                        "
+                                    >
+                                        <img
+                                            src="../../assets/icons/icon-gray-trash.svg"
+                                            alt="Excluir"
+                                        />
+                                    </button>
+                                </div>
+                                <div class="order-card-body">
+                                    <p>
+                                        <span class="label">Veículo: </span
+                                        ><span class="value"
+                                            >Fiat Uno - DEF-5678</span
+                                        >
+                                    </p>
+                                    <p class="text-truncate">
+                                        <span class="label">Serviços: </span
+                                        ><span class="value"
+                                            >Verificação do motor e troca de
+                                            velas</span
+                                        >
+                                    </p>
+                                    <p class="order-date">09/04/2026</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <script src="../../js/components/Sidebar.js"></script>
+    </body>
+</html>
