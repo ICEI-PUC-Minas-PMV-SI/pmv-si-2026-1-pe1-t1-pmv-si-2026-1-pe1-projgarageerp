@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Importa a font Inter do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/pages/style.css" />
+    <title>Login - GarageERP</title>
+  </head>
+  <body>
+    <!-- Container principal que centraliza o conteúdo na tela -->
+    <main class="container">
+      <!-- Cabeçalho do card contendo o logo e o título -->
+      <header class="card-header">
+        <!-- Caixa do logo com borda e sombra -->
+        <div class="logo-box">
+          <img
+            src="assets/img/logo-garageerp.png"
+            alt="Logo GarageERP"
+            class="logo-img"
+          />
+        </div>
+
+        <!-- Título principal -->
+        <h1>Garage ERP</h1>
+        <!-- Subtítulo -->
+        <p>Sistema de Gestão de Oficina Mecânica</p>
+      </header>
+
+      <!-- Formulário de login -->
+      <form>
+        <!-- Grupo de input para o email -->
+        <div class="input-box">
+          <label class="nome">Email</label>
+          <input placeholder="seu@email.com" type="email" required />
+        </div>
+
+        <!-- Grupo de input para a senha -->
+        <div class="input-box">
+          <label class="nome">Senha</label>
+          <input placeholder="••••••••" type="password" required />
+        </div>
+
+        <!-- Botão de submissão do formulário -->
+        <button type="submit" class="login">Entrar</button>
+      </form>
+    </main>
+  </body>
+</html>

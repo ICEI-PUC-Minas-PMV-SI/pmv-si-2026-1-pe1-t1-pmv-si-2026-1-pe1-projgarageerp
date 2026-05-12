@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/pages/administrativo/editar-veiculo.css">
+    <title>Cadastro de veículos</title>
+</head>
+
+     <body>
+        <main class="container">
+
+                <a href="lista-veiculos.html" class="link-voltar">
+                <i class="fas fa-arrow-left"></i> Voltar para Veículos
+                </a>
+
+            <form class="card-edicao">
+                <h1>Editar Veículo</h1>
+                <p class="subtitulo">Atualize as informações do veículo</p>
+
+                <div class="alerta-info">
+                    <i class="fas fa-car"></i>
+                    <span>Cadastrre o veículo vinculando ao proprietário. Todos os campos são obrigatórios.</span>
+                </div>
+
+                <div class="input-box">
+                    <label class="nome">Proprietário *</label>
+                    <input type="text">
+                    <p class="ajuda">Cliente dono do veículo</p>
+                </div>
+
+                <div class="input-box">
+                    <label class="nome">Marca *</label>
+                    <input placeholder="Chevrolet" type="text">
+                    <p class="ajuda">Ex: Volkswagen, Fiat, Chevrolet</p>
+                </div>
+
+                <div class="input-box">
+                    <label class="nome">Modelo *</label>
+                    <input placeholder="Onix" type="text">
+                    <p class="ajuda">Ex: Gol, Uno, Onix</p>
+                </div>
+
+                <div class="input-box">
+                    <label class="nome">Placa *</label>
+                    <input placeholder="GHI-9012" type="text">
+                    <p class="ajuda">Formato: ABC-1234</p>
+                </div>
+
+                <div class="input-box">
+                    <label class="nome">Ano *</label>
+                    <input placeholder="2021" type="data">
+                    <p class="ajuda">Ano de fabricação do veículo</p>
+                </div>
+
+                <div class="acoes-form">
+                    <button type="button" class="btn-cancelar">Cancelar</button>
+                    <button type="submit" class="btn-atualizar">
+                        <i class="far fa-save"></i> Atualizar Veículo
+                    </button>
+                </div>
+
+            </form>
+
+        </main>
+
+    </body>
+
+</html>

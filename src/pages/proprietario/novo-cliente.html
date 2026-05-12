@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/pages/proprietario/novo-cliente.css">
+    <title>Cadastro de clientes</title>
+</head>
+
+     <body>
+        <main class="container">
+
+                <a href="lista-clientes.html" class="link-voltar">
+                <i class="fas fa-arrow-left"></i> Voltar para Clientes
+                </a>
+
+            <form class="card-edicao">
+                <h1>Novo Cliente</h1>
+                <p class="subtitulo">Preencha os dados do novo cliente</p>
+
+                <div class="alerta-info">
+                    <i class="fas fa-user"></i>
+                    <span>Preencha os dados do cliente. Todos os campos são obrigatórios.</span>
+                </div>
+
+                <div class="input-box">
+                    <label class="nome">Nome Completo *</label>
+                    <input placeholder="Digite o nome completo" type="text">
+                    <p class="ajuda">Nome que aparecerá nos registros</p>
+                </div>
+
+                <div class="input-box">
+                    <label class="nome">Telefone *</label>
+                    <input placeholder="(00) 00000-0000" type="tel">
+                    <p class="ajuda">Telefone para contato</p>
+                </div>
+
+                <div class="input-box">
+                    <label class="nome">Email *</label>
+                    <input placeholder="exemplo@email.com" type="email">
+                    <p class="ajuda">Email para notificações</p>
+                </div>
+
+                <div class="acoes-form">
+                    <button type="button" class="btn-cancelar">Cancelar</button>
+                    <button type="submit" class="btn-atualizar">
+                        <i class="far fa-save"></i> Atualizar Cliente
+                    </button>
+                </div>
+
+                <div class="proximos-passos">
+                    <hr class="divisor">
+                    <p class="titulo-passos">Próximos passos após cadastrar:</p>
+                
+                <div class="item-passo">
+                    <i class="fas fa-car"></i>
+                    <span>Cadastrar veículo do cliente</span>
+                </div>
+                </div>
+
+            </form>
+
+        </main>
+
+    </body>
+
+</html>
