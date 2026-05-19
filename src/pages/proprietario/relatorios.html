@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/img/Geral/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/pages/proprietario/relatorio.css">
+    <title>Relatório</title>
+</head>
+<body>
+    <div class="app-layout">
+    <!-- AQUI A MÁGICA ACONTECE -->
+        <ge-sidebar user-name="Armando Silva" role="Proprietário" type="proprietario">
+        </ge-sidebar>
+        <div class="principal">
+            <header>
+                <div class="button-voltar">
+                    <img src="../../assets/icons/icon-left-arrow.svg" alt="Voltar">
+                    <a href="ProDashboard.html" class="button-voltar">Voltar ao Dashboard</a>
+                </div>
+                <div class="header-texto">
+                    <div class="header-titulo">
+                        <img src="../../assets/icons/icon-blue-reports-big.svg" alt="Grafico">
+                        <h2>Relatórios</h2>
+                    </div>
+                    <p>Visão geral da performance da oficina</p>
+                </div>
+            </header>
+
+            <main class="main-content">
+                <div class="card-container">
+                    <div class="card">
+                            <div class="card-body">
+                                <div class="card-img blue" id="OS">
+                                    <img src="../../assets/icons/icon-blue-clipboard-list.svg" alt="Total de OS">
+                                </div>
+                                <div class="card-text">
+                                    <p class="card-title">Total de OS</p>
+                                    <p class="card-number" id="num-OS"></p> <!--Alterar para Javascript-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-img" id="concluido">
+                                    <img src="../../assets/icons/icon-green-trending-up.svg" alt="Taxa de conclusão">
+                                </div>
+                                <div class="card-text">
+                                    <p class="card-title">Taxa de conclusão</p>
+                                    <p class="card-number" id="indice-concluido"></p> <!--Alterar para Javascript-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="alert-icon">
+                                    <img src="../../assets/icons/icon-red-warning-circle-big.svg" alt="Atrasado">
+                                </div>
+                                <div class="card-text">
+                                    <p class="card-title">Taxa de Atraso</p>
+                                    <p class="card-number" id="indice-atrasado"></p> <!--Alterar para Javascript-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-img blue" id="cliente">
+                                    <img src="../../assets/icons/icon-blue-users.svg" alt="Clientes">
+                                </div>
+                                <div class="card-text">
+                                    <p class="card-title">Clientes</p>
+                                    <p class="card-number" id="num-cliente"></p> <!--Alterar para Javascript-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-img blue" id="receita-total">
+                                    <img src="../../assets/icons/icon-blue-dollar-sign.svg" alt="Receita Total">
+                                </div>
+                                <div class="card-text">
+                                    <p class="card-title">Receita Total</p>
+                                    <p class="card-number" id="num-receita-total">R$ 275,00</p> <!--Alterar para Javascript-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-img blue" id="receita-media">
+                                    <img src="../../assets/icons/icon-blue-dollar-sign.svg" alt="Receita Total">
+                                </div>
+                                <div class="card-text">
+                                    <p class="card-title">Receita Média</p>
+                                    <p class="card-number" id="num-receita-media">R$ 275,00</p> <!--Alterar para Javascript-->
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="perfomance-container">
+                    <div class="relatorio-titulo">
+                        <img src="../../assets/icons/icon-blue-reports-big.svg" alt="">
+                        <h2>Distribuição de Status das Ordens</h2>
+                    </div>
+                    <div class="performance-indicadores">
+                        <div class="performance-grafico">
+                            <div class="performance-barra">
+                                <div class="performance-texto">
+                                    <p class="performance-indice">Concluídos</p>
+                                    <p class="performance-status" id="performance-concluido"></p><!--Alterar para Javascript-->
+                                </div>
+                                <div class="barra-container">
+                                    <div class="barra-fundo">
+                                        <div class="barra-progresso" id="barra-concluido"></div>
+                                    </div>
+                                </div><!--Modificar Javascript-->
+                            </div>
+                            <div class="performance-barra">
+                                <div class="performance-texto">
+                                    <p class="performance-indice">Em Andamento</p>
+                                    <p class="performance-status" id="performance-andamento"></p><!--Alterar para Javascript-->
+                                </div>
+                                <div class="barra-container">
+                                    <div class="barra-fundo">
+                                        <div class="barra-progresso" id="barra-andamento"></div>
+                                    </div>
+                                </div><!--Modificar Javascript-->
+                            </div>
+                            <div class="performance-barra">
+                                <div class="performance-texto">
+                                    <p class="performance-indice">Pendentes</p>
+                                    <p class="performance-status" id="performance-pendente"></p><!--Alterar para Javascript-->
+                                </div>
+                                <div class="barra-container">
+                                    <div class="barra-fundo">
+                                        <div class="barra-progresso" id="barra-pendente"></div>
+                                    </div>
+                                </div><!--Modificar Javascript-->
+                            </div>
+                            <div class="performance-barra">
+                                <div class="performance-texto">
+                                    <p class="performance-indice">Atrasados</p>
+                                    <p class="performance-status" id="performance-atrasado"></p><!--Alterar para Javascript-->
+                                </div>
+                                <div class="barra-container">
+                                    <div class="barra-fundo">
+                                        <div class="barra-progresso" id="barra-atrasado"></div>
+                                    </div>
+                                </div><!--Modificar Javascript-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="graphic">
+                    <h2>Ordens por Mes (Ultimos 6 meses)</h2>
+                    <canvas id="monthly-graphic"></canvas>
+                </div>
+
+                <div class="frequency-container">
+                    <div class="frequency-container-inside">
+                        <div class="frequency-title">
+                            <img src="../../assets/icons/icon-blue-user.svg" alt="">
+                            <h2>Clientes mais frequentes</h2>
+                        </div>
+                        <div class="frequency-body">
+                            <div class="frequency-card">
+                                <div class="frequency-numbername">
+                                    <p class="frequency-number">1</p>
+                                    <p class="frequency-name">João Silva</p>
+                                </div>
+                                <p class="number-os">2 OS</p>
+                            </div>
+                            <div class="frequency-card">
+                                <div class="frequency-numbername">
+                                    <p class="frequency-number">2</p>
+                                    <p class="frequency-name">Maria Santos</p>
+                                </div>
+                                <p class="number-os">1 OS</p>
+                            </div>
+                            <div class="frequency-card">
+                                <div class="frequency-numbername">
+                                    <p class="frequency-number">3</p>
+                                    <p class="frequency-name">Pedro Oliveira</p>
+                                </div>
+                                <p class="number-os">1 OS</p>
+                            </div>
+                            <div class="frequency-card">
+                                <div class="frequency-numbername">
+                                    <p class="frequency-number">4</p>
+                                    <p class="frequency-name">Caio Rocha</p>
+                                </div>
+                                <p class="number-os">1 OS</p>
+                            </div>
+                            <div class="frequency-card">
+                                <div class="frequency-numbername">
+                                    <p class="frequency-number">5</p>
+                                    <p class="frequency-name">Erick Barbosa</p>
+                                </div>
+                                <p class="number-os">1 OS</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="frequency-container-inside">
+                        <div class="frequency-title">
+                            <img src="../../assets/icons/icon-car.svg" alt="Veículos">
+                            <h2>Veiculos com Mais Manutencoes</h2>
+                        </div>
+                        <div class="frequency-body">
+                            <div class="frequency-card">
+                                <div class="frequency-numbername">
+                                    <p class="frequency-number">1</p>
+                                    <div class="frequency-information">
+                                        <p class="frequency-name">Volkswagen Gol</p>
+                                        <div class="frequency-cadastro">
+                                            <p class="frequency-plate">ABC-1234</p>
+                                            <p class="frequency-owner">João Silva</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="number-os">2 OS</p>
+                            </div>
+                            <div class="frequency-card">
+                                <div class="frequency-numbername">
+                                    <p class="frequency-number">2</p>
+                                    <div class="frequency-information">
+                                        <p class="frequency-name">Fiat Uno</p>
+                                        <div class="frequency-cadastro">
+                                            <p class="frequency-plate">DEF-5678</p>
+                                            <p class="frequency-owner">Maria Santos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="number-os">1 OS</p>
+                            </div>
+                            <div class="frequency-card">
+                                <div class="frequency-numbername">
+                                    <p class="frequency-number">3</p>
+                                    <div class="frequency-information">
+                                        <p class="frequency-name">Chevrolet Onix</p>
+                                        <div class="frequency-cadastro">
+                                            <p class="frequency-plate">GHI-9012</p>
+                                            <p class="frequency-owner">Pedro Oliveira</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="number-os">1 OS</p>
+                            </div>
+                            <div class="frequency-card">
+                                <div class="frequency-numbername">
+                                    <p class="frequency-number">4</p>
+                                    <div class="frequency-information">
+                                        <p class="frequency-name">Honda Civic</p>
+                                        <div class="frequency-cadastro">
+                                            <p class="frequency-plate">JKL-3456</p>
+                                            <p class="frequency-owner">Caio Rocha</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="number-os">1 OS</p>
+                            </div>
+                            <div class="frequency-card">
+                                <div class="frequency-numbername">
+                                    <p class="frequency-number">5</p>
+                                    <div class="frequency-information">
+                                        <p class="frequency-name">Hyundai HB20</p>
+                                        <div class="frequency-cadastro">
+                                            <p class="frequency-plate">SOV-1917</p>
+                                            <p class="frequency-owner">Erick Barbosa</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="number-os">1 OS</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="../../js/components/Sidebar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../js/pages/proprietario/relatorio.js"></script>
+</body>
+</html>
