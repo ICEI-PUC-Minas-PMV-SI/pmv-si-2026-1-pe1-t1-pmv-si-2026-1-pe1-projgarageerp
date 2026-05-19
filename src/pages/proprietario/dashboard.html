@@ -1,290 +1,517 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="shortcut icon" href="../../assets/img/logo-garageerp.png" type="image/x-icon">
-    <link rel="stylesheet" href="../../css/pages/proprietario/dashboard.css">
-</head>
-<body>
-    <div class="app-layout">
-        <!-- AQUI A MÁGICA ACONTECE -->
-        <ge-sidebar user-name="Armando Silva" role="Proprietário" type="proprietario">
-        </ge-sidebar>
-        <div class="principal">
-            <header>
-                <div class="header-text">
-                    <p class="header-titulo">Visão Estratégica</p>
-                    <p class="header-subtitulo">Olá Armando Silva - Acompanhe a perfomance da sua empresa</p> <!--Alterar para Javascript-->
-                </div>
-                <div class="header-buttons">
-                    <a href="" class="header-relatorio button">
-                        <img src="../../assets/icons/icon-gray-reports.svg" alt="Relatórios">
-                        <p>Relatórios</p>
-                    </a>
-                    <a href="" class="header-newOS button">
-                        <img src="../../assets/icons/icon-white-plus.svg" alt="">
-                        <p>Nova OS</p>
-                    </a>
-                </div>
-            </header>
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dashboard - GarageERP</title>
+        <link
+            rel="icon"
+            href="../../assets/img/favicon-garageerp.png"
+            type="image/png"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="../../css/pages/proprietario/dashboard.css"
+        />
+    </head>
+    <body>
+        <div class="app-layout">
+            <!-- AQUI A MÁGICA ACONTECE -->
+            <ge-sidebar
+                user-name="Carlos Silva"
+                role="Proprietário"
+                type="proprietario"
+            >
+            </ge-sidebar>
+            <div class="principal">
+                <header>
+                    <div class="header-text">
+                        <p class="header-titulo">Visão Estratégica</p>
+                        <p class="header-subtitulo">
+                            Olá Carlos Silva - Acompanhe a perfomance da sua
+                            empresa
+                        </p>
+                        <!--Alterar para Javascript-->
+                    </div>
+                    <div class="header-buttons">
+                        <a
+                            href="relatorios.html"
+                            class="header-relatorio button"
+                        >
+                            <img
+                                src="../../assets/icons/icon-gray-reports.svg"
+                                alt="Relatórios"
+                            />
+                            <p>Relatórios</p>
+                        </a>
+                        <a
+                            href="nova-ordem-de-servico.html"
+                            class="header-newOS button"
+                        >
+                            <img
+                                src="../../assets/icons/icon-white-plus.svg"
+                                alt=""
+                            />
+                            <p>Nova OS</p>
+                        </a>
+                    </div>
+                </header>
 
-            <main class="main-content">
-                <!--Alert-Container-->
-                <div class="alert-container">
-                    <div class="alert-icon">
-                        <img src="../../assets/icons/icon-red-warning-circle-big.svg" alt="">
+                <main class="main-content">
+                    <!--Alert-Container-->
+                    <div class="alert-container">
+                        <div class="alert-icon">
+                            <img
+                                src="../../assets/icons/icon-red-warning-circle-big.svg"
+                                alt=""
+                            />
+                        </div>
+                        <div class="alert-text">
+                            <p class="alert-title" id="alerta"></p>
+                            <!--Alterar para Javascript-->
+                            <p class="alert-detail">
+                                Verifique suas ordens atrasadas
+                            </p>
+                            <a href="#" class="button">Ver Ordens Atrasadas</a>
+                        </div>
                     </div>
-                    <div class="alert-text">
-                        <p class="alert-title" id="alerta"></p> <!--Alterar para Javascript-->
-                        <p class="alert-detail">Verifique suas ordens atrasadas</p>
-                        <a href="#" class="button">Ver Ordens Atrasadas</a>
-                    </div>
-                </div>
-                <!--Alert-Container-->
+                    <!--Alert-Container-->
 
-                <!--Card-Container-->
-                <div class="card-container">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card-img" id="concluido">
-                                <img src="../../assets/icons/icon-green-trending-up.svg" alt="Taxa de conclusão">
+                    <!--Card-Container-->
+                    <div class="card-container">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-img" id="concluido">
+                                    <img
+                                        src="../../assets/icons/icon-green-trending-up.svg"
+                                        alt="Taxa de conclusão"
+                                    />
+                                </div>
+                                <div class="card-text">
+                                    <p class="card-title">Taxa de conclusão</p>
+                                    <p
+                                        class="card-number"
+                                        id="indice-concluido"
+                                    ></p>
+                                    <!--Alterar para Javascript-->
+                                    <p class="card-detail">
+                                        <!--5%-->
+                                        vs. mês anterior
+                                    </p>
+                                    <!--Alterar para Javascript-->
+                                </div>
                             </div>
-                            <div class="card-text">
-                                <p class="card-title">Taxa de conclusão</p>
-                                <p class="card-number" id="indice-concluido"></p> <!--Alterar para Javascript-->
-                                <p class="card-detail"><!--5%--> vs. mês anterior</p> <!--Alterar para Javascript-->
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-img" id="cliente">
+                                    <img
+                                        src="../../assets/icons/icon-blue-users.svg"
+                                        alt="Clientes"
+                                    />
+                                </div>
+                                <div class="card-text">
+                                    <p class="card-title">Clientes</p>
+                                    <p class="card-number" id="num-cliente"></p>
+                                    <!--Alterar para Javascript-->
+                                    <p class="card-detail">
+                                        <!--5%-->
+                                        Ativos
+                                    </p>
+                                    <!--Alterar para Javascript-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-img" id="concluido">
+                                    <img
+                                        src="../../assets/icons/icon-check-circle.svg"
+                                        alt="Concluido"
+                                    />
+                                </div>
+                                <div class="card-text">
+                                    <p class="card-title">
+                                        Concluídos (7 dias)
+                                    </p>
+                                    <p
+                                        class="card-number"
+                                        id="num-concluido"
+                                    ></p>
+                                    <!--Alterar para Javascript-->
+                                    <p class="card-detail">Últimos 7 dias</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="alert-icon">
+                                    <img
+                                        src="../../assets/icons/icon-red-warning-circle-big.svg"
+                                        alt="Atrasado"
+                                    />
+                                </div>
+                                <div class="card-text">
+                                    <p class="card-title">Taxa de Atraso</p>
+                                    <p
+                                        class="card-number"
+                                        id="indice-atrasado"
+                                    ></p>
+                                    <!--Alterar para Javascript-->
+                                    <p
+                                        class="card-detail"
+                                        id="alerta-atrasado"
+                                    ></p>
+                                    <!--Alterar para Javascript-->
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card-img" id="cliente">
-                                <img src="../../assets/icons/icon-blue-users.svg" alt="Clientes">
-                            </div>
-                            <div class="card-text">
-                                <p class="card-title">Clientes</p>
-                                <p class="card-number" id="num-cliente"></p> <!--Alterar para Javascript-->
-                                <p class="card-detail"><!--5%--> Ativos</p> <!--Alterar para Javascript-->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card-img" id="concluido">
-                                <img src="../../assets/icons/icon-check-circle.svg" alt="Concluido">
-                            </div>
-                            <div class="card-text">
-                                <p class="card-title">Concluídos (7 dias)</p>
-                                <p class="card-number" id="num-concluido"></p> <!--Alterar para Javascript-->
-                                <p class="card-detail">Últimos 7 dias</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="alert-icon">
-                                <img src="../../assets/icons/icon-red-warning-circle-big.svg" alt="Atrasado">
-                            </div>
-                            <div class="card-text">
-                                <p class="card-title">Taxa de Atraso</p>
-                                <p class="card-number" id="indice-atrasado"></p> <!--Alterar para Javascript-->
-                                <p class="card-detail" id="alerta-atrasado"></p> <!--Alterar para Javascript-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Card-Container-->
+                    <!--Card-Container-->
 
-                <!--Performance e Atividades-->
-                <div class="relatorio-container">
-                    <div class="perfomance-container">
-                        <div class="relatorio-titulo">
-                            <img src="../../assets/icons/icon-blue-reports.svg" alt="Performance">
-                            <h2>Performance Operacional</h2>
-                        </div>
-                        <div class="performance-indicadores">
-                            <div class="performance-grafico">
-                                <div class="performance-barra">
-                                    <div class="performance-texto">
-                                        <p class="performance-indice">Concluídos</p>
-                                        <p class="performance-status" id="performance-concluido"></p><!--Alterar para Javascript-->
-                                    </div>
-                                    <div class="barra-container">
-                                        <div class="barra-fundo">
-                                            <div class="barra-progresso" id="barra-concluido"></div>
+                    <!--Performance e Atividades-->
+                    <div class="relatorio-container">
+                        <div class="perfomance-container">
+                            <div class="relatorio-titulo">
+                                <img
+                                    src="../../assets/icons/icon-blue-reports.svg"
+                                    alt="Performance"
+                                />
+                                <h2>Performance Operacional</h2>
+                            </div>
+                            <div class="performance-indicadores">
+                                <div class="performance-grafico">
+                                    <div class="performance-barra">
+                                        <div class="performance-texto">
+                                            <p class="performance-indice">
+                                                Concluídos
+                                            </p>
+                                            <p
+                                                class="performance-status"
+                                                id="performance-concluido"
+                                            ></p>
+                                            <!--Alterar para Javascript-->
                                         </div>
-                                    </div><!--Modificar Javascript-->
+                                        <div class="barra-container">
+                                            <div class="barra-fundo">
+                                                <div
+                                                    class="barra-progresso"
+                                                    id="barra-concluido"
+                                                ></div>
+                                            </div>
+                                        </div>
+                                        <!--Modificar Javascript-->
+                                    </div>
+                                    <div class="performance-barra">
+                                        <div class="performance-texto">
+                                            <p class="performance-indice">
+                                                Em Andamento
+                                            </p>
+                                            <p
+                                                class="performance-status"
+                                                id="performance-andamento"
+                                            ></p>
+                                            <!--Alterar para Javascript-->
+                                        </div>
+                                        <div class="barra-container">
+                                            <div class="barra-fundo">
+                                                <div
+                                                    class="barra-progresso"
+                                                    id="barra-andamento"
+                                                ></div>
+                                            </div>
+                                        </div>
+                                        <!--Modificar Javascript-->
+                                    </div>
+                                    <div class="performance-barra">
+                                        <div class="performance-texto">
+                                            <p class="performance-indice">
+                                                Pendentes
+                                            </p>
+                                            <p
+                                                class="performance-status"
+                                                id="performance-pendente"
+                                            ></p>
+                                            <!--Alterar para Javascript-->
+                                        </div>
+                                        <div class="barra-container">
+                                            <div class="barra-fundo">
+                                                <div
+                                                    class="barra-progresso"
+                                                    id="barra-pendente"
+                                                ></div>
+                                            </div>
+                                        </div>
+                                        <!--Modificar Javascript-->
+                                    </div>
+                                    <div class="performance-barra">
+                                        <div class="performance-texto">
+                                            <p class="performance-indice">
+                                                Atrasados
+                                            </p>
+                                            <p
+                                                class="performance-status"
+                                                id="performance-atrasado"
+                                            ></p>
+                                            <!--Alterar para Javascript-->
+                                        </div>
+                                        <div class="barra-container">
+                                            <div class="barra-fundo">
+                                                <div
+                                                    class="barra-progresso"
+                                                    id="barra-atrasado"
+                                                ></div>
+                                            </div>
+                                        </div>
+                                        <!--Modificar Javascript-->
+                                    </div>
                                 </div>
-                                <div class="performance-barra">
-                                    <div class="performance-texto">
-                                        <p class="performance-indice">Em Andamento</p>
-                                        <p class="performance-status" id="performance-andamento"></p><!--Alterar para Javascript-->
-                                    </div>
-                                    <div class="barra-container">
-                                        <div class="barra-fundo">
-                                            <div class="barra-progresso" id="barra-andamento"></div>
+                                <div class="performance-financeiro">
+                                    <div class="financeiro-titulo">
+                                        <img
+                                            src="../../assets/icons/icon-blue-dollar-sign.svg"
+                                            alt=""
+                                        />
+                                        <div>
+                                            <h2>Indicadores Financeiros</h2>
+                                            <p>
+                                                Baseado nos serviços registrados
+                                                pelos mecânicos
+                                            </p>
                                         </div>
-                                    </div><!--Modificar Javascript-->
-                                </div>
-                                <div class="performance-barra">
-                                    <div class="performance-texto">
-                                        <p class="performance-indice">Pendentes</p>
-                                        <p class="performance-status" id="performance-pendente"></p><!--Alterar para Javascript-->
                                     </div>
-                                    <div class="barra-container">
-                                        <div class="barra-fundo">
-                                            <div class="barra-progresso" id="barra-pendente"></div>
+                                    <div class="performance-financeiro-valores">
+                                        <div class="faturamento-ticket">
+                                            <p class="faturamento-texto">
+                                                Faturamento Estimado
+                                            </p>
+                                            <p class="faturamento-valor">
+                                                R$ 450,00
+                                            </p>
+                                            <!--Alterar para Javascript-->
+                                            <p class="faturamento-texto">
+                                                OS em andamento/pendente
+                                            </p>
                                         </div>
-                                    </div><!--Modificar Javascript-->
-
-                                </div>
-                                <div class="performance-barra">
-                                    <div class="performance-texto">
-                                        <p class="performance-indice">Atrasados</p>
-                                        <p class="performance-status" id="performance-atrasado"></p><!--Alterar para Javascript-->
+                                        <div class="faturamento-ticket">
+                                            <p class="faturamento-texto">
+                                                Ticket Médio
+                                            </p>
+                                            <p class="faturamento-valor">
+                                                R$ 275,00
+                                            </p>
+                                            <!--Alterar para Javascript-->
+                                            <p class="faturamento-texto">
+                                                OS concluídas
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div class="barra-container">
-                                        <div class="barra-fundo">
-                                            <div class="barra-progresso" id="barra-atrasado"></div>
-                                        </div>
-                                    </div><!--Modificar Javascript-->
+                                    <div class="faturamento-receita">
+                                        <p class="faturamento-texto">
+                                            Receita Total (Concluído)
+                                        </p>
+                                        <p class="receita-valor">R$ 275,00</p>
+                                        <!--Alterar para Javascript-->
+                                    </div>
                                 </div>
                             </div>
-                            <div class="performance-financeiro">
-                                <div class="financeiro-titulo">
-                                    <img src="../../assets/icons/icon-blue-dollar-sign.svg" alt="">
-                                    <div>
-                                        <h2>Indicadores Financeiros</h2>
-                                        <p>Baseado nos serviços registrados pelos mecânicos</p>
+                        </div>
+                        <div class="atividade-container">
+                            <div class="relatorio-titulo">
+                                <h2>Atividade Recente</h2>
+                            </div>
+                            <div class="recente-container">
+                                <div class="recente-OS">
+                                    <div class="numero-status">
+                                        <p
+                                            class="OS-numero"
+                                            id="numero-os-5"
+                                        ></p>
+                                        <!--Alterar para Javascript-->
+                                        <div class="OS-status" id="status-os-5">
+                                            <img id="img-status-5" />
+                                            <!--Alterar para Javascript-->
+                                            <p
+                                                class="status-texto"
+                                                id="status-texto-5"
+                                            ></p>
+                                        </div>
+                                    </div>
+                                    <div class="nome-veiculos">
+                                        <p class="nome-cliente">Maria Santos</p>
+                                        <!--Alterar para Javascript-->
+                                        <p class="veiculo">
+                                            Fiat Uno - DEF-5678
+                                        </p>
+                                        <!--Alterar para Javascript-->
                                     </div>
                                 </div>
-                                <div class="performance-financeiro-valores">
-                                    <div class="faturamento-ticket">
-                                        <p class="faturamento-texto">Faturamento Estimado</p>
-                                        <p class="faturamento-valor">R$ 450,00</p><!--Alterar para Javascript-->
-                                        <p class="faturamento-texto">OS em andamento/pendente</p>
+                                <div class="recente-OS">
+                                    <div class="numero-status">
+                                        <p
+                                            class="OS-numero"
+                                            id="numero-os-6"
+                                        ></p>
+                                        <!--Alterar para Javascript-->
+                                        <div class="OS-status" id="status-os-6">
+                                            <img id="img-status-6" />
+                                            <!--Alterar para Javascript-->
+                                            <p
+                                                class="status-texto"
+                                                id="status-texto-6"
+                                            ></p>
+                                        </div>
                                     </div>
-                                    <div class="faturamento-ticket">
-                                        <p class="faturamento-texto">Ticket Médio</p>
-                                        <p class="faturamento-valor">R$ 275,00</p><!--Alterar para Javascript-->
-                                        <p class="faturamento-texto">OS concluídas</p>
+                                    <div class="nome-veiculos">
+                                        <p class="nome-cliente">João Silva</p>
+                                        <!--Alterar para Javascript-->
+                                        <p class="veiculo">
+                                            Volkswagen Gol - ABC-1234
+                                        </p>
+                                        <!--Alterar para Javascript-->
                                     </div>
                                 </div>
-                                <div class="faturamento-receita">
-                                    <p class="faturamento-texto">Receita Total (Concluído)</p>
-                                    <p class="receita-valor">R$ 275,00</p> <!--Alterar para Javascript-->
+                                <div class="recente-OS">
+                                    <div class="numero-status">
+                                        <p
+                                            class="OS-numero"
+                                            id="numero-os-7"
+                                        ></p>
+                                        <!--Alterar para Javascript-->
+                                        <div class="OS-status" id="status-os-7">
+                                            <img id="img-status-7" />
+                                            <!--Alterar para Javascript-->
+                                            <p
+                                                class="status-texto"
+                                                id="status-texto-7"
+                                            ></p>
+                                        </div>
+                                    </div>
+                                    <div class="nome-veiculos">
+                                        <p class="nome-cliente">Caio Rocha</p>
+                                        <!--Alterar para Javascript-->
+                                        <p class="veiculo">
+                                            Honda Civic - JKL-3456
+                                        </p>
+                                        <!--Alterar para Javascript-->
+                                    </div>
                                 </div>
+                                <div class="recente-OS">
+                                    <div class="numero-status">
+                                        <p
+                                            class="OS-numero"
+                                            id="numero-os-8"
+                                        ></p>
+                                        <!--Alterar para Javascript-->
+                                        <div class="OS-status" id="status-os-8">
+                                            <img id="img-status-8" />
+                                            <!--Alterar para Javascript-->
+                                            <p
+                                                class="status-texto"
+                                                id="status-texto-8"
+                                            ></p>
+                                        </div>
+                                    </div>
+                                    <div class="nome-veiculos">
+                                        <p class="nome-cliente">
+                                            Pedro Oliveira
+                                        </p>
+                                        <!--Alterar para Javascript-->
+                                        <p class="veiculo">
+                                            Chevrolet Onix - GHI-9012
+                                        </p>
+                                        <!--Alterar para Javascript-->
+                                    </div>
+                                </div>
+                                <div class="recente-OS">
+                                    <div class="numero-status">
+                                        <p
+                                            class="OS-numero"
+                                            id="numero-os-9"
+                                        ></p>
+                                        <!--Alterar para Javascript-->
+                                        <div class="OS-status" id="status-os-9">
+                                            <img id="img-status-9" />
+                                            <!--Alterar para Javascript-->
+                                            <p
+                                                class="status-texto"
+                                                id="status-texto-9"
+                                            ></p>
+                                        </div>
+                                    </div>
+                                    <div class="nome-veiculos">
+                                        <p class="nome-cliente">
+                                            Erick Barbosa
+                                        </p>
+                                        <!--Alterar para Javascript-->
+                                        <p class="veiculo">
+                                            Fiat Uno - DEF-5678
+                                        </p>
+                                        <!--Alterar para Javascript-->
+                                    </div>
+                                </div>
+                                <a
+                                    href="ordens-de-servico.html"
+                                    class="todas-ordens-button button"
+                                >
+                                    <p>Ver Todas as Ordens</p>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="atividade-container">
-                        <div class="relatorio-titulo">
-                            <h2>Atividade Recente</h2>
+
+                    <!--Ações Rápidas-->
+                    <div class="acoes-container">
+                        <div class="acoes-titulo">
+                            <h2 class="relatorio-titulo">Ações Rápidas</h2>
                         </div>
-                        <div class="recente-container">
-                            <div class="recente-OS">
-                                <div class="numero-status">
-                                    <p class="OS-numero" id="numero-os-5"></p> <!--Alterar para Javascript-->
-                                    <div class="OS-status" id="status-os-5">
-                                        <img id="img-status-5"> <!--Alterar para Javascript-->
-                                        <p class="status-texto" id="status-texto-5"></p>
-                                    </div>
-                                </div>
-                                <div class="nome-veiculos">
-                                    <p class="nome-cliente">Maria Santos</p> <!--Alterar para Javascript-->
-                                    <p class="veiculo">Fiat Uno - DEF-5678</p> <!--Alterar para Javascript-->
-                                </div>
-                            </div>
-                            <div class="recente-OS">
-                                <div class="numero-status">
-                                    <p class="OS-numero" id="numero-os-6"></p> <!--Alterar para Javascript-->
-                                    <div class="OS-status" id="status-os-6">
-                                        <img id="img-status-6"> <!--Alterar para Javascript-->
-                                        <p class="status-texto" id="status-texto-6"></p>
-                                    </div>
-                                </div>
-                                <div class="nome-veiculos">
-                                    <p class="nome-cliente">João Silva</p> <!--Alterar para Javascript-->
-                                    <p class="veiculo">Volkswagen Gol - ABC-1234</p> <!--Alterar para Javascript-->
-                                </div>
-                            </div>
-                            <div class="recente-OS">
-                                <div class="numero-status">
-                                    <p class="OS-numero" id="numero-os-7"></p> <!--Alterar para Javascript-->
-                                    <div class="OS-status" id="status-os-7">
-                                        <img id="img-status-7"> <!--Alterar para Javascript-->
-                                        <p class="status-texto" id="status-texto-7"></p>
-                                    </div>
-                                </div>
-                                <div class="nome-veiculos">
-                                    <p class="nome-cliente">Caio Rocha</p> <!--Alterar para Javascript-->
-                                    <p class="veiculo">Honda Civic - JKL-3456</p> <!--Alterar para Javascript-->
-                                </div>
-                            </div>
-                            <div class="recente-OS">
-                                <div class="numero-status">
-                                    <p class="OS-numero" id="numero-os-8"></p> <!--Alterar para Javascript-->
-                                    <div class="OS-status" id="status-os-8">
-                                        <img id="img-status-8"> <!--Alterar para Javascript-->
-                                        <p class="status-texto" id="status-texto-8"></p>
-                                    </div>
-                                </div>
-                                <div class="nome-veiculos">
-                                    <p class="nome-cliente">Pedro Oliveira</p> <!--Alterar para Javascript-->
-                                    <p class="veiculo">Chevrolet Onix - GHI-9012</p> <!--Alterar para Javascript-->
-                                </div>
-                            </div>
-                            <div class="recente-OS">
-                                <div class="numero-status">
-                                    <p class="OS-numero" id="numero-os-9"></p> <!--Alterar para Javascript-->
-                                    <div class="OS-status" id="status-os-9">
-                                        <img id="img-status-9"> <!--Alterar para Javascript-->
-                                        <p class="status-texto" id="status-texto-9"></p>
-                                    </div>
-                                </div>
-                                <div class="nome-veiculos">
-                                    <p class="nome-cliente">Erick Barbosa</p> <!--Alterar para Javascript-->
-                                    <p class="veiculo">Fiat Uno - DEF-5678</p> <!--Alterar para Javascript-->
-                                </div>
-                            </div>
-                            <a href="" class="todas-ordens-button button">
-                                <p>Ver Todas as Ordens</p>
+                        <div class="acoes-card-container">
+                            <a href="clientes.html" class="acoes-card button">
+                                <img
+                                    src="../../assets/icons/icon-blue-users.svg"
+                                    alt="Clientes"
+                                />
+                                <p class="relatorio-titulo">Clientes</p>
+                            </a>
+                            <a href="veiculos.html" class="acoes-card button">
+                                <img
+                                    src="../../assets/icons/icon-car-big.svg"
+                                    alt="Veiculos"
+                                />
+                                <p class="relatorio-titulo">Veículos</p>
+                            </a>
+                            <a
+                                href="ordens-de-servico.html"
+                                class="acoes-card button"
+                            >
+                                <img
+                                    src="../../assets/icons/icon-orange-clipboard-list.svg"
+                                    alt="Ordens de serviço"
+                                />
+                                <p class="relatorio-titulo">
+                                    Ordens de Serviço
+                                </p>
+                            </a>
+                            <a href="relatorios.html" class="acoes-card button">
+                                <img
+                                    src="../../assets/icons/icon-green-reports.svg"
+                                    alt="Relátorios"
+                                />
+                                <p class="relatorio-titulo">Relatórios</p>
                             </a>
                         </div>
                     </div>
-                </div>
-
-                <!--Ações Rápidas-->
-                <div class="acoes-container">
-                    <div class="acoes-titulo">
-                        <h2 class="relatorio-titulo">Ações Rápidas</h2>
-                    </div>
-                    <div class="acoes-card-container">
-                        <a href="" class="acoes-card button">
-                            <img src="../../assets/icons/icon-blue-users.svg" alt="Clientes">
-                            <p class="relatorio-titulo">Clientes</p>
-                        </a>
-                        <a href="" class="acoes-card button">
-                            <img src="../../assets/icons/icon-car-big.svg" alt="Veiculos">
-                            <p class="relatorio-titulo">Veículos</p>
-                        </a>
-                        <a href="" class="acoes-card button">
-                            <img src="../../assets/icons/icon-orange-clipboard-list.svg" alt="Ordens de serviço">
-                            <p class="relatorio-titulo">Ordens de Serviço</p>
-                        </a>
-                        <a href="" class="acoes-card button">
-                            <img src="../../assets/icons/icon-green-reports.svg" alt="Relátorios">
-                            <p class="relatorio-titulo">Relatórios</p>
-                        </a>
-                    </div>
-                </div>
-            </main>
+                </main>
+            </div>
         </div>
-    </div>
 
-    <script src="../../js/components/Sidebar.js"></script>
-    <script src="../../js/pages/proprietario/dashboard.js"></script>
-</body>
+        <script src="../../js/components/Sidebar.js"></script>
+        <script src="../../js/pages/proprietario/dashboard.js"></script>
+    </body>
 </html>

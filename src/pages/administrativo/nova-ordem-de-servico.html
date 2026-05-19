@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Nova Ordem de Serviço - GarageERP</title>
+        <link
+            rel="icon"
+            href="../../assets/img/favicon-garageerp.png"
+            type="image/png"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+            rel="stylesheet"
+        />
+
+        <link
+            rel="stylesheet"
+            href="../../css/pages/administrativo/nova-ordem-de-servico.css"
+        />
+    </head>
+    <body>
+        <!--
+            Container principal da aplicação.
+            Divide a tela na proporção Sidebar (Web Component) e Main Content da Página.
+        -->
+        <!--
+        /**
+         * @layout AppLayout
+         * @description Container Matriz. Segue o princípio de Single Responsibility 
+         * ao separar a gestão da barra de navegação (Sidebar) do container Principal.
+         */
+        -->
+        <div class="app-layout">
+            <!--
+                Componente Customizado da Barra Lateral.
+                - user-name: Nome do perfil a ser exibido (Mockup).
+                - role: Função do funcionário.
+                - type: Usado pelo script interno da Sidebar para determinar o conjunto de rotas ("mecanico", "admin", "proprietario").
+            -->
+            <ge-sidebar
+                user-name="Maria Santos"
+                role="Administrativo"
+                type="admin"
+            ></ge-sidebar>
+
+            <!-- Área delimitada para o conteúdo principal, contém transbordo (overflow) vertical nativo -->
+            <main class="main-content">
+                <div class="page-container">
+                    <a href="ordens-de-servico.html" class="btn-back">
+                        <img
+                            src="../../assets/icons/icon-left-arrow.svg"
+                            alt="Ícone Voltar"
+                            class="icon-back"
+                        />
+                        Voltar para Ordens de Serviço
+                    </a>
+
+                    <div class="form-card">
+                        <header class="form-header">
+                            <h1 class="form-title">Nova Ordem de Serviço</h1>
+                            <p class="form-subtitle">
+                                Preencha os dados da nova ordem
+                            </p>
+                        </header>
+
+                        <div class="form-body">
+                            <div class="info-banner">
+                                <div class="icon-banner">
+                                    <img
+                                        src="../../assets/icons/icon-blue-clipboard-list.svg"
+                                        alt="Info ícone"
+                                    />
+                                </div>
+                                <div class="info-text">
+                                    <p class="info-title">
+                                        Criar nova ordem de serviço
+                                    </p>
+                                    <p class="info-desc">
+                                        Selecione o cliente, veículo e
+                                        opcionalmente atribua a um mecânico.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cliente">Cliente *</label>
+                                <select
+                                    id="cliente"
+                                    class="form-control"
+                                    required
+                                >
+                                    <option value="" disabled selected>
+                                        Selecione o cliente...
+                                    </option>
+                                </select>
+                                <p class="form-help">Proprietário do veículo</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="veiculo">Veículo *</label>
+                                <select
+                                    id="veiculo"
+                                    class="form-control"
+                                    disabled
+                                    required
+                                >
+                                    <option value="" disabled selected>
+                                        Aguardando cliente...
+                                    </option>
+                                </select>
+                                <p class="form-help">
+                                    <img
+                                        src="../../assets/icons/icon-gray-warning.svg"
+                                        alt="Aviso"
+                                        class="icon-inline"
+                                    />
+                                    Selecione um cliente primeiro
+                                </p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mecanico">
+                                    <img
+                                        src="../../assets/icons/icon-wrench-screwdriver.svg"
+                                        alt="Ícone Mecânico"
+                                    />
+                                    Mecânico Responsável
+                                </label>
+                                <select id="mecanico" class="form-control">
+                                    <option value="" disabled selected>
+                                        Selecione um mecânico...
+                                    </option>
+                                    <option value="joao_silva">
+                                        João Silva
+                                    </option>
+                                </select>
+                                <p class="form-help">
+                                    <img
+                                        src="../../assets/icons/icon-gray-wrench.svg"
+                                        alt="Info"
+                                        class="icon-inline"
+                                    />
+                                    Opcional - deixe vazio se ainda não souber
+                                    quem executará
+                                </p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="queixa">
+                                    <img
+                                        src="../../assets/icons/icon-chat-bubble-oval-left-ellipsis.svg"
+                                        alt="Ícone Chat"
+                                    />
+                                    Queixa do Cliente *
+                                </label>
+                                <textarea
+                                    id="queixa"
+                                    class="form-control"
+                                    rows="4"
+                                    required
+                                    placeholder="Descreva o problema relatado pelo cliente...&#10;Ex: Carro fazendo barulho ao frear, óleo vazando embaixo do motor"
+                                ></textarea>
+                                <p class="form-help">
+                                    Registre o que o cliente relatou — será
+                                    exibido ao mecânico como referência
+                                </p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="status">Status da Ordem *</label>
+                                <select
+                                    id="status"
+                                    class="form-control"
+                                    required
+                                >
+                                    <option value="" disabled selected>
+                                        Selecione o status atual...
+                                    </option>
+                                    <option value="pendente">
+                                        Pendente - Aguardando início
+                                    </option>
+                                    <option value="em_andamento">
+                                        Em Andamento - Sendo executado
+                                    </option>
+                                    <option value="concluido">
+                                        Concluído - Serviço finalizado
+                                    </option>
+                                    <option value="atrasado">
+                                        Atrasado - Requer atenção
+                                    </option>
+                                </select>
+                                <p class="form-help">Status atual do serviço</p>
+                            </div>
+
+                            <div class="form-actions">
+                                <button
+                                    type="button"
+                                    class="btn-cancel"
+                                    onclick="
+                                        window.location.href =
+                                            'ordens-de-servico.html'
+                                    "
+                                >
+                                    Cancelar
+                                </button>
+                                <button type="submit" class="btn-primary">
+                                    <img
+                                        src="../../assets/icons/icon-save.svg"
+                                        alt="Criar ícone"
+                                        class="icon-inline"
+                                    />
+                                    Criar Ordem de Serviço
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <script src="../../js/components/Sidebar.js"></script>
+    </body>
+</html>

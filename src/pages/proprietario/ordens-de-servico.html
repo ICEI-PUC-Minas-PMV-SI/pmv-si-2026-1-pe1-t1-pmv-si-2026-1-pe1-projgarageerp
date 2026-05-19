@@ -63,7 +63,9 @@
                     </div>
                     <button
                         class="btn-primary"
-                        onclick="window.location.href = 'nova-ordem.html'"
+                        onclick="
+                            window.location.href = 'nova-ordem-de-servico.html'
+                        "
                     >
                         <img
                             src="../../assets/icons/icon-white-plus.svg"
@@ -97,13 +99,13 @@
                         -->
                         <div class="filter-dropdown">
                             <select class="filter-select">
-                                <option value="">Situação (Todos)</option>
+                                <option value="">Todos os status</option>
+                                <option value="Pendente">Pendente</option>
                                 <option value="Em Andamento">
                                     Em Andamento
                                 </option>
-                                <option value="Atrasado">Atrasado</option>
-                                <option value="Pendente">Pendente</option>
                                 <option value="Concluído">Concluído</option>
+                                <option value="Atrasado">Atrasado</option>
                             </select>
                             <img
                                 src="../../assets/icons/icon-filter.svg"

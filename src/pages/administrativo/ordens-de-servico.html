@@ -54,7 +54,7 @@
                      * @description Agrupa os títulos da página e seus Botões Principais de Ação (CTAs) em Flexbox.
                      */
                     -->
-                    <div class="content-header">
+                <div class="content-header">
                     <div class="header-titles">
                         <h1 class="page-title">Ordens de Serviço</h1>
                         <p class="page-subtitle">
@@ -63,7 +63,9 @@
                     </div>
                     <button
                         class="btn-primary"
-                        onclick="window.location.href = 'nova-ordem.html'"
+                        onclick="
+                            window.location.href = 'nova-ordem-de-servico.html'
+                        "
                     >
                         <img
                             src="../../assets/icons/icon-white-plus.svg"
@@ -97,13 +99,13 @@
                         -->
                         <div class="filter-dropdown">
                             <select class="filter-select">
-                                <option value="">Situação (Todos)</option>
+                                <option value="">Todos os status</option>
+                                <option value="Pendente">Pendente</option>
                                 <option value="Em Andamento">
                                     Em Andamento
                                 </option>
-                                <option value="Atrasado">Atrasado</option>
-                                <option value="Pendente">Pendente</option>
                                 <option value="Concluído">Concluído</option>
+                                <option value="Atrasado">Atrasado</option>
                             </select>
                             <img
                                 src="../../assets/icons/icon-filter.svg"
@@ -137,7 +139,9 @@
                                         de detalhes `ordem-de-servico.html` extraia pela query string
                                         o identificador e exiba a informação correspondente sem backend/SGBD presente.
                                     -->
-                                    <tr class="cursor-pointer" onclick="
+                                    <tr
+                                        class="cursor-pointer"
+                                        onclick="
                                             window.location.href =
                                                 'ordem-de-servico.html?id=1'
                                         "
@@ -190,7 +194,9 @@
                                             </button>
                                         </td>
                                     </tr>
-                                    <tr class="cursor-pointer" onclick="
+                                    <tr
+                                        class="cursor-pointer"
+                                        onclick="
                                             window.location.href =
                                                 'ordem-de-servico.html?id=2'
                                         "
@@ -245,7 +251,9 @@
                                             </button>
                                         </td>
                                     </tr>
-                                    <tr class="cursor-pointer" onclick="
+                                    <tr
+                                        class="cursor-pointer"
+                                        onclick="
                                             window.location.href =
                                                 'ordem-de-servico.html?id=3'
                                         "
@@ -300,7 +308,9 @@
                                             </button>
                                         </td>
                                     </tr>
-                                    <tr class="cursor-pointer" onclick="
+                                    <tr
+                                        class="cursor-pointer"
+                                        onclick="
                                             window.location.href =
                                                 'ordem-de-servico.html?id=4'
                                         "
@@ -353,7 +363,9 @@
                                             </button>
                                         </td>
                                     </tr>
-                                    <tr class="cursor-pointer" onclick="
+                                    <tr
+                                        class="cursor-pointer"
+                                        onclick="
                                             window.location.href =
                                                 'ordem-de-servico.html?id=5'
                                         "
@@ -407,7 +419,9 @@
                                             </button>
                                         </td>
                                     </tr>
-                                    <tr class="cursor-pointer" onclick="
+                                    <tr
+                                        class="cursor-pointer"
+                                        onclick="
                                             window.location.href =
                                                 'ordem-de-servico.html?id=6'
                                         "
