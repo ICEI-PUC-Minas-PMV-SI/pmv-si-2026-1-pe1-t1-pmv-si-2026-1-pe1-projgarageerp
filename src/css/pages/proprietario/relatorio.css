@@ -81,6 +81,13 @@ header{
     gap: 40px;
 }
 
+button{
+    all: unset;
+    cursor: pointer;
+    display: inline-flex;
+    gap: 6px;
+}
+
 .button-voltar{
     text-decoration: none;
     color: var(--cor1);
