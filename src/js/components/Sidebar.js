@@ -614,9 +614,14 @@ class GarageErpSidebar extends HTMLElement {
                         ${navLinks
                             .map((link) => {
                                 const currentPath = window.location.pathname;
+                                const isClienteDetalhe =
+                                    link.url === "clientes" &&
+                                    currentPath.endsWith("/cliente.html");
+
                                 // Marca como ativo se a URL atual contiver o nome do link, ou se estiver na raiz e for o dashboard
                                 const isActive =
                                     currentPath.includes(link.url) ||
+                                    isClienteDetalhe ||
                                     (currentPath.endsWith("/") &&
                                         link.url === "dashboard")
                                         ? "active"

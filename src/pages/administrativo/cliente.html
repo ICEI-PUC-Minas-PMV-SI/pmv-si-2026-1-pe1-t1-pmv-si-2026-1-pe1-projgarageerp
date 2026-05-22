@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cliente - GarageERP</title>
+        <link
+            rel="icon"
+            href="../../assets/img/favicon-garageerp.png"
+            type="image/png"
+        />
+        <link rel="stylesheet" href="../../css/pages/cliente.css" />
+    </head>
+    <body>
+        <div class="app-layout">
+            <ge-sidebar
+                user-name="Maria Santos"
+                role="Administrativo"
+                type="admin"
+            >
+            </ge-sidebar>
+
+            <main class="main-content">
+                <a href="clientes.html" class="link-voltar">
+                    <img
+                        src="../../assets/icons/icon-left-arrow.svg"
+                        alt="Voltar"
+                        class="icone-inline"
+                    />
+                    Voltar para Clientes
+                </a>
+
+                <section class="cartao cabecalho-cliente">
+                    <div class="linha-info">
+                        <div class="avatar-cliente">
+                            <img
+                                src="../../assets/icons/icon-white-user.svg"
+                                alt="Cliente"
+                                class="icone-avatar"
+                            />
+                        </div>
+                        <div>
+                            <h1>João Silva</h1>
+                            <div class="dados-contato">
+                                <span>
+                                    <img
+                                        src="../../assets/icons/icon-email.svg"
+                                        alt="Email"
+                                        class="icone-minimo"
+                                    />
+                                    joao@email.com
+                                </span>
+                                <span>
+                                    <img
+                                        src="../../assets/icons/icon-phone.svg"
+                                        alt="Telefone"
+                                        class="icone-minimo"
+                                    />
+                                    (11) 98765-4321
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="editar-cliente.html" class="botao botao-secundario">
+                        Editar Cliente
+                    </a>
+                </section>
+
+                <div class="grade-conteudo">
+                    <section class="cartao cartao-veiculos">
+                        <div class="titulo-cartao">
+                            <h2>Veículos (2)</h2>
+                            <a href="novo-veiculo.html" class="botao">
+                                <img
+                                    src="../../assets/icons/icon-white-plus.svg"
+                                    alt="Adicionar"
+                                    class="icone-botao"
+                                />
+                                Adicionar Veículo
+                            </a>
+                        </div>
+
+                        <div class="lista-veiculos">
+                            <div class="campo campo-veiculo">
+                                <div class="icone-caixa">
+                                    <img
+                                        src="../../assets/icons/icon-car.svg"
+                                        alt="Veículo"
+                                        class="icone-conteudo"
+                                    />
+                                </div>
+                                <div>
+                                    <p>Volkswagen Gol</p>
+                                    <span>Placa: ABC-1234 • Ano: 2020</span>
+                                </div>
+                            </div>
+
+                            <div class="campo campo-veiculo">
+                                <div class="icone-caixa">
+                                    <img
+                                        src="../../assets/icons/icon-car.svg"
+                                        alt="Veículo"
+                                        class="icone-conteudo"
+                                    />
+                                </div>
+                                <div>
+                                    <p>Honda Civic</p>
+                                    <span>Placa: JKL-3456 • Ano: 2022</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="cartao cartao-historico">
+                        <h2>Histórico de Serviços (2)</h2>
+
+                        <div class="lista-historico">
+                            <div class="bloco-status status-atrasado">
+                                <div class="status-topo">
+                                    <div class="linha-status">
+                                        <div class="icone-status">
+                                            <img
+                                                src="../../assets/icons/icon-red-warning-circle.svg"
+                                                alt="Atrasado"
+                                                class="icone-status-img"
+                                            />
+                                        </div>
+                                        <div>
+                                            <div class="data-status">
+                                                <img
+                                                    src="../../assets/icons/icon-calendar.svg"
+                                                    alt="Calendário"
+                                                    class="icone-minimo"
+                                                />
+                                                10 de mar. de 2024, 07:00
+                                            </div>
+                                            <p>Troca de pneus</p>
+                                        </div>
+                                    </div>
+
+                                    <span class="badge badge-atrasado">
+                                        <img
+                                            src="../../assets/icons/icon-red-warning-circle.svg"
+                                            alt="Atrasado"
+                                            class="icone-badge"
+                                        />
+                                        Atrasado
+                                    </span>
+                                </div>
+
+                                <div class="aviso aviso-atrasado">
+                                    <img
+                                        src="../../assets/icons/icon-red-warning.svg"
+                                        alt="Alerta"
+                                        class="icone-minimo"
+                                    />
+                                    Atenção: serviço atrasado
+                                </div>
+                            </div>
+
+                            <div class="bloco-status status-concluido">
+                                <div class="status-topo">
+                                    <div class="linha-status">
+                                        <div class="icone-status">
+                                            <img
+                                                src="../../assets/icons/icon-green-check-circle.svg"
+                                                alt="Concluído"
+                                                class="icone-status-img"
+                                            />
+                                        </div>
+                                        <div>
+                                            <div class="data-status">
+                                                <img
+                                                    src="../../assets/icons/icon-calendar.svg"
+                                                    alt="Calendário"
+                                                    class="icone-minimo"
+                                                />
+                                                01 de mar. de 2024, 05:00
+                                            </div>
+                                            <p>Troca de óleo e filtros</p>
+                                        </div>
+                                    </div>
+
+                                    <span class="badge badge-concluido">
+                                        <img
+                                            src="../../assets/icons/icon-green-check-circle.svg"
+                                            alt="Concluído"
+                                            class="icone-badge"
+                                        />
+                                        Concluído
+                                    </span>
+                                </div>
+
+                                <div class="aviso aviso-concluido">
+                                    <img
+                                        src="../../assets/icons/icon-green-check-circle.svg"
+                                        alt="Concluído"
+                                        class="icone-minimo"
+                                    />
+                                    Concluído em 01 de mar. de 2024
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="nova-ordem-de-servico.html" class="botao botao-grande">
+                            <img
+                                src="../../assets/icons/icon-white-plus.svg"
+                                alt="Nova ordem"
+                                class="icone-botao"
+                            />
+                            Nova Ordem de Serviço
+                        </a>
+                    </section>
+                </div>
+            </main>
+        </div>
+
+        <script src="../../js/components/Sidebar.js"></script>
+    </body>
+</html>
