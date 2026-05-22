@@ -19,11 +19,15 @@
     </head>
     <body>
         <div class="app-layout">
-            <!-- AQUI A MÁGICA ACONTECE -->
-            <ge-sidebar user-name="João Silva" role="Mecânico" type="mecanico">
-            </ge-sidebar>
+            <!-- ge-sidebar: Componente global de navegação (Não alterar estrutura) -->
+            <ge-sidebar
+                user-name="João Mecânico"
+                role="Mecânico"
+                type="mecanico"
+            ></ge-sidebar>
 
             <div class="principal">
+                <!-- Cabeçalho de boas-vindas -->
                 <header>
                     <div class="bloco-inicio">
                         <div class="bloco-img">
@@ -33,22 +37,20 @@
                             />
                         </div>
                         <div class="bloco-identificacao">
-                            <p class="nome">Olá João Silva</p>
-                            <!--Alterar para Javascript-->
+                            <p class="nome">Olá, João Mecânico!</p>
                             <p class="subnome">Suas ordens de serviço</p>
                         </div>
                     </div>
                 </header>
 
                 <main class="main-content">
-                    <!--Cards do topo da tela-->
+                    <!-- Cards de resumo quantitativo -->
                     <div class="card-container">
                         <div class="card">
                             <div class="card-body">
                                 <div class="card-text">
                                     <p class="card-title">Pendentes</p>
                                     <p class="card-number">2</p>
-                                    <!--Alterar para Javascript-->
                                 </div>
                                 <div class="card-img card-img--pendente">
                                     <img
@@ -64,7 +66,6 @@
                                 <div class="card-text">
                                     <p class="card-title">Em Andamento</p>
                                     <p class="card-number">2</p>
-                                    <!--Alterar para Javascript-->
                                 </div>
                                 <div class="card-img card-img--andamento">
                                     <img
@@ -78,26 +79,27 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="card-text">
-                                    <p class="card-title">Concluídos</p>
-                                    <p class="card-number">2</p>
-                                    <!--Alterar para Javascript-->
+                                    <p class="card-title">Concluídas Hoje</p>
+                                    <p class="card-number">0</p>
                                 </div>
                                 <div class="card-img card-img--concluido">
                                     <img
                                         src="../../assets/icons/icon-check-circle.svg"
-                                        alt="Concluídos"
+                                        alt="Concluídas"
                                     />
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!--Lista com as Ordens de Serviço-->
+
+                    <!-- Lista de Ordens de Serviço -->
                     <div class="order-list">
                         <div class="order-title">
                             <h2>Minhas Ordens de Serviço</h2>
                         </div>
                         <div class="order-items">
                             <div class="order-container">
+                                <!-- Exemplo de OS em Andamento -->
                                 <div class="order-card">
                                     <div class="order-info">
                                         <div class="order-status-container">
@@ -108,35 +110,31 @@
                                                 <img
                                                     src="../../assets/icons/icon-orange-clock.svg"
                                                     alt="Status"
-                                                    class="order-status-img"
                                                 />
-                                                <!--Alterar para Javascript-->
-                                                <p class="order-status-texto">
-                                                    Em Andamento
-                                                </p>
+                                                <p>Em Andamento</p>
                                             </div>
-                                            <!--Alterar para Javascript-->
                                             <p class="order-numero">OS #6</p>
                                         </div>
                                         <div class="order-detail">
                                             <p class="order-client">
-                                                Maria Santos
+                                                Erick Barbosa
                                             </p>
                                             <p class="order-car">
-                                                Fiat Uno - DEF-5678
+                                                🚗 Fiat Uno - DEF-5678
                                             </p>
-                                            <p class="order-servico">
-                                                Serviços: Verificação do motor e
-                                                troca de velas
+                                            <p class="order-detail">
+                                                <strong>Serviços:</strong>
+                                                Verificação do motor e troca de
+                                                velas
                                             </p>
                                         </div>
                                     </div>
-                                    <a href="" class="button" id="b-andamento">
-                                        <!--Alterar para Javascript-->
-                                        <p>Concluir Serviço</p>
-                                    </a>
+                                    <a href="#" class="button" id="b-andamento"
+                                        >Concluir Serviço</a
+                                    >
                                 </div>
 
+                                <!-- Exemplo de OS Pendente -->
                                 <div class="order-card">
                                     <div class="order-info">
                                         <div class="order-status-container">
@@ -147,33 +145,64 @@
                                                 <img
                                                     src="../../assets/icons/icon-blue-file.svg"
                                                     alt="Status"
-                                                    class="order-status-img"
                                                 />
-                                                <!--Alterar para Javascript-->
-                                                <p class="order-status-texto">
-                                                    Pendente
-                                                </p>
+                                                <p>Pendente</p>
                                             </div>
-                                            <p class="order-numero">OS #2</p>
+                                            <p class="order-numero">OS #3</p>
                                         </div>
-                                        <p class="order-client">
-                                            Pedro Oliveira
-                                        </p>
-                                        <p class="order-car">
-                                            Chevrolet Onix - GHI-9012
-                                        </p>
-                                        <p class="order-detail">
-                                            Serviços: Revisão completa dos
-                                            freios
-                                        </p>
+                                        <div class="order-detail">
+                                            <p class="order-client">
+                                                Pedro Oliveira
+                                            </p>
+                                            <p class="order-car">
+                                                🚗 Chevrolet Onix - GHI-9012
+                                            </p>
+                                            <p class="order-detail">
+                                                <strong>Serviços:</strong>
+                                                Revisão completa dos freios
+                                            </p>
+                                        </div>
                                     </div>
-                                    <!--Alterar para Javascript-->
-                                    <a href="" class="button" id="b-pendente">
-                                        <!--Alterar para Javascript-->
-                                        <p>Iniciar Serviço</p>
-                                    </a>
+                                    <a href="#" class="button" id="b-pendente"
+                                        >Iniciar Serviço</a
+                                    >
                                 </div>
 
+                                <!-- Exemplo de OS Atrasada -->
+                                <div class="order-card">
+                                    <div class="order-info">
+                                        <div class="order-status-container">
+                                            <div
+                                                class="order-status"
+                                                id="atrasado"
+                                            >
+                                                <img
+                                                    src="../../assets/icons/icon-red-warning-circle.svg"
+                                                    alt="Status"
+                                                />
+                                                <p>Atrasado</p>
+                                            </div>
+                                            <p class="order-numero">OS #4</p>
+                                        </div>
+                                        <div class="order-detail">
+                                            <p class="order-client">
+                                                João Silva
+                                            </p>
+                                            <p class="order-car">
+                                                🚗 Honda Civic - JKL-3456
+                                            </p>
+                                            <p class="order-detail">
+                                                <strong>Serviços:</strong> Troca
+                                                de pneus
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="button" id="b-atrasado"
+                                        >Ver Serviço</a
+                                    >
+                                </div>
+
+                                <!-- Exemplo de OS Concluída -->
                                 <div class="order-card">
                                     <div class="order-info">
                                         <div class="order-status-container">
@@ -184,61 +213,25 @@
                                                 <img
                                                     src="../../assets/icons/icon-green-check-circle.svg"
                                                     alt="Status"
-                                                    class="order-status-img"
                                                 />
-                                                <!--Alterar para Javascript-->
-                                                <p class="order-status-texto">
-                                                    Concluído
-                                                </p>
+                                                <p>Concluído</p>
                                             </div>
-                                            <p class="order-numero">OS #9</p>
+                                            <p class="order-numero">OS #1</p>
                                         </div>
-                                        <!--Alterar para Javascript-->
-                                        <p class="order-client">João Silva</p>
-                                        <p class="order-car">
-                                            Volkswagen Gol - ABC-1234
-                                        </p>
-                                        <p class="order-detail">
-                                            Serviços: Troca de óleo e filtros
-                                        </p>
-                                    </div>
-                                    <a href="" class="button" id="b-concluido">
-                                        <!--Alterar para Javascript-->
-                                        <p>Ver Detalhes</p>
-                                    </a>
-                                </div>
-
-                                <div class="order-card">
-                                    <div class="order-info">
-                                        <div class="order-status-container">
-                                            <div
-                                                class="order-status"
-                                                id="atrasado"
-                                            >
-                                                <img
-                                                    src="../../assets/icons/icon-red-warning-circle.svg"
-                                                    alt="Atrasado"
-                                                    class="order-status-img"
-                                                />
-                                                <p class="order-status-texto">
-                                                    Atrasado
-                                                </p>
-                                            </div>
-                                            <!--Alterar para Javascript-->
-                                            <p class="order-numero">OS #4</p>
+                                        <div class="order-detail">
+                                            <p class="order-client">
+                                                João Silva
+                                            </p>
+                                            <p class="order-car">
+                                                🚗 Volkswagen Gol - ABC-1234
+                                            </p>
+                                            <p class="order-detail">
+                                                <strong>Serviços:</strong> Troca
+                                                de óleo e filtros
+                                            </p>
                                         </div>
-                                        <p class="order-client">Caio Rocha</p>
-                                        <p class="order-car">
-                                            Honda Civic - JKL-3456
-                                        </p>
-                                        <p class="order-detail">
-                                            Serviços: Troca de pneus
-                                        </p>
                                     </div>
-                                    <a href="" class="button" id="b-atrasado">
-                                        <!--Alterar para Javascript-->
-                                        <p>Ver Serviço</p>
-                                    </a>
+                                    <a href="#" class="button">Ver Detalhes</a>
                                 </div>
                             </div>
                         </div>

@@ -1,45 +1,34 @@
 /**
  * @file ordens-de-servico.css
  * @description Estilização da tela de Ordens de Serviço.
+ * Refatorado para fidelidade visual (Figma) e responsividade milimétrica.
  */
 
 :root {
-    /* Superfícies e Componentes Plásticos */
-    --color-bg-body: #f3f4f6;
+    /* Cores atualizadas conforme Figma */
+    --color-bg-body: #f8f9fa;
     --color-bg-card: #ffffff;
-    --color-bg-sidebar-mobile: #f8f9fa;
-
-    /* Cores das Fontes */
     --color-text-main: #1f2937;
     --color-text-muted: #6b7280;
-
-    /* Botões e Interações */
     --color-primary-base: #2563eb;
-    --color-primary-hover: #1d4ed8;
-    --color-primary-light: #3b82f6;
-
-    /* Distâncias e Contornos */
     --color-border: #e5e7eb;
-    --radius-default: 8px;
-    --font-family-base: "Inter", sans-serif;
-}
 
-/**
- * Utilitários Genéricos (Utility Classes)
- * Isola as declarações `style` contidas soltas dentro do HTML mantendo o CSS coeso.
- */
-.cursor-pointer {
-    cursor: pointer;
+    /* Design Tokens (English) */
+    --main-padding-desktop: 32px;
+    --main-padding-mobile: 16px;
+    --global-header-height: 60px;
+    --card-shadow:
+        0px 1px 1.5px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 * {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 html,
 body {
-    margin: 0;
-    padding: 0;
     height: 100vh;
     overflow: hidden;
     font-family: "Inter", sans-serif;
@@ -53,53 +42,54 @@ body {
 }
 
 /**
- * Área central de listagem.
- * Permite scroll individual isolando a barra lateral (Sidebar).
+ * Área central de listagem com scroll independente.
  */
 .main-content {
     flex: 1;
-    padding: 24px;
+    padding: var(--main-padding-mobile);
     overflow-y: auto;
+    scrollbar-gutter: stable;
+}
+
+@media (min-width: 1024px) {
+    .main-content {
+        padding: var(--main-padding-desktop);
+    }
 }
 
 /**
- * Reserva de Espaço da Sidebar (<ge-sidebar>).
- * Evita o piscar de tela (FOUC) definindo estaticamente as dimensões do Web Component antes do HTML parse processá-lo.
+ * BLINDAGEM DA NAVEGAÇÃO: Reserva de Espaço da Sidebar.
  */
 ge-sidebar:not(:defined) {
     display: block;
     width: 255px;
     height: 100vh;
-    height: 100dvh;
     background-color: var(--color-text-main);
     flex-shrink: 0;
 }
 
-/**
- * Regras de recuo no Responsivo Mobile (Sobrescritas do Header).
- */
 @media (max-width: 760px) {
     .app-layout {
         flex-direction: column;
     }
     .main-content {
-        padding-top: 60px; /* Compensa o header mobile de 60px */
-        padding: 16px;
+        /* 
+           Compensação obrigatória: Conteúdo deve começar abaixo do menu mobile fixo.
+           60px (Header) + 16px (Padding) = 76px.
+        */
         padding-top: 76px;
     }
     ge-sidebar:not(:defined) {
         width: 100vw;
-        height: 61px;
+        height: var(--global-header-height);
         background-color: #f8f9fa;
         border-bottom: 1.25px solid var(--color-border);
     }
 }
 
 /**
- * Cabeçalhos e Container de Cards (.card).
- * Define a caixa branca principal e as disposições flexíveis do menu de cabeçalho.
+ * Cabeçalhos da Página
  */
-
 .content-header {
     display: flex;
     flex-direction: column;
@@ -108,28 +98,31 @@ ge-sidebar:not(:defined) {
 }
 
 .page-title {
-    margin: 0;
     font-weight: 500;
-    font-size: 30px;
-    line-height: 36px;
+    font-size: 24px;
     color: var(--color-text-main);
 }
 
+@media (min-width: 1024px) {
+    .page-title {
+        font-size: 30px;
+    }
+}
+
 .page-subtitle {
-    margin: 0;
     font-weight: 400;
     font-size: 16px;
-    line-height: 24px;
     color: var(--color-text-muted);
 }
 
+/**
+ * Estrutura do Card Principal
+ */
 .card {
     background-color: var(--color-bg-card);
-    border: 1px solid var(--color-border);
+    border: 1.25px solid var(--color-border);
     border-radius: 8px;
-    box-shadow:
-        0px 1px 1.5px rgba(0, 0, 0, 0.1),
-        0px 1px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--card-shadow);
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -138,87 +131,105 @@ ge-sidebar:not(:defined) {
 .card-header {
     padding: 24px;
     display: flex;
-    /* Alinha ao topo (flex-start) garantindo que inputs de alturas distintas permaneçam regulares. */
-    align-items: flex-start;
-    gap: 16px;
+    flex-direction: column;
+    gap: 16px; /* Gap exato do Figma node 73:3466 */
+}
+
+/* Alinhamento Desktop: campos alinhados pela linha superior */
+@media (min-width: 768px) {
+    .card-header {
+        flex-direction: row;
+        align-items: flex-start; /* Alinhamento por cima conforme solicitado */
+    }
 }
 
 /**
- * Controles de Busca e Filtro.
- * Modela os botões e áreas de input textual (busca) e o campo seletor (status).
+ * Campo de Busca (Surgical Adjustment node 73:3468)
  */
-
-/* Container da barra de pesquisa -> ocupa espaço remanescente no Desktop (flex: 1) */
 .search-input {
-    flex: 1;
-    height: 50px;
+    width: 100%;
+    height: 50.46px; /* Altura exata milimétrica do Figma */
+    min-height: 50.46px;
     display: flex;
     align-items: center;
-    border: 1px solid var(--color-border);
+    position: relative;
+    border: 1.25px solid var(--color-border);
     border-radius: 8px;
-    padding: 0 16px 0 12px;
-    background-color: var(--color-bg-card);
-    min-width: 0;
+    background-color: #fff;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+    .search-input {
+        flex: 1; /* Ocupa o espaço restante no desktop */
+    }
 }
 
 .search-input img {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
+    position: absolute;
+    left: 12px;
+    top: 15.23px; /* Posição exata do ícone no Figma node 73:3470 */
+    width: 19.98px;
+    height: 19.98px;
 }
 
 .search-input input {
     border: none;
     outline: none;
     width: 100%;
-    font-family: "Inter", sans-serif;
+    height: 100%;
+    padding-left: 40px; /* Recuo para o ícone conforme Figma */
+    padding-right: 16px;
+    font-family: inherit;
     font-size: 16px;
     color: var(--color-text-muted);
-    background: transparent;
 }
 
-/* Área delimitadora geométrica do Filtro (Retangular no Desktop e expansível no Mobile). */
+/**
+ * Dropdown de Filtro (Surgical Adjustment node 73:3474)
+ */
 .filter-dropdown {
-    width: 192px;
-    height: 40px;
+    width: 100%;
+    height: 39.652px; /* Altura exata milimétrica do Figma */
+    min-height: 39.652px;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
     position: relative;
-    border: 1px solid var(--color-border);
+    border: 1.25px solid var(--color-border);
     border-radius: 8px;
-    padding: 0 12px;
-    background-color: var(--color-bg-card);
+    background-color: #fff;
     cursor: pointer;
+    flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+    .filter-dropdown {
+        width: 191.99px; /* Largura exata Desktop node 73:3120 */
+    }
 }
 
 .filter-dropdown img {
-    width: 20px;
-    height: 20px;
+    position: absolute;
+    left: 12px;
+    top: 9.83px; /* Posição exata do ícone no Figma node 73:3475 */
+    width: 19.98px;
+    height: 19.98px;
 }
 
-/**
- * Estratégia de Dropdown Transparente (Opacity 0).
- * O elemento nativo <select> assume uma camada 100% visível, porém invisível aos olhos (opacity 0).
- * Ao interagir na área, o Menu Nativo de opções do Dispositivo (Android/iOS) ou Navegador é exebido,
- * provêindo melhor UX e mantendo o design UI unificado.
- */
 .filter-select {
     opacity: 0;
     position: absolute;
-    left: 0;
-    top: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     cursor: pointer;
+    z-index: 2;
 }
 
 /**
- * Estrutura Geral da Tabela (Desktop).
- * Inclui os alinhamentos base em formato de tabela, listando cabeçalhos e células.
- * Também detém classes de tipografia base (text-primary, text-secondary).
+ * Tabela Desktop
  */
-
 .card-content {
     padding: 0 24px 24px 24px;
 }
@@ -231,21 +242,21 @@ ge-sidebar:not(:defined) {
 table {
     width: 100%;
     border-collapse: collapse;
-    text-align: left;
 }
 
 th {
-    padding: 10px 16px;
-    border-bottom: 1px solid var(--color-border);
+    padding: 12px 16px;
+    border-bottom: 1.25px solid var(--color-border);
     font-weight: 500;
     font-size: 16px;
     color: var(--color-text-muted);
+    text-align: left;
 }
 
 td {
-    padding: 24px 16px;
-    border-bottom: 1px solid var(--color-border);
-    vertical-align: top;
+    padding: 20px 16px;
+    border-bottom: 1.25px solid var(--color-border);
+    vertical-align: middle;
 }
 
 .text-primary {
@@ -262,28 +273,23 @@ td {
     font-size: 14px;
 }
 
-.m-0 {
-    margin: 0;
-}
-
 .vehicle-info p {
-    line-height: 1.5;
+    margin: 0;
+    line-height: 1.4;
 }
 
 /**
- * Status Badges.
- * Estados visuais coloridos e auto contidos que classificam as OS (Andamento, Concluído...).
- * Desenvolvidos de forma reutilizável, aplicáveis às Tables (Desktop) e aos Cards (Mobile).
+ * Status Badges
  */
-
 .status-badge {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 6px 11px;
+    gap: 8px;
+    padding: 6px 12px;
     border-radius: 8px;
     font-weight: 500;
     font-size: 14px;
+    border: 1.25px solid transparent;
 }
 
 .status-badge img {
@@ -293,34 +299,31 @@ td {
 
 .status-concluido {
     background-color: rgba(16, 185, 129, 0.2);
-    border: 1px solid rgba(16, 185, 129, 0.4);
+    border-color: rgba(16, 185, 129, 0.4);
     color: #10b981;
 }
 
 .status-andamento {
     background-color: rgba(245, 158, 11, 0.2);
-    border: 1px solid rgba(245, 158, 11, 0.4);
+    border-color: rgba(245, 158, 11, 0.4);
     color: #f59e0b;
 }
 
 .status-pendente {
     background-color: rgba(59, 130, 246, 0.2);
-    border: 1px solid rgba(59, 130, 246, 0.4);
-    color: var(--color-primary-light);
+    border-color: rgba(59, 130, 246, 0.4);
+    color: #3b82f6;
 }
 
 .status-atrasado {
     background-color: rgba(239, 68, 68, 0.2);
-    border: 1px solid rgba(239, 68, 68, 0.4);
+    border-color: rgba(239, 68, 68, 0.4);
     color: #ef4444;
 }
 
 /**
- * Classes Utilitárias de Visibilidade (Alternância de Interface).
- * Define qual container (Table vs Cards) renderizado baseano-se na largura viewport.
+ * Listagem Mobile (Cards)
  */
-
-/* Esconde cards mobile nativamente no desktop */
 .desktop-only {
     display: block;
 }
@@ -328,12 +331,7 @@ td {
     display: none;
 }
 
-/**
- * Adaptações Mobile (Mobile Styles).
- * Breakpoint: 760px. Dispara a reescrita do grid global focada em displays verticais da Aplicação.
- */
 @media (max-width: 760px) {
-    /* Troca Tabela pelos Cards Listáveis. */
     .desktop-only {
         display: none;
     }
@@ -343,49 +341,14 @@ td {
         gap: 12px;
     }
 
-    /* Adaptação de tipografia para mobile */
-    .page-title {
-        font-size: 24px;
-        line-height: 32px;
-    }
-
-    /* O container de controle de filtros quebra em coluna */
-    .card-header {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 24px;
-        gap: 16px;
-    }
-
-    /* "flex: none" necessário para evitar que herdado layout flex interfira na altura da caixa */
-    .search-input {
-        flex: none;
-        width: 100%;
-        height: 50px;
-    }
-
-    .filter-dropdown {
-        flex: none;
-        width: 100%;
-        height: 40px;
-        padding: 0 12px;
-        justify-content: flex-start;
-    }
-
-    /* Layout interno dos cards da Listagem Mobile */
     .order-card {
-        background-color: rgba(
-            219,
-            234,
-            254,
-            0.5
-        ); /* Primary light blue tint used in design */
-        border: 1px solid var(--color-border);
+        background-color: rgba(219, 234, 254, 0.5);
+        border: 1.25px solid var(--color-border);
         border-radius: 8px;
-        padding: 17px;
+        padding: 20px;
         display: flex;
         flex-direction: column;
-        gap: 12px;
+        gap: 16px;
     }
 
     .order-card-header {
@@ -395,15 +358,13 @@ td {
     }
 
     .order-id {
-        margin: 0;
         font-size: 14px;
         color: var(--color-text-muted);
     }
 
     .order-client {
-        margin: 0;
         font-size: 16px;
-        font-weight: 500;
+        font-weight: 600;
         color: var(--color-text-main);
     }
 
@@ -414,8 +375,8 @@ td {
     }
 
     .order-card-body p {
-        margin: 0;
         font-size: 14px;
+        line-height: 1.4;
     }
 
     .order-card-body .label {
@@ -427,22 +388,16 @@ td {
     }
 
     .order-date {
-        color: var(--color-text-muted) !important;
+        font-size: 14px;
+        color: var(--color-text-muted);
     }
+}
 
-    .text-truncate {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .status-badge {
-        font-size: 12px;
-        padding: 5px 11px;
-    }
-
-    .status-badge img {
-        width: 12px;
-        height: 12px;
-    }
+.cursor-pointer {
+    cursor: pointer;
+}
+.text-truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

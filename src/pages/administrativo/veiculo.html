@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Veículo - GarageERP</title>
+        <link
+            rel="icon"
+            href="../../assets/img/favicon-garageerp.png"
+            type="image/png"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="../../css/pages/administrativo/veiculo.css"
+        />
+    </head>
+    <body>
+        <div class="app-layout">
+            <!-- AQUI A MÁGICA ACONTECE -->
+            <ge-sidebar
+                user-name="Maria Santos"
+                role="Administrativo"
+                type="admin"
+            >
+            </ge-sidebar>
+            <div class="principal">
+                <header>
+                    <button>
+                        <img
+                            src="../../assets/icons/icon-left-arrow.svg"
+                            alt="Voltar"
+                        />
+                        <a href="" class="button-voltar">Voltar</a>
+                    </button>
+                </header>
+
+                <main class="main-content">
+                    <div class="vehicle-container">
+                        <div class="vehicle-info">
+                            <div class="vehicle-img">
+                                <img
+                                    src="../../assets/icons/icon-car.svg"
+                                    alt="Veículo"
+                                />
+                            </div>
+                            <div class="vehicle-text">
+                                <h2>Volkswagen Gol</h2>
+                                <p>ABC-1234 • 2020</p>
+                                <p>Proprietário: João Silva</p>
+                            </div>
+                        </div>
+                        <div class="vehicle-container-button">
+                            <div
+                                class="vehicle-button"
+                                id="vehicle-edit-button"
+                            >
+                                <a
+                                    href=""
+                                    class="vehicle-button-text"
+                                    id="edit-vehicle"
+                                    >Editar veículo</a
+                                >
+                            </div>
+                            <div
+                                class="new-order-button vehicle-button"
+                                id="new-order-button"
+                            >
+                                <img
+                                    src="../../assets/icons/icon-white-plus.svg"
+                                    alt="Nova Ordem"
+                                />
+                                <a
+                                    href=""
+                                    class="vehicle-button-text"
+                                    id="neworder-vehicle"
+                                    >Nova Ordem</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="history-container">
+                        <div class="history-title">
+                            <h2>Histórico de Manutenções</h2>
+                            <p>2 serviços registrados</p>
+                        </div>
+                        <div class="history-card" id="history-pendente">
+                            <div class="history">
+                                <img
+                                    src="../../assets/icons/icon-gray-file.svg"
+                                    alt="Pendente"
+                                    class="img-pendente"
+                                />
+                                <div class="history-os">
+                                    <div class="history-data">
+                                        <img
+                                            src="../../assets/icons/icon-calendar.svg"
+                                            alt="Calendário"
+                                        />
+                                        <p class="data">
+                                            10 de abr. de 2024, 07:00
+                                        </p>
+                                    </div>
+                                    <p class="history-service">
+                                        Troca de pneus
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="history-status pendente">
+                                <img
+                                    src="../../assets/icons/icon-blue-file.svg"
+                                    alt="Concluido"
+                                />
+                                <p class="status">Pendente</p>
+                            </div>
+                        </div>
+                        <div class="history-card" id="history-concluido">
+                            <div class="history">
+                                <img
+                                    src="../../assets/icons/icon-gray-check-circle.svg"
+                                    alt="Concluído"
+                                    class="img-concluido"
+                                />
+                                <div class="history-os">
+                                    <div class="history-data">
+                                        <img
+                                            src="../../assets/icons/icon-calendar.svg"
+                                            alt="Calendário"
+                                        />
+                                        <p class="data">
+                                            01 de mar. de 2024, 05:00
+                                        </p>
+                                    </div>
+
+                                    <p class="history-service">
+                                        Troca de óleo e filtros
+                                    </p>
+
+                                    <div class="history-info">
+                                        <img
+                                            src="../../assets/icons/icon-green-check-circle.svg"
+                                            alt=""
+                                        />
+                                        <p class="data">01 de mar. de 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="history-status concluido">
+                                <img
+                                    src="../../assets/icons/icon-green-check-circle.svg"
+                                    alt="Concluido"
+                                />
+                                <p class="status">Concluído</p>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <script src="../../js/components/Sidebar.js"></script>
+    </body>
+</html>
