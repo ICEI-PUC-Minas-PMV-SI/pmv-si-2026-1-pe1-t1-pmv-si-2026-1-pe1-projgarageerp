@@ -544,6 +544,12 @@ header {
     background: rgba(219, 234, 254, 0.5);
 }
 
+.recente-OS-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 .numero-status {
     display: flex;
     padding: 10px 10px 0 10px;
@@ -564,7 +570,7 @@ header {
     border-radius: 8px;
 }
 
-.OS-status.andamento {
+.OS-status.em_andamento {
     color: var(--cor-andamento);
     border: 1.246px solid rgba(245, 158, 11, 0.4);
     background: rgba(245, 158, 11, 0.2);
