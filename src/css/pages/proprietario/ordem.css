@@ -373,10 +373,19 @@ h3 {
 }
 
 .link-simples {
+    display: block;
     text-align: center;
     margin-top: 32px;
     font-weight: 500;
     color: #1f2937;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.link-simples:hover,
+.link-simples:focus-visible {
+    color: #2563eb;
+    text-decoration: underline;
 }
 
 .servico-registrado {

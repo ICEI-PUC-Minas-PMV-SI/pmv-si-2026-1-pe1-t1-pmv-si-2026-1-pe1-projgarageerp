@@ -177,7 +177,9 @@
                 "</div>" +
                 "</div>" +
                 (mostrarLinks
-                    ? '<p class="link-simples">Ver Perfil do Cliente</p>'
+                    ? '<a href="cliente.html?id=' +
+                      ordem.cliente.id +
+                      '" class="link-simples">Ver Perfil do Cliente</a>'
                     : "") +
                 "</div>" +
                 '<div class="cartao">' +
@@ -198,7 +200,11 @@
                 "</span>" +
                 "</div>" +
                 "</div>" +
-                '<p class="link-simples">Ver Histórico do Veículo</p>' +
+                (mostrarLinks
+                    ? '<a href="veiculo.html?id=' +
+                      ordem.veiculo.id +
+                      '" class="link-simples">Ver Histórico do Veículo</a>'
+                    : "") +
                 "</div>" +
                 "</div>"
             );
