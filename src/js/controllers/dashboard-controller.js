@@ -206,3 +206,77 @@ const container = document.getElementById("atividades-recentes");
             </a>
             `;
     }
+
+
+//Dashboard Mecanico
+
+const containerMecanico = document.getElementById("order-list");
+
+const statusMap = {
+    pendente: {
+        texto: "Pendente",
+        icone: "../../assets/icons/icon-blue-file.svg",
+        botao: "Iniciar Serviço",
+        botaoClasse: "b-pendente",
+    },
+    em_andamento: {
+        texto: "Em Andamento",
+        icone: "../../assets/icons/icon-orange-clock.svg",
+        botao: "Concluir Serviço",
+        botaoClasse: "b-andamento",
+    },
+    atrasado: {
+        texto: "Atrasado",
+        icone: "../../assets/icons/icon-red-warning-circle.svg",
+        botao: "Ver Serviço",
+        botaoClasse: "b-atrasado",
+    },
+    concluido: {
+        texto: "Concluído",
+        icone: "../../assets/icons/icon-green-check-circle.svg",
+        botao: "Ver Detalhes",
+        botaoClasse: "b-concluido",
+    },
+};
+
+containerMecanico.innerHTML = "";
+
+ordens.forEach(ordem => {
+    const status = statusMap[ordem.status];
+
+    containerMecanico.innerHTML += `
+        <div class="order-card">
+            <div class="order-info">
+                <div class="order-status-container">
+                    <div class="order-status" id="${ordem.status}">
+                        <img src="${status.icone}" alt="Status" />
+                        <p>${status.texto}</p>
+                    </div>
+
+                    <p class="order-numero">
+                        OS #${ordem.id}
+                    </p>
+                </div>
+
+                <div class="order-detail">
+                    <p class="order-client">
+                        ${ordem.cliente.nome}
+                    </p>
+
+                    <p class="order-car">
+                        🚗 ${ordem.veiculo.modelo} - ${ordem.veiculo.placa}
+                    </p>
+
+                    <p class="order-detail">
+                        <strong>Serviços:</strong>
+                        ${ordem.queixa}
+                    </p>
+                </div>
+            </div>
+
+            <a href="ordem.html?id=${ordem.id}" class="button ${status.botaoClasse}">
+                ${status.botao}
+            </a>
+        </div>
+    `;
+});

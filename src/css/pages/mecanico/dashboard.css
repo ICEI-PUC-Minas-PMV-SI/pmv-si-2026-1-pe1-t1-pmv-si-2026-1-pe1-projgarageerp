@@ -306,7 +306,7 @@ header {
     height: 20px;
 }
 
-#andamento {
+#em_andamento {
     color: var(--cor-andamento);
     background: rgba(245, 158, 11, 0.2);
     border: 1.25px solid rgba(245, 158, 11, 0.4);
@@ -386,15 +386,15 @@ header {
     transform: translateY(-1px);
 }
 
-#b-andamento {
+.b-andamento {
     background: var(--cor-concluido);
     color: #fff;
 }
-#b-pendente {
+.b-pendente {
     background: var(--cor-default);
     color: #fff;
 }
-#b-atrasado {
+.b-atrasado {
     background: var(--cor-atrasado);
     color: #fff;
 }

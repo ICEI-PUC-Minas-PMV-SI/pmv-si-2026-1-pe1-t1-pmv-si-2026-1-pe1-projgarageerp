@@ -1,6 +1,115 @@
-<!doctype html><html lang="pt-BR">    <head>        <meta charset="UTF-8" />        <meta name="viewport" content="width=device-width, initial-scale=1.0" />        <title>Dashboard - GarageERP</title>        <link            rel="icon"            href="../../assets/img/favicon-garageerp.png"            type="image/png"        />        <link rel="preconnect" href="https://fonts.googleapis.com" />        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />        <link            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"            rel="stylesheet"        />        <link rel="stylesheet" href="../../css/pages/mecanico/dashboard.css" />        
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dashboard - GarageERP</title>
+        <link
+            rel="icon"
+            href="../../assets/img/favicon-garageerp.png"
+            type="image/png"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../../css/pages/mecanico/dashboard.css" />
         
-                <script src="../../js/utils/formatters.js"></script>
+        
+        
+        <script src="../../js/utils/formatters.js"></script>
     <script src="../../js/components/alert-ui-utils.js"></script>
     <script src="../../js/services/auth-service.js"></script>
-    </head>    <body data-perfil-permitido="mecanico">        <div class="app-layout">            <!-- ge-sidebar: Componente global de navegação (Não alterar estrutura) -->            <ge-sidebar                user-name="João Lopes"                role="Mecânico"                type="mecanico"            ></ge-sidebar>            <div class="principal">                <!-- Cabeçalho de boas-vindas -->                <header>                    <div class="bloco-inicio">                        <div class="bloco-img">                            <img                                src="../../assets/icons/icon-clipboard-check.svg"                                alt="inicio"                            />                        </div>                        <div class="bloco-identificacao">                            <p class="nome">Olá, João Lopes!</p>                            <p class="subnome">Suas ordens de serviço</p>                        </div>                    </div>                </header>                <main class="main-content">                    <!-- Cards de resumo quantitativo -->                    <div class="card-container">                        <div class="card">                            <div class="card-body">                                <div class="card-text">                                    <p class="card-title">Pendentes</p>                                    <p class="card-number">2</p>                                </div>                                <div class="card-img card-img--pendente">                                    <img                                        src="../../assets/icons/icon-blue-clock.svg"                                        alt="Pendentes"                                    />                                </div>                            </div>                        </div>                        <div class="card">                            <div class="card-body">                                <div class="card-text">                                    <p class="card-title">Em Andamento</p>                                    <p class="card-number">2</p>                                </div>                                <div class="card-img card-img--andamento">                                    <img                                        src="../../assets/icons/icon-orange-warning-circle.svg"                                        alt="Em Andamento"                                    />                                </div>                            </div>                        </div>                        <div class="card">                            <div class="card-body">                                <div class="card-text">                                    <p class="card-title">Concluídas Hoje</p>                                    <p class="card-number">0</p>                                </div>                                <div class="card-img card-img--concluido">                                    <img                                        src="../../assets/icons/icon-check-circle.svg"                                        alt="Concluídas"                                    />                                </div>                            </div>                        </div>                    </div>                    <!-- Lista de Ordens de Serviço -->                    <div class="order-list">                        <div class="order-title">                            <h2>Minhas Ordens de Serviço</h2>                        </div>                        <div class="order-items">                            <div class="order-container">                                <!-- Exemplo de OS em Andamento -->                                <div class="order-card">                                    <div class="order-info">                                        <div class="order-status-container">                                            <div                                                class="order-status"                                                id="andamento"                                            >                                                <img                                                    src="../../assets/icons/icon-orange-clock.svg"                                                    alt="Status"                                                />                                                <p>Em Andamento</p>                                            </div>                                            <p class="order-numero">OS #6</p>                                        </div>                                        <div class="order-detail">                                            <p class="order-client">                                                Erick Barbosa                                            </p>                                            <p class="order-car">                                                🚗 Fiat Uno - DEF-5678                                            </p>                                            <p class="order-detail">                                                <strong>Serviços:</strong>                                                Verificação do motor e troca de                                                velas                                            </p>                                        </div>                                    </div>                                    <a href="#" class="button" id="b-andamento"                                        >Concluir Serviço</a                                    >                                </div>                                <!-- Exemplo de OS Pendente -->                                <div class="order-card">                                    <div class="order-info">                                        <div class="order-status-container">                                            <div                                                class="order-status"                                                id="pendente"                                            >                                                <img                                                    src="../../assets/icons/icon-blue-file.svg"                                                    alt="Status"                                                />                                                <p>Pendente</p>                                            </div>                                            <p class="order-numero">OS #3</p>                                        </div>                                        <div class="order-detail">                                            <p class="order-client">                                                Pedro Oliveira                                            </p>                                            <p class="order-car">                                                🚗 Chevrolet Onix - GHI-9012                                            </p>                                            <p class="order-detail">                                                <strong>Serviços:</strong>                                                Revisão completa dos freios                                            </p>                                        </div>                                    </div>                                    <a href="#" class="button" id="b-pendente"                                        >Iniciar Serviço</a                                    >                                </div>                                <!-- Exemplo de OS Atrasada -->                                <div class="order-card">                                    <div class="order-info">                                        <div class="order-status-container">                                            <div                                                class="order-status"                                                id="atrasado"                                            >                                                <img                                                    src="../../assets/icons/icon-red-warning-circle.svg"                                                    alt="Status"                                                />                                                <p>Atrasado</p>                                            </div>                                            <p class="order-numero">OS #4</p>                                        </div>                                        <div class="order-detail">                                            <p class="order-client">                                                João Silva                                            </p>                                            <p class="order-car">                                                🚗 Honda Civic - JKL-3456                                            </p>                                            <p class="order-detail">                                                <strong>Serviços:</strong> Troca                                                de pneus                                            </p>                                        </div>                                    </div>                                    <a href="#" class="button" id="b-atrasado"                                        >Ver Serviço</a                                    >                                </div>                                <!-- Exemplo de OS Concluída -->                                <div class="order-card">                                    <div class="order-info">                                        <div class="order-status-container">                                            <div                                                class="order-status"                                                id="concluido"                                            >                                                <img                                                    src="../../assets/icons/icon-green-check-circle.svg"                                                    alt="Status"                                                />                                                <p>Concluído</p>                                            </div>                                            <p class="order-numero">OS #1</p>                                        </div>                                        <div class="order-detail">                                            <p class="order-client">                                                João Silva                                            </p>                                            <p class="order-car">                                                🚗 Volkswagen Gol - ABC-1234                                            </p>                                            <p class="order-detail">                                                <strong>Serviços:</strong> Troca                                                de óleo e filtros                                            </p>                                        </div>                                    </div>                                    <a href="#" class="button">Ver Detalhes</a>                                </div>                            </div>                        </div>                    </div>                </main>            </div>        </div>        <script src="../../js/components/sidebar-component.js"></script>    </body></html>
+    </head>
+    <body data-perfil-permitido="mecanico">
+        <div class="app-layout">
+            <!-- ge-sidebar: Componente global de navegação (Não alterar estrutura) -->
+            <ge-sidebar
+                user-name="João Lopes"
+                role="Mecânico"
+                type="mecanico"
+            ></ge-sidebar>
+            <div class="principal">
+                <!-- Cabeçalho de boas-vindas -->
+                <header>
+                    <div class="bloco-inicio">
+                        <div class="bloco-img">
+                            <img
+                                src="../../assets/icons/icon-clipboard-check.svg"
+                                alt="inicio"
+                            />
+                        </div>
+                        <div class="bloco-identificacao">
+                            <p class="nome">Olá, João Lopes!</p>
+                            <p class="subnome">Suas ordens de serviço</p>
+                        </div>
+                    </div>
+                </header>
+                <main class="main-content">
+                    <!-- Cards de resumo quantitativo -->
+                    <div class="card-container">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-text">
+                                    <p class="card-title">Pendentes</p>
+                                    <p class="card-number" id="num-pendente"></p>
+                                </div>
+                                <div class="card-img card-img--pendente">
+                                    <img
+                                        src="../../assets/icons/icon-blue-clock.svg"
+                                        alt="Pendentes"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-text">
+                                    <p class="card-title">Em Andamento</p>
+                                    <p class="card-number" id="num-andamento"></p>
+                                </div>
+                                <div class="card-img card-img--andamento">
+                                    <img
+                                        src="../../assets/icons/icon-orange-warning-circle.svg"
+                                        alt="Em Andamento"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-text">
+                                    <p class="card-title">Concluídas Hoje</p>
+                                    <p class="card-number" id="num-concluido"></p>
+                                </div>
+                                <div class="card-img card-img--concluido">
+                                    <img
+                                        src="../../assets/icons/icon-check-circle.svg"
+                                        alt="Concluídas"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Lista de Ordens de Serviço -->
+                    <div class="order-list">
+                        <div class="order-title">
+                            <h2>Minhas Ordens de Serviço</h2>
+                        </div>
+                        <div class="order-items">
+                            <div class="order-container" id="order-list"></div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <script src="../../js/repositories/cliente-repository.js"></script>
+        <script src="../../js/repositories/ordem-repository.js"></script>
+        <script src="../../js/repositories/veiculo-repository.js"></script>
+        <script src="../../js/controllers/dashboard-controller.js"></script>
+        <script src="../../js/components/sidebar-component.js"></script>
+    </body>
+</html>
