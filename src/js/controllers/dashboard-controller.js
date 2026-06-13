@@ -65,7 +65,10 @@ function ValorQuan(id, valor) {
 // === ATUALIZAÇÃO AUTOMÁTICA DOS CARDS DO CARD-CONTAINER ===
 ValorQuan("concluido", concluido);
 ValorQuan("andamento", em_andamento);
+ValorQuan("andamentos", em_andamento);
 ValorQuan("pendente", pendente);
+ValorQuan("pendentes", pendente);
+ValorQuan("atrasado", atrasado);
 // ==========================================================
 function AtualizarClientes() {
     const TotalClientes = ClienteStorage.listar().length;
@@ -74,11 +77,18 @@ function AtualizarClientes() {
 
 AtualizarClientes();
 
+function AtualizarVeiculos() {
+    const totalVeiculos = VeiculoStorage.Listar().length;
+    ValorQuan("veiculo", totalVeiculos);
+}
+
+AtualizarVeiculos();
+
 function AtualizarBarra(id, valor, total) {
     const pct = Porcentagem(valor, total);
     const barra = document.getElementById("barra-" + id);
     const performance = document.getElementById("performance-" + id);
- 
+
     if (barra) barra.style.width = pct + "%";
     if (performance) {
         performance.textContent = `${valor} de ${total} (${Math.round(pct)}%)`;
@@ -105,7 +115,7 @@ const faturamentoEstimado = ordens
     }, 0);
 
 const receitaElemento = document.getElementById("receita-total");
-const faturamentoElemento = document.getElementById("faturamneto-estimado");
+const faturamentoElemento = document.getElementById("faturamento-estimado");
 const ticketElemento = document.getElementById("ticket-medio");
 
 if(receitaElemento){

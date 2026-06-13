@@ -154,6 +154,37 @@ ge-sidebar:not(:defined) {
     color: var(--cor2);
 }
 
+.form-control {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1.246px solid #e5e7eb;
+    background: #ffffff;
+    font-size: 16px;
+    color: var(--cor1);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-control:focus {
+    border-color: var(--color-primary);
+}
+
+.form-control:disabled {
+    opacity: 0.5;
+    background-color: var(--color-bg-light);
+    cursor: not-allowed;
+}
+
+select.form-control {
+    height: 48px;
+    appearance: auto;
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+
 .acoes-form {
     display: flex;
     gap: 12px;

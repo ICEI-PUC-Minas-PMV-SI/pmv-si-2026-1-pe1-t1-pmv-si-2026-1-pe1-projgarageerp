@@ -1,6 +1,113 @@
-<!doctype html><html lang="pt-BR">    <head>        <meta charset="UTF-8" />        <meta name="viewport" content="width=device-width, initial-scale=1.0" />        <title>Editar Veículo - GarageERP</title>        <link            rel="icon"            href="../../assets/img/favicon-garageerp.png"            type="image/png"        />        <link rel="preconnect" href="https://fonts.googleapis.com" />        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />        <link            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"            rel="stylesheet"        />        <link            rel="stylesheet"            href="../../css/pages/administrativo/editar-veiculo.css"        />        
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Editar Veículo - GarageERP</title>
+        <link
+            rel="icon"
+            href="../../assets/img/favicon-garageerp.png"
+            type="image/png"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="../../css/pages/administrativo/editar-veiculo.css"
+        />
         
-                <script src="../../js/utils/formatters.js"></script>
+        
+        
+        <script src="../../js/utils/formatters.js"></script>
     <script src="../../js/components/alert-ui-utils.js"></script>
     <script src="../../js/services/auth-service.js"></script>
-    </head>    <body data-perfil-permitido="administrativo">        <div class="app-layout">            <ge-sidebar                user-name="Maria Santos"                role="Administrativo"                type="admin"            >            </ge-sidebar>            <main class="main-content">                <a href="listar-veiculos.html" class="link-voltar">                    <img                        src="../../assets/icons/icon-left-arrow.svg"                        alt="Voltar"                    />                    Voltar para Veículos                </a>                <form class="card-edicao" id="form-veiculo">                    <div>                        <h1>Editar Veículo</h1>                        <p class="subtitulo">                            Atualize as informações do veículo                        </p>                    </div>                    <div class="alerta-info">                        <img src="../../assets/icons/icon-car.svg" alt="" />                        <span                            >Cadastre o veículo vinculando ao proprietário.                            Todos os campos são obrigatórios.</span                        >                    </div>                    <div class="input-box">                        <label>Proprietário *</label>                        <input                            placeholder="João Silva"                            id="proprietario"                            type="text"                        />                        <p class="ajuda">Cliente dono do veículo</p>                    </div>                    <div class="input-box">                        <label>Marca *</label>                        <input placeholder="Chevrolet" id="marca" type="text" />                        <p class="ajuda">Ex: Volkswagen, Fiat, Chevrolet</p>                    </div>                    <div class="input-box">                        <label>Modelo *</label>                        <input placeholder="Onix" id="modelo" type="text" />                        <p class="ajuda">Ex: Gol, Uno, Onix</p>                    </div>                    <div class="input-box">                        <label>Placa *</label>                        <input placeholder="GHI-9012" id="placa" type="text" />                        <p class="ajuda">Formato: ABC-1234</p>                    </div>                    <div class="input-box">                        <label>Ano *</label>                        <input placeholder="2021" id="ano" type="text" />                        <p class="ajuda">Ano de fabricação do veículo</p>                    </div>                    <div class="acoes-form">                        <button type="button" class="btn-cancelar">                            Cancelar                        </button>                        <button type="submit" class="btn-atualizar">                            <img                                src="../../assets/icons/icon-save.svg"                                alt=""                            />                            Atualizar Veículo                        </button>                    </div>                </form>            </main>        </div>        <script src="../../js/repositories/veiculo-repository.js"></script>        <script src="../../js/controllers/editar-veiculo-controller.js"></script>        <script src="../../js/components/sidebar-component.js"></script>    </body></html>
+    </head>
+    <body data-perfil-permitido="administrativo">
+        <div class="app-layout">
+            <ge-sidebar
+                user-name="Maria Santos"
+                role="Administrativo"
+                type="admin"
+            >
+            </ge-sidebar>
+            <main class="main-content">
+                <a href="listar-veiculos.html" class="link-voltar">
+                    <img
+                        src="../../assets/icons/icon-left-arrow.svg"
+                        alt="Voltar"
+                    />
+                    Voltar para Veículos
+                </a>
+                <form class="card-edicao" id="form-veiculo">
+                    <div>
+                        <h1>Editar Veículo</h1>
+                        <p class="subtitulo">
+                            Atualize as informações do veículo
+                        </p>
+                    </div>
+                    <div class="alerta-info">
+                        <img src="../../assets/icons/icon-car.svg" alt="" />
+                        <span
+                            >Cadastre o veículo vinculando ao proprietário.
+                            Todos os campos são obrigatórios.</span
+                        >
+                    </div>
+                    <div class="form-group">
+                            <label for="cliente">Cliente *</label>
+                            <select
+                                id="cliente"
+                                class="form-control"
+                                required
+                            >
+                                <option value="" disabled selected>
+                                    Selecione o cliente...
+                                </option>
+                            </select>
+                            <p class="form-help">Proprietário do veículo</p>
+                        </div>
+                    <div class="input-box">
+                        <label>Marca *</label>
+                        <input placeholder="Chevrolet" id="marca" type="text" />
+                        <p class="ajuda">Ex: Volkswagen, Fiat, Chevrolet</p>
+                    </div>
+                    <div class="input-box">
+                        <label>Modelo *</label>
+                        <input placeholder="Onix" id="modelo" type="text" />
+                        <p class="ajuda">Ex: Gol, Uno, Onix</p>
+                    </div>
+                    <div class="input-box">
+                        <label>Placa *</label>
+                        <input placeholder="GHI-9012" id="placa" type="text" />
+                        <p class="ajuda">Formato: ABC-1234</p>
+                    </div>
+                    <div class="input-box">
+                        <label>Ano *</label>
+                        <input placeholder="2021" id="ano" type="text" />
+                        <p class="ajuda">Ano de fabricação do veículo</p>
+                    </div>
+                    <div class="acoes-form">
+                        <button type="button" class="btn-cancelar">
+                            Cancelar
+                        </button>
+                        <button type="submit" class="btn-atualizar">
+                            <img
+                                src="../../assets/icons/icon-save.svg"
+                                alt=""
+                            />
+                            Atualizar Veículo
+                        </button>
+                    </div>
+                </form>
+            </main>
+        </div>
+        
+        <script src="../../js/repositories/veiculo-repository.js"></script>
+        <script src="../../js/repositories/cliente-repository.js"></script>
+        <script src="../../js/controllers/editar-veiculo-controller.js"></script>
+        <script src="../../js/components/sidebar-component.js"></script>
+    </body>
+</html>

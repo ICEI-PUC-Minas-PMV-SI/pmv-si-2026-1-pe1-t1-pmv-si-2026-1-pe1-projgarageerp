@@ -60,35 +60,30 @@
                 </header>
                 <!--Alert-Container-->
                 <div class="alert-container">
-                    <div class="alert-icon">
-                        <img
-                            src="../../assets/icons/icon-red-warning-circle-big.svg"
-                            alt="Atrasados"
-                            class="alert-img"
-                        />
-                    </div>
-                    <div class="alert-text">
-                        <p class="alert-title">
+                        <div class="alert-icon">
                             <img
-                                src="../../assets/icons/icon-red-warning.svg"
+                                src="../../assets/icons/icon-red-warning-circle-big.svg"
+                                alt=""
                             />
-                            1 Ordem Atrasada
-                        </p>
-                        <p class="alert-detail">
-                            Verifique as ordens atrasadas e tome providências
-                        </p>
-                        <a href="#">Ver Ordens Atrasadas</a>
+                        </div>
+                        <div class="alert-text">
+                            <p class="alert-title" id="alerta"></p>
+                            <!--Alterar para Javascript-->
+                            <p class="alert-detail">
+                                Verifique suas ordens atrasadas
+                            </p>
+                            <a href="#" class="button">Ver Ordens Atrasadas</a>
+                        </div>
                     </div>
-                </div>
                 <!--Alert-Container-->
                 <!--Card-Container-->
                 <div class="card-container">
                     <div class="card">
                         <a href="listar-clientes.html" class="card-body">
                             <div class="card-text">
-                                <p class="card-title">Clientes Ativos</p>
-                                <p class="card-number">5</p>
-                            </div>
+                                    <p class="card-title">Clientes Ativos</p>
+                                    <p class="card-number" id="num-cliente"></p>
+                                </div>
                             <div class="card-img">
                                 <img
                                     src="../../assets/icons/icon-blue-users.svg"
@@ -101,7 +96,7 @@
                         <a href="listar-veiculos.html" class="card-body">
                             <div class="card-text">
                                 <p class="card-title">Veículos Cadastrados</p>
-                                <p class="card-number">4</p>
+                                <p class="card-number" id="num-veiculo"></p>
                             </div>
                             <div class="card-img">
                                 <img
@@ -115,7 +110,7 @@
                         <a href="listar-ordens.html" class="card-body">
                             <div class="card-text">
                                 <p class="card-title">Ordens Pendentes</p>
-                                <p class="card-number">2</p>
+                                <p class="card-number" id="num-pendente"></p>
                             </div>
                             <div class="card-img">
                                 <img
@@ -129,7 +124,7 @@
                         <a href="listar-ordens.html" class="card-body">
                             <div class="card-text">
                                 <p class="card-title">Em Andamento</p>
-                                <p class="card-number">2</p>
+                                <p class="card-number" id="num-andamento"></p>
                             </div>
                             <div class="card-img card-img-orange">
                                 <img
@@ -150,78 +145,7 @@
                                 >Ver Todas</a
                             >
                         </div>
-                        <div class="order-container">
-                            <div class="order-card">
-                                <div class="order-info">
-                                    <p class="order-client">Erick Barbosa</p>
-                                    <p class="order-car">Fiat Uno - DEF-5678</p>
-                                </div>
-                                <div class="order-status" id="andamento">
-                                    <img
-                                        src="../../assets/icons/icon-orange-clock.svg"
-                                        alt="Andamento"
-                                    />
-                                    <p>Em Andamento</p>
-                                </div>
-                            </div>
-                            <div class="order-card">
-                                <div class="order-info">
-                                    <p class="order-client">Caio Rocha</p>
-                                    <p class="order-car">
-                                        Volkswagen Gol - ABC-1234
-                                    </p>
-                                </div>
-                                <div class="order-status" id="pendente">
-                                    <img
-                                        src="../../assets/icons/icon-blue-file.svg"
-                                        alt="Pendente"
-                                    />
-                                    <p>Pendente</p>
-                                </div>
-                            </div>
-                            <div class="order-card">
-                                <div class="order-info">
-                                    <p class="order-client">Pedro Oliveira</p>
-                                    <p class="order-car">
-                                        Chevrolet Onix - GHI-9012
-                                    </p>
-                                </div>
-                                <div class="order-status" id="pendente">
-                                    <img
-                                        src="../../assets/icons/icon-blue-file.svg"
-                                        alt="Pendente"
-                                    />
-                                    <p>Pendente</p>
-                                </div>
-                            </div>
-                            <div class="order-card">
-                                <div class="order-info">
-                                    <p class="order-client">Maria Santos</p>
-                                    <p class="order-car">Fiat Uno - DEF-5678</p>
-                                </div>
-                                <div class="order-status" id="andamento">
-                                    <img
-                                        src="../../assets/icons/icon-orange-clock.svg"
-                                        alt="Andamento"
-                                    />
-                                    <p>Em Andamento</p>
-                                </div>
-                            </div>
-                            <div class="order-card">
-                                <div class="order-info">
-                                    <p class="order-client">João Silva</p>
-                                    <p class="order-car">
-                                        Honda Civic - JKL-3456
-                                    </p>
-                                </div>
-                                <div class="order-status" id="atrasado">
-                                    <img
-                                        src="../../assets/icons/icon-red-warning-circle.svg"
-                                        alt="Atrasado"
-                                    />
-                                    <p>Atrasado</p>
-                                </div>
-                            </div>
+                        <div class="order-container" id="atividades-recentes">
                         </div>
                     </div>
                     <div class="status-list">
@@ -247,11 +171,8 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div
-                                    class="status-number"
-                                    id="status-number-concluido"
-                                >
-                                    <p class="status-subnumber">1</p>
+                                <div class="status-number" id="status-number-concluido">
+                                    <p class="status-subnumber" id="num-concluido"></p>
                                 </div>
                             </div>
                             <div class="status-card" id="status-card-andamento">
@@ -272,11 +193,8 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div
-                                    class="status-number"
-                                    id="status-number-andamento"
-                                >
-                                    <p class="status-subnumber">2</p>
+                                <div class="status-number" id="status-number-andamento">
+                                    <p class="status-subnumber" id="num-andamentos"></p>
                                 </div>
                             </div>
                             <div class="status-card" id="status-card-pendente">
@@ -301,7 +219,7 @@
                                     class="status-number"
                                     id="status-number-pendente"
                                 >
-                                    <p class="status-subnumber">2</p>
+                                    <p class="status-subnumber" id="num-pendentes"></p>
                                 </div>
                             </div>
                             <div class="status-card" id="status-card-atrasado">
@@ -326,7 +244,7 @@
                                     class="status-number"
                                     id="status-number-atrasado"
                                 >
-                                    <p class="status-subnumber">1</p>
+                                    <p class="status-subnumber" id="num-atrasado"></p>
                                 </div>
                             </div>
                         </div>
@@ -334,6 +252,11 @@
                 </div>
             </main>
         </div>
+
+        <script src="../../js/repositories/cliente-repository.js"></script>
+        <script src="../../js/repositories/ordem-repository.js"></script>
+        <script src="../../js/repositories/veiculo-repository.js"></script>
+        <script src="../../js/controllers/dashboard-controller.js"></script>
         <script src="../../js/components/sidebar-component.js"></script>
     </body>
 </html>

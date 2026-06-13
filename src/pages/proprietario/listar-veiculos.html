@@ -1,6 +1,73 @@
-<!doctype html><html lang="pt-BR">    <head>        <meta charset="UTF-8" />        <meta name="viewport" content="width=device-width, initial-scale=1.0" />        <title>Veículos - GarageERP</title>        <link            rel="icon"            href="../../assets/img/favicon-garageerp.png"            type="image/png"        />        <link rel="preconnect" href="https://fonts.googleapis.com" />        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />        <link            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"            rel="stylesheet"        />        <link            rel="stylesheet"            href="../../css/pages/proprietario/listar-veiculos.css"        />        
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Veículos - GarageERP</title>
+        <link
+            rel="icon"
+            href="../../assets/img/favicon-garageerp.png"
+            type="image/png"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="../../css/pages/proprietario/listar-veiculos.css"
+        />
         
-                <script src="../../js/utils/formatters.js"></script>
+        
+        
+        <script src="../../js/utils/formatters.js"></script>
     <script src="../../js/components/alert-ui-utils.js"></script>
     <script src="../../js/services/auth-service.js"></script>
-    </head>    <body data-perfil-permitido="proprietario">        <div class="app-layout">            <ge-sidebar                user-name="Carlos Silva"                role="Proprietário"                type="proprietario"            >            </ge-sidebar>            <main class="main-content">                <header class="header">                    <div class="header-textos">                        <div class="header-titulo"><h1>Veículos</h1></div>                        <div class="header-subtitulo">                            <p>Gerencie os veículos cadastrados</p>                        </div>                    </div>                    <a href="novo-veiculo.html" class="header-botao">                        <img                            src="../../assets/icons/icon-white-plus.svg"                            alt=""                        />                        Novo Veículo                    </a>                </header>                <section class="pesquisa">                    <div class="busca">                        <img src="../../assets/icons/icon-search.svg" alt="" />                        <input                            type="text"                            id="pesquisa"                            class="search"                            placeholder="Buscar por marca, modelo, placa ou cliente..."                        />                    </div>                    <div class="lista" id="lista-veiculos"></div>                </section>            </main>        </div>        <script src="../../js/repositories/veiculo-repository.js"></script>        <script src="../../js/controllers/listar-veiculos-controller.js"></script>        <script src="../../js/components/sidebar-component.js"></script>    </body></html>
+    </head>
+    <body data-perfil-permitido="proprietario">
+        <div class="app-layout">
+            <ge-sidebar
+                user-name="Carlos Silva"
+                role="Proprietário"
+                type="proprietario"
+            >
+            </ge-sidebar>
+            <main class="main-content">
+                <header class="header">
+                    <div class="header-textos">
+                        <div class="header-titulo"><h1>Veículos</h1></div>
+                        <div class="header-subtitulo">
+                            <p>Gerencie os veículos cadastrados</p>
+                        </div>
+                    </div>
+                    <a href="novo-veiculo.html" class="header-botao">
+                        <img
+                            src="../../assets/icons/icon-white-plus.svg"
+                            alt=""
+                        />
+                        Novo Veículo
+                    </a>
+                </header>
+                <section class="pesquisa">
+                    <div class="busca">
+                        <img src="../../assets/icons/icon-search.svg" alt="" />
+                        <input
+                            type="text"
+                            id="pesquisa"
+                            class="search"
+                            placeholder="Buscar por marca, modelo, placa ou cliente..."
+                        />
+                    </div>
+                    <div class="lista" id="lista-veiculos"></div>
+                </section>
+            </main>
+        </div>
+
+        <script src="../../js/repositories/veiculo-repository.js"></script>
+        <script src="../../js/repositories/cliente-repository.js"></script>
+        <script src="../../js/controllers/listar-veiculos-controller.js"></script>
+        <script src="../../js/components/sidebar-component.js"></script>
+    </body>
+</html>

@@ -1,33 +1,53 @@
+console.log(VeiculoStorage.Listar());
+
 const lista = document.getElementById("lista-veiculos");
+const pesquisa = document.getElementById("pesquisa");
 
 const veiculos = VeiculoStorage.Listar();
 
 function AdicionarEventosExcluir() {
-    const botaoExcluir = document.querySelectorAll(".btn-excluir");
+    const botoesExcluir = document.querySelectorAll(".btn-excluir");
 
-    botaoExcluir.forEach((botao) => {
+    botoesExcluir.forEach((botao) => {
         botao.addEventListener("click", function () {
             const id = Number(this.dataset.id);
 
-            window.customConfirm("Você realmente deseja excluir?", function () {
-                VeiculoStorage.Excluir(id);
-                location.reload();
-            });
+            window.customConfirm(
+                "Você realmente deseja excluir?",
+                function () {
+                    VeiculoStorage.Excluir(id);
+                    location.reload();
+                }
+            );
         });
     });
 }
 
 function RenderizarVeiculos(listaVeiculos) {
+    if (!lista) return;
+
     lista.innerHTML = "";
 
+    if (listaVeiculos.length === 0) {
+        lista.innerHTML = `
+            <p>Nenhum veículo encontrado.</p>
+        `;
+        return;
+    }
+
     listaVeiculos.forEach((veiculo) => {
+        const cliente = ClienteStorage.obterPorId(veiculo.clienteId);
+        const nomeProprietario = cliente
+            ? cliente.nome
+            : "Proprietário não encontrado";
+
         lista.innerHTML += `
             <div class="card">
                 <div class="card-topo">
                     <div class="icone-carro">
                         <img
                             src="../../assets/icons/icon-car.svg"
-                            alt=""
+                            alt="Carro"
                         />
                     </div>
 
@@ -51,7 +71,7 @@ function RenderizarVeiculos(listaVeiculos) {
 
                 <div class="card-veiculo">
                     <h2 class="veiculo">
-                        ${veiculo.marca} ${veiculo.modelo}
+                        ${veiculo.modelo}
                     </h2>
 
                     <p class="placa">
@@ -65,7 +85,7 @@ function RenderizarVeiculos(listaVeiculos) {
                     </p>
 
                     <p class="proprietario-nome">
-                        ${veiculo.proprietario}
+                        ${nomeProprietario}
                     </p>
                 </div>
 
@@ -81,18 +101,21 @@ function RenderizarVeiculos(listaVeiculos) {
 
 RenderizarVeiculos(veiculos);
 
-const pesquisa = document.getElementById("pesquisa");
+if (pesquisa) {
+    pesquisa.addEventListener("input", function () {
+        const texto = this.value.toLowerCase();
 
-pesquisa.addEventListener("input", function () {
-    const texto = this.value.toLowerCase();
+        const filtrados = veiculos.filter((veiculo) => {
+            const cliente = ClienteStorage.obterPorId(veiculo.clienteId);
+            const nomeCliente = cliente ? cliente.nome.toLowerCase() : "";
 
-    const filtrados = veiculos.filter(
-        (veiculo) =>
-            veiculo.marca.toLowerCase().includes(texto) ||
-            veiculo.modelo.toLowerCase().includes(texto) ||
-            veiculo.placa.toLowerCase().includes(texto) ||
-            veiculo.proprietario.toLowerCase().includes(texto),
-    );
+            return (
+                (veiculo.modelo || "").toLowerCase().includes(texto) ||
+                (veiculo.placa || "").toLowerCase().includes(texto) ||
+                nomeCliente.includes(texto)
+            );
+        });
 
-    RenderizarVeiculos(filtrados);
-});
+        RenderizarVeiculos(filtrados);
+    });
+}

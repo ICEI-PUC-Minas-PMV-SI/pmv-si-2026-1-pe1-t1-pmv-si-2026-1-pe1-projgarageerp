@@ -1,11 +1,14 @@
-const id = Number(new URLSearchParams(window.location.search).get("id"));
+const id = new URLSearchParams(window.location.search).get("id");
 
 const veiculo = VeiculoStorage.Buscar(id);
 const ordens = GarageOrdens.listarOrdens();
 
 if (!veiculo) {
     alert("Veículo não encontrado");
+    throw new Error("Veículo não encontrado");
 }
+
+const cliente = ClienteStorage.obterPorId(veiculo.clienteId);
 
 document.getElementById("veiculo-nome").textContent =
     `${veiculo.marca} ${veiculo.modelo}`;
@@ -14,10 +17,10 @@ document.getElementById("veiculo-info").textContent =
     `${veiculo.placa} • ${veiculo.ano}`;
 
 document.getElementById("veiculo-proprietario").textContent =
-    `Proprietário: ${veiculo.proprietario}`;
+    `Proprietário: ${cliente ? cliente.nome : "Não encontrado"}`;
 
 const historico = ordens.filter(
-    ordem => ordem.veiculo.placa === veiculo.placa
+    ordem => ordem.veiculo?.placa === veiculo.placa
 );
 
 document.getElementById("total-servicos").textContent =
