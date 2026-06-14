@@ -34,23 +34,19 @@
         },
     };
 
-    const mecanicos = [
-        { id: "joao_lopes", nome: "João Lopes" },
-        { id: "marcos_lima", nome: "Marcos Lima" },
-        { id: "ana_costa", nome: "Ana Costa" },
-    ];
+    const mecanicos = [{ id: "joao_lopes", nome: "João Lopes" }];
 
     function criarDadosIniciais() {
         const clientes = [
             {
                 id: 1,
-                nome: "João Silva",
+                nome: "João Batista",
                 email: "joao@email.com",
                 telefone: "(11) 98765-4321",
             },
             {
                 id: 2,
-                nome: "Maria Santos",
+                nome: "Maria Soares",
                 email: "maria@email.com",
                 telefone: "(11) 97654-3210",
             },

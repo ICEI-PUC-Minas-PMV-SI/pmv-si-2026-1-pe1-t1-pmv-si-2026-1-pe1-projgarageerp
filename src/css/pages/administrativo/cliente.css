@@ -230,10 +230,23 @@ ge-sidebar:not(:defined) {
 
 .bloco-status {
     border-radius: 8px;
-    border: 1.246px solid transparent;
+    border: 2px solid transparent;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    position: relative;
+    padding: 18px 18px 18px 58px;
+    width: 100%;
+}
+
+.status-pendente {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.status-andamento {
+    background: rgba(245, 158, 11, 0.1);
+    border-color: rgba(245, 158, 11, 0.3);
 }
 
 .status-atrasado {
@@ -248,18 +261,22 @@ ge-sidebar:not(:defined) {
 
 .status-topo {
     display: flex;
-    padding: 16px;
     justify-content: space-between;
     align-items: flex-start;
+    width: 100%;
 }
 
 .linha-status {
     display: flex;
     align-items: flex-start;
     gap: 16px;
+    flex: 1;
 }
 
-.icone-status {
+.icone-status-circular {
+    position: absolute;
+    left: 12px;
+    top: 16px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -269,8 +286,18 @@ ge-sidebar:not(:defined) {
     flex-shrink: 0;
 }
 
-.status-atrasado .icone-status { background: rgba(239, 68, 68, 0.1); }
-.status-concluido .icone-status { background: rgba(16, 185, 129, 0.1); }
+.status-pendente .icone-status-circular {
+    background: rgba(59, 130, 246, 0.1);
+}
+.status-andamento .icone-status-circular {
+    background: rgba(245, 158, 11, 0.1);
+}
+.status-atrasado .icone-status-circular {
+    background: rgba(239, 68, 68, 0.1);
+}
+.status-concluido .icone-status-circular {
+    background: rgba(16, 185, 129, 0.1);
+}
 
 .data-status {
     display: flex;
@@ -278,13 +305,14 @@ ge-sidebar:not(:defined) {
     gap: 8px;
     color: var(--cor2);
     font-size: 14px;
-    margin-bottom: 4px;
 }
 
-.linha-status p {
+.info-status p {
     color: var(--cor1);
     font-size: 16px;
     font-weight: 500;
+    margin-top: 4px;
+    line-height: 24px;
 }
 
 .badge {
@@ -299,8 +327,8 @@ ge-sidebar:not(:defined) {
 }
 
 .badge img {
-    width: 20px;
-    height: 20px;
+    width: 12px;
+    height: 12px;
     flex-shrink: 0;
 }
 
@@ -316,14 +344,34 @@ ge-sidebar:not(:defined) {
     border-color: rgba(16, 185, 129, 0.4);
 }
 
+.badge-pendente {
+    color: #3b82f6;
+    background: rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+.badge-andamento {
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.2);
+    border-color: rgba(245, 158, 11, 0.4);
+}
+
 .aviso {
     display: flex;
-    padding: 9px 16px 8px;
+    padding: 9px 18px 8px 58px;
+    margin-left: -58px;
+    margin-right: -18px;
+    margin-top: 8px;
     align-items: center;
     gap: 8px;
-    border-top: 1.246px solid transparent;
+    border-top: 1px solid transparent;
     font-size: 14px;
     font-weight: 500;
+}
+
+.aviso img {
+    width: 16px;
+    height: 16px;
 }
 
 .aviso-atrasado {
@@ -336,6 +384,13 @@ ge-sidebar:not(:defined) {
     color: var(--cor2);
     background: transparent;
     border-top-color: rgba(229, 231, 235, 0.5);
+    font-weight: 400;
+}
+
+.aviso-andamento {
+    color: #f59e0b;
+    background: transparent;
+    border-top-color: rgba(245, 158, 11, 0.2);
     font-weight: 400;
 }
 
@@ -366,5 +421,14 @@ ge-sidebar:not(:defined) {
 
     .cabecalho-cliente .botao {
         width: 100%;
+    }
+
+    .status-topo {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .badge {
+        width: fit-content;
     }
 }

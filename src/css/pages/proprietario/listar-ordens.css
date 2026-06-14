@@ -419,6 +419,7 @@ td {
     }
 
     .search-input {
+        flex: none;
         width: 100%;
         height: 50.46px; /* Altura exata do Figma no mobile 73:10367 */
     }

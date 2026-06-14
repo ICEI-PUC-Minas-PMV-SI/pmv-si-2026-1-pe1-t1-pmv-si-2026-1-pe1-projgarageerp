@@ -16,6 +16,48 @@ const Formatters = {
     },
 
     /**
+     * Formata uma data para o padrão 'DD de mes. de AAAA'.
+     * @param {string|Date} data
+     * @returns {string}
+     */
+    formatarDataPorExtenso(data) {
+        if (!data) return "";
+        const d = new Date(data);
+        const dia = String(d.getDate()).padStart(2, "0");
+        const meses = [
+            "jan.",
+            "fev.",
+            "mar.",
+            "abr.",
+            "mai.",
+            "jun.",
+            "jul.",
+            "ago.",
+            "set.",
+            "out.",
+            "nov.",
+            "dez.",
+        ];
+        const mes = meses[d.getMonth()];
+        const ano = d.getFullYear();
+        return `${dia} de ${mes} de ${ano}`;
+    },
+
+    /**
+     * Formata uma data para o padrão 'DD de mes. de AAAA, HH:MM'.
+     * @param {string|Date} data
+     * @returns {string}
+     */
+    formatarDataEHoraPorExtenso(data) {
+        if (!data) return "";
+        const d = new Date(data);
+        const dataExtenso = this.formatarDataPorExtenso(data);
+        const horas = String(d.getHours()).padStart(2, "0");
+        const minutos = String(d.getMinutes()).padStart(2, "0");
+        return `${dataExtenso}, ${horas}:${minutos}`;
+    },
+
+    /**
      * Formata uma data ISO ou timestamp para o padrão DD/MM/AAAA às HH:MM.
      * @param {string|Date} data
      * @returns {string}

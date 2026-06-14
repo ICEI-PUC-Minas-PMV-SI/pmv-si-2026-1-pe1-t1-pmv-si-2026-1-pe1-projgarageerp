@@ -155,20 +155,21 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             cliente.historico.forEach((o) => {
                 const divOrdem = document.createElement("div");
+                const dataFormatada = window.Formatters.formatarDataEHoraPorExtenso(o.dataCriacao || o.data);
 
                 // Configura as classes e badges dinamicamente com base no status da OS
                 if (o.status === "atrasado") {
                     divOrdem.className = "bloco-status status-atrasado";
                     divOrdem.innerHTML = `
+                        <div class="icone-status-circular">
+                            <img src="../../assets/icons/icon-red-warning-circle.svg" style="width: 20px; height: 20px;" alt="" />
+                        </div>
                         <div class="status-topo">
                             <div class="linha-status">
-                                <div class="icone-status">
-                                    <img src="../../assets/icons/icon-gray-warning.svg" alt="" />
-                                </div>
                                 <div class="info-status">
                                     <div class="data-status">
                                         <img src="../../assets/icons/icon-calendar.svg" alt="Data" />
-                                        ${o.data || (o.dataCriacao ? o.dataCriacao.slice(0, 10) : "—")}
+                                        ${dataFormatada}
                                     </div>
                                     <p>${o.servico || o.queixa || "—"}</p>
                                 </div>
@@ -184,17 +185,18 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>
                     `;
                 } else if (o.status === "concluido") {
+                    const dataConclusao = window.Formatters.formatarDataPorExtenso(o.concluidoEm || o.dataAtualizacao || o.data);
                     divOrdem.className = "bloco-status status-concluido";
                     divOrdem.innerHTML = `
+                        <div class="icone-status-circular">
+                            <img src="../../assets/icons/icon-check-circle.svg" style="width: 20px; height: 20px;" alt="" />
+                        </div>
                         <div class="status-topo">
                             <div class="linha-status">
-                                <div class="icone-status">
-                                    <img src="../../assets/icons/icon-gray-check-circle.svg" alt="" />
-                                </div>
                                 <div class="info-status">
                                     <div class="data-status">
                                         <img src="../../assets/icons/icon-calendar.svg" alt="Data" />
-                                        ${o.data || (o.dataCriacao ? o.dataCriacao.slice(0, 10) : "—")}
+                                        ${dataFormatada}
                                     </div>
                                     <p>${o.servico || o.queixa || "—"}</p>
                                 </div>
@@ -206,44 +208,49 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>
                         <div class="aviso aviso-concluido">
                             <img src="../../assets/icons/icon-green-check-circle.svg" alt="" />
-                            Concluído em ${o.concluidoEm || o.data}
+                            Concluído em ${dataConclusao}
                         </div>
                     `;
-                } else if (o.status === "andamento") {
-                    divOrdem.className = "bloco-status status-pendente"; // Reaproveita estilos
+                } else if (o.status === "andamento" || o.status === "em_andamento") {
+                    const dataAndamento = window.Formatters.formatarDataPorExtenso(o.dataCriacao || o.data);
+                    divOrdem.className = "bloco-status status-andamento";
                     divOrdem.innerHTML = `
+                        <div class="icone-status-circular">
+                            <img src="../../assets/icons/icon-orange-clock.svg" style="width: 20px; height: 20px;" alt="" />
+                        </div>
                         <div class="status-topo">
                             <div class="linha-status">
-                                <div class="icone-status">
-                                    <img src="../../assets/icons/icon-orange-clock.svg" alt="" />
-                                </div>
                                 <div class="info-status">
                                     <div class="data-status">
                                         <img src="../../assets/icons/icon-calendar.svg" alt="Data" />
-                                        ${o.data || (o.dataCriacao ? o.dataCriacao.slice(0, 10) : "—")}
+                                        ${dataFormatada}
                                     </div>
                                     <p>${o.servico || o.queixa || "—"}</p>
                                 </div>
                             </div>
-                            <div class="badge" style="background-color: rgba(245, 158, 11, 0.1); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); display: flex; align-items: center; gap: 4px; padding: 4px 8px; border-radius: 999px; font-size: 12px; font-weight: 500;">
-                                <img src="../../assets/icons/icon-orange-clock.svg" style="width: 14px; height: 14px;" alt="" />
+                            <div class="badge badge-andamento">
+                                <img src="../../assets/icons/icon-orange-clock.svg" alt="" />
                                 Em Andamento
                             </div>
+                        </div>
+                        <div class="aviso aviso-andamento">
+                            <img src="../../assets/icons/icon-orange-clock.svg" alt="" />
+                            Em andamento desde ${dataAndamento}
                         </div>
                     `;
                 } else {
                     // pendente
                     divOrdem.className = "bloco-status status-pendente";
                     divOrdem.innerHTML = `
+                        <div class="icone-status-circular">
+                            <img src="../../assets/icons/icon-blue-file.svg" style="width: 20px; height: 20px;" alt="" />
+                        </div>
                         <div class="status-topo">
                             <div class="linha-status">
-                                <div class="icone-status">
-                                    <img src="../../assets/icons/icon-gray-file.svg" alt="" />
-                                </div>
                                 <div class="info-status">
                                     <div class="data-status">
                                         <img src="../../assets/icons/icon-calendar.svg" alt="Data" />
-                                        ${o.data || (o.dataCriacao ? o.dataCriacao.slice(0, 10) : "—")}
+                                        ${dataFormatada}
                                     </div>
                                     <p>${o.servico || o.queixa || "—"}</p>
                                 </div>

@@ -188,14 +188,16 @@ ge-sidebar:not(:defined) {
 }
 
 .history-card {
-    display: flex;
-    padding: 16px;
-    justify-content: space-between;
-    align-items: flex-start;
     border-radius: 8px;
-    border: 1.246px solid transparent;
+    border: 2px solid transparent;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 18px 18px 18px 58px;
     text-decoration: none;
     transition: transform 0.2s ease;
+    width: 100%;
 }
 
 .history-card:hover {
@@ -207,17 +209,32 @@ ge-sidebar:not(:defined) {
     border-color: rgba(59, 130, 246, 0.3);
 }
 
+.history-card-andamento {
+    background: rgba(245, 158, 11, 0.1);
+    border-color: rgba(245, 158, 11, 0.3);
+}
+
+.history-card-atrasado {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
 .history-card-concluido {
     background: rgba(16, 185, 129, 0.1);
     border-color: rgba(16, 185, 129, 0.3);
 }
 
-.history-content {
+.history-topo {
     display: flex;
-    gap: 16px;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
 }
 
 .icone-status-circular {
+    position: absolute;
+    left: 12px;
+    top: 16px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -228,12 +245,14 @@ ge-sidebar:not(:defined) {
 }
 
 .history-card-pendente .icone-status-circular { background: rgba(59, 130, 246, 0.1); }
+.history-card-andamento .icone-status-circular { background: rgba(245, 158, 11, 0.1); }
+.history-card-atrasado .icone-status-circular { background: rgba(239, 68, 68, 0.1); }
 .history-card-concluido .icone-status-circular { background: rgba(16, 185, 129, 0.1); }
 
 .history-os {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    flex: 1;
 }
 
 .history-data {
@@ -248,17 +267,46 @@ ge-sidebar:not(:defined) {
     font-size: 16px;
     font-weight: 500;
     color: var(--cor1);
+    margin-top: 4px;
+    line-height: 24px;
 }
 
-.history-info-conclusao {
+.aviso {
     display: flex;
+    padding: 9px 18px 8px 58px;
+    margin-left: -58px;
+    margin-right: -18px;
+    margin-top: 8px;
     align-items: center;
     gap: 8px;
-    margin-top: 4px;
-    padding-top: 8px;
-    border-top: 1.246px solid rgba(229, 231, 235, 0.5);
-    color: var(--cor2);
+    border-top: 1px solid transparent;
     font-size: 14px;
+    font-weight: 500;
+}
+
+.aviso img {
+    width: 16px;
+    height: 16px;
+}
+
+.history-card-atrasado .aviso {
+    color: var(--cor-atrasado);
+    background: rgba(239, 68, 68, 0.05);
+    border-top-color: rgba(239, 68, 68, 0.2);
+}
+
+.history-card-concluido .aviso {
+    color: var(--cor2);
+    background: transparent;
+    border-top-color: rgba(229, 231, 235, 0.5);
+    font-weight: 400;
+}
+
+.history-card-andamento .aviso {
+    color: #f59e0b;
+    background: transparent;
+    border-top-color: rgba(245, 158, 11, 0.2);
+    font-weight: 400;
 }
 
 .badge {
@@ -278,15 +326,27 @@ ge-sidebar:not(:defined) {
     border-color: rgba(59, 130, 246, 0.4);
 }
 
+.badge-andamento {
+    color: var(--cor-andamento);
+    background: rgba(245, 158, 11, 0.2);
+    border-color: rgba(245, 158, 11, 0.4);
+}
+
 .badge-concluido {
     color: var(--cor-concluido);
     background: rgba(16, 185, 129, 0.2);
     border-color: rgba(16, 185, 129, 0.4);
 }
 
+.badge-atrasado {
+    color: var(--cor-atrasado);
+    background: rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 0.4);
+}
+
 .badge img {
-    width: 20px;
-    height: 20px;
+    width: 12px;
+    height: 12px;
 }
 
 @media (max-width: 768px) {
@@ -306,6 +366,10 @@ ge-sidebar:not(:defined) {
     }
 
     .history-card {
+        padding: 18px 18px 18px 58px;
+    }
+
+    .history-topo {
         flex-direction: column;
         gap: 12px;
     }
