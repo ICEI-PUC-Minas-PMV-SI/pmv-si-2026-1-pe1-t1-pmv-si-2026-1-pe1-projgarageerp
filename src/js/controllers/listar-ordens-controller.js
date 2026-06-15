@@ -14,6 +14,16 @@
 
         dados.inicializar();
 
+        // Ler o parâmetro da URL
+        if (filtroStatus) {
+            const urlParams = new URLSearchParams(window.location.search);
+            const statusUrl = urlParams.get("status"); // Pega o valor 'atrasado' da URL
+
+            if (statusUrl) {
+                filtroStatus.value = statusUrl; // Define o <select> para 'atrasado'
+            }
+        }
+
         if (!tabela || !mobile) {
             return;
         }

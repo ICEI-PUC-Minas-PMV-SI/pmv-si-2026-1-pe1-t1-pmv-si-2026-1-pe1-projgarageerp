@@ -24,8 +24,19 @@ function Porcentagem(valor, total) {
 }
 
 function Alerta(id, valor) {
-    // Certifique-se de que o elemento com id "alerta" existe no HTML
     const elementoAlerta = document.getElementById("alerta");
+    const containerAlerta = document.querySelector(".alert-container");
+
+    if (valor === 0) {
+        if (containerAlerta) {
+            containerAlerta.style.display = "none";
+        }
+    } else {
+        if (containerAlerta) {
+            containerAlerta.style.display = "flex";
+        }
+    }
+
     if (elementoAlerta) {
         elementoAlerta.textContent = `Você tem ${valor} ordem atrasada(s)`;
     }

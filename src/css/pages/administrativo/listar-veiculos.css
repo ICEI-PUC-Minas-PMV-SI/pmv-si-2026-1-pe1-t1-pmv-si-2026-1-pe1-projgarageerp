@@ -215,11 +215,17 @@ ge-sidebar:not(:defined) {
     gap: 4px;
 }
 
-.card-acoes button {
+.card-acoes a {
     display: flex;
     align-items: center;
-    border: none;
+    text-decoration: none;
+}
+
+.card-acoes button {
     background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 }
 
 .card-acoes img {

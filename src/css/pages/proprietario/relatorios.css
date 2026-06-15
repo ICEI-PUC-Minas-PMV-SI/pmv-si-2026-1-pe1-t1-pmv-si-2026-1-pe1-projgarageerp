@@ -349,7 +349,6 @@ main {
 
 .frequency-container {
     display: flex;
-    justify-content: space-between;
     justify-content: center;
     gap: 15px;
 }
@@ -409,13 +408,17 @@ main {
 }
 
 .frequency-number {
-    padding: 10px;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: rgba(37, 99, 235, 0.1);
     color: var(--cor-default);
     font-size: 14px;
     font-weight: 700;
-    line-height: 20px; /* 142.857% */
 }
 
 .frequency-name {

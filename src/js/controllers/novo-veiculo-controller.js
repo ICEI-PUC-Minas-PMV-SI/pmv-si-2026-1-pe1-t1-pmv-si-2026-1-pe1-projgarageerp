@@ -12,6 +12,13 @@ function carregarClientes() {
         option.textContent = cliente.nome;
         selectCliente.appendChild(option);
     });
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const clienteIdUrl = urlParams.get("clienteId");
+
+    if (clienteIdUrl && selectCliente) {
+        selectCliente.value = clienteIdUrl;
+    }
 }
 
 carregarClientes();
@@ -61,7 +68,7 @@ formulario.addEventListener("submit", function (evento) {
     window.customAlert("Veículo cadastrado com sucesso!", "success");
 
     setTimeout(() => {
-        window.location.href = "listar-veiculos.html";
+        window.location.href = `cliente.html?id=${clienteId}`;
     }, 500);
 });
 
