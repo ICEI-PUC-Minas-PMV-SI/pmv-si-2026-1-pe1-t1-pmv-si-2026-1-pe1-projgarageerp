@@ -1,140 +1,189 @@
-# Testes
+# Teste Sistema Garage ERP
 
-Neste projeto serão realizados dois tipos de testes:
+## Introdução
 
- - O **Teste de Software**, que utiliza uma abordadem de caixa preta, e tem por objetivo verificar a conformidade do software com os requisitos funcionais e não funcionais do sistema.
- - O **Teste de Usabilidade**, que busca avaliar a qualidade do uso do sistema por um usuário do público alvo. 
+O sistema Garage ERP foi pensado para ser aplicado em oficinas e centros automotivos com o objetivo de facilitar na gestão de seu négocio. Sendo assim, os testes do sistema visaram verificar se as funções cruciais de projeto web estão funcionando de acordo com o proposto.
 
-Se quiser conhecer um pouco mais sobre os tipos de teste de software, leia o documento [Teste de Software: Conceitos e tipos de testes](https://blog.onedaytesting.com.br/teste-de-software/).
+Os testes de software seguiram a abordagem de caixa-preta, avaliando o comportamento da aplicação com base nas entradas realizadas pela interface e nas saídas apresentadas ao usuário, sem considerar detalhes da implementação. Adicionalmente, foram definidos testes de usabilidade para medir a capacidade do público-alvo de operar as funções principais com clareza e independência.
 
-A documentação dos testes é dividida nas seguintes seções:
+## RF-01 — Cadastrar clientes
 
- - [Plano de Testes de Software](#plano-de-testes-de-software)
- - [Registro dos Testes de Software](#registro-dos-testes-de-software)
- - [Avaliação dos Testes de Software](#avaliação-dos-testes-de-software)
- - [Cenários de Teste de Usabilidade](#cenários-de-teste-de-usabilidade)
- - [Registro dos Testes de Usabilidade](#registro-dos-testes-de-usabilidade)
- - [Avaliação dos Testes de Usabilidade](#avaliação-dos-testes-de-usabilidade)
-
-# Teste de Software
-
-Nesta seção o grupo deverá documentar os testes de software que verificam a correta implementação dos requisitos funcionais e não funcionais do software.
-
-## Plano de Testes de Software
-
-Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe qual o Requisito Funcional ou não funcional que ele está verificando. Associe também a página (ou artefato) onde o teste será realizado e descreva o cenário do teste. Veja a tabela de exemplo.
-
-
-**Caso de Teste** | **CT01 - Criar conta parte 1**
- :--------------: | ------------
-**Procedimento**  | 1) Acesse o endereço www.teste.com.br <br> 2) Clique em criar conta <br> 2) Preencha todos os campos do formulário <br> 3) Clique no botão "Continuar".
-**Requisitos associados** | RF-001
-**Resultado esperado** | Prosseguir para a parte 2 do cadastro
-**Dados de entrada** | Inserção de dados válidos no formulário de cadastro
-**Resultado obtido** | Sucesso
-
-**Caso de Teste** | **CT02 - Criar conta parte 2**
- :--------------: | ------------
-**Procedimento**  | 1) Preencha todos os campos do formulário <br> 2) Clique no botão "Criar conta" <br> 
-**Requisitos associados** | RF-001
-**Resultado esperado** | Usuário cadastrado
-**Dados de entrada** | Inserção de dados válidos no formulário de cadastro
-**Resultado obtido** | Sucesso
-
-## Registro dos Testes de Software
-
-Esta seção deve apresentar o relatório com as evidências dos testes de software realizados no sistema pela equipe, baseado no plano de testes pré-definido. Documente cada caso de teste apresentando um vídeo ou animação que comprove o funcionamento da funcionalidade. Veja os exemplos a seguir.
-
-|*Caso de Teste*                                 |*CT01 - Criar conta parte 1*                                         |
+| Campo | Descrição |
 |---|---|
-|Requisito Associado | RF-001 - A aplicação deve permitir que os usuários criem uma conta e gerenciem seu cadastro|
-|Link do vídeo do teste realizado: | https://1drv.ms/u/s!AhD2JqpOUvJChapRtRSQ9vPzbNLwGA?e=mxZs6t| 
+| **Procedimento** | 1. Acessar a página `listar-clientes.html`. <br>2. Selecionar a opção **novo cliente**. <br>3. Preencher as informações solicitadas. <br>4. Selecionar botão **Cadastrar Cliente**.|
+| **Requisitos associados** | RF-01 - O sistema deve permitir o cadastro de clientes contendo, no mínimo, nome, telefone e identificação básica. |
+| **Resultado esperado** | O cliente será cadastrado e estará já disponível  para o cadastro de veículo.|
+| **Dados de entrada** | Informações do cliente. |
+| **Resultado obtido** | O cliente foi cadastrado no sistema. |
 
-|*Caso de Teste*                                 |*CT02 - Criar conta parte 2*                                        |
+## RF-02 — Cadastrar Veículos
+
+| Campo | Descrição |
 |---|---|
-|Requisito Associado | RF-001 - A aplicação deve permitir que os usuários criem uma conta e gerenciem seu cadastro|
-|Link do vídeo do teste realizado: | https://1drv.ms/v/s!AhD2JqpOUvJChapQ8CPXL-TI_A7iVg?e=spD3Ar | 
+| **Procedimento** | 1. Acessar a página `listar-veiculos.html`. <br>2. Selecionar a opção **novo veículo**. <br>3. Preencher as informações solicitadas. <br>4. Selecionar botão **Cadastrar veículo**.|
+| **Requisitos associados** | RF-02 - O sistema deve permitir o cadastro de veículos vinculados a um cliente, incluindo informações como modelo, placa e ano. |
+| **Resultado esperado** | O veículo será cadastrado e vinculado a um cliente já existente no sistema e estará disponível para criação de ordem de serviços.|
+| **Dados de entrada** | Informações do veículo. |
+| **Resultado obtido** | O veículo foi cadastrado no sistema. |
 
+## RF-03 — Abertura de Ordem de Serviço
 
-## Avaliação dos Testes de Software
+| Campo | Descrição |
+|---|---|
+| **Procedimento** | 1. Acessar a página `listar-ordens.html`. <br>2. Selecionar a opção **nova ordem**. <br>3. Preencher as informações solicitadas. <br>4. Selecionar botão **Criar ordem de serviço**.|
+| **Requisitos associados** | RF-03 - O sistema deve permitir a abertura de ordem de serviço associada a um cliente e a um veículo. |
+| **Resultado esperado** | A ordem será criada e já aparecerá tanto na listagem na página `listar-ordem.html`, quanto na página `dashboard.html` de todos os perfis.|
+| **Dados de entrada** | Informações da solicitação da ordem. |
+| **Resultado obtido** | A ordem de serviço foi cadastrada e disponível para ser iniciada. |
 
-Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identificados na solução. Comente como o grupo pretende atacar esses pontos nas próximas iterações. Apresente as falhas detectadas e as melhorias geradas a partir dos resultados obtidos nos testes.
+## RF-04 — Filtrar Ordens de Serviço
 
-## Testes de unidade automatizados (Opcional)
+| Campo | Descrição |
+|---|---|
+| **Procedimento** | 1. Acessar a página `listar-ordens.html`. <br>2. Selecionar a opção **filtrar** na parte superior da lista. <br>3. Selecionar o status desejado.|
+| **Requisitos associados** | RF-04 - O sistema deve permitir a listagem de ordens de serviço com filtros por status (em aberto, em andamento, em atraso, concluída). |
+| **Resultado esperado** | A lista será filtrada de acordo com a opção selecionada.|
+| **Dados de entrada** | Tipo de status da solicitação |
+| **Resultado obtido** | A lista foi filtrada de acordo com a seleção. |
 
-Se o grupo tiver interesse em se aprofundar no desenvolvimento de testes de software, ele podera desenvolver testes automatizados de software que verificam o funcionamento das funções JavaScript desenvolvidas. Para conhecer sobre testes unitários em JavaScript, leia 0 documento  [Ferramentas de Teste para Java Script](https://geekflare.com/javascript-unit-testing/).
+## RF-05 — Consultar Histórico de Serviço
 
-# Testes de Usabilidade
+| Campo | Descrição |
+|---|---|
+| **Procedimento** | 1. Acessar a página `listar-veículos.html`. <br>2. Selecionar o veículo desejado.|
+| **Requisitos associados** | RF-05 - O sistema deve permitir a consulta do histórico de serviços de um veículo de forma organizada e cronológica. |
+| **Resultado esperado** | O usuário será direcionado para a página `veiculo?id=.html` e visualizará todo o histórico de ordens na empresa.|
+| **Dados de entrada** | ID do veículo |
+| **Resultado obtido** | O veículo teve seu histórico disponibilizado.|
 
-O objetivo do Plano de Testes de Usabilidade é obter informações quanto à expectativa dos usuários em relação à  funcionalidade da aplicação de forma geral.
+## RF-06 — Detalhar Ordem de Serviço
 
-Para tanto, elaboramos quatro cenários, cada um baseado na definição apresentada sobre as histórias dos usuários, definido na etapa das especificações do projeto.
+| Campo | Descrição |
+|---|---|
+| **Procedimento** | 1. Acessar a página `ordem?id=.html`. <br>2. Preencher com os serviços prestados.|
+| **Requisitos associados** | RF-06 - O sistema deve permitir registrar detalhadamente os serviços realizados em uma ordem de serviço. |
+| **Resultado esperado** | O usuário conseguirá registrar o serviço realizado, valor do serviço, além de fotos sobre trabalho prestado.|
+| **Dados de entrada** | Informações do serviço |
+| **Resultado obtido** | A **Ordem de Serviço** foi atualizada.|
 
-Foram convidadas quatro pessoas que os perfis se encaixassem nas definições das histórias apresentadas na documentação, visando averiguar os seguintes indicadores:
+## RF-07 — Atualizar Status da Ordem
 
-Taxa de sucesso: responde se o usuário conseguiu ou não executar a tarefa proposta;
+| Campo | Descrição |
+|---|---|
+| **Procedimento** | 1. Acessar a página `ordem?id=.html`. <br>2. Selecionar na parte superior da página o status atual da ordem.|
+| **Requisitos associados** | RF-07 - O sistema deve permitir atualizar o status da ordem de serviço (ex: em andamento, concluída). |
+| **Resultado esperado** | O usuário conseguirá alterar o status da ordem.|
+| **Dados de entrada** | Status da ordem de serviço |
+| **Resultado obtido** | O **Status da ordem de serviço** foi atualizada.|
 
-Satisfação subjetiva: responde como o usuário avalia o sistema com relação à execução da tarefa proposta, conforme a seguinte escala:
+## RF-08 — Buscar Cliente
 
-1. Péssimo; 
-2. Ruim; 
-3. Regular; 
-4. Bom; 
-5. Ótimo.
+| Campo | Descrição |
+|---|---|
+| **Procedimento** | 1. Acessar a página `listar-clientes.html`. <br>2. Buscar o cliente na barra superior da lista<br> 3. Selecionar cliente.|
+| **Requisitos associados** | RF-08 - O sistema deve permitir a busca de clientes por nome ou telefone. |
+| **Resultado esperado** | O usuário conseguirá filtrar a lista de cliente por nome, telefone ou email.|
+| **Dados de entrada** | Dados do cliente |
+| **Resultado obtido** | A lista de clientes foi filtrada de acordo com o pesquisado.|
 
-Tempo para conclusão da tarefa: em segundos, e em comparação com o tempo utilizado quando um especialista (um desenvolvedor) realiza a mesma tarefa.
+## RF-09 — Buscar Veículo
 
-Objetivando respeitar as diretrizes da Lei Geral de Proteção de Dados, as informações pessoais dos usuários que participaram do teste não foram coletadas, tendo em vista a ausência de Termo de Consentimento Livre e Esclarecido.
+| Campo | Descrição |
+|---|---|
+| **Procedimento** | 1. Acessar a página `listar-veiculos.html`. <br>2. Buscar o veículo na barra superior da lista<br> 3. Selecionar veículos.|
+| **Requisitos associados** | RF-09 - O sistema deve permitir a busca de veículos por placa ou modelo. |
+| **Resultado esperado** | O usuário conseguirá filtrar a lista de veículos por placa, modelo ou proprietário.|
+| **Dados de entrada** | Dados do veículo |
+| **Resultado obtido** | A lista de veículos foi filtrada de acordo com o pesquisado.|
 
-Apresente os cenários de testes utilizados na realização dos testes de usabilidade da sua aplicação. Escolha cenários de testes que demonstrem as principais histórias de usuário sendo realizadas. Neste tópico o grupo deve detalhar quais funcionalidades avaliadas, o grupo de usuários que foi escolhido para participar do teste e as ferramentas utilizadas.
+## RF-10 — Visualizar Dados de uma Ordem de Serviço
 
-> - [UX Tools](https://uxdesign.cc/ux-user-research-and-user-testing-tools-2d339d379dc7)
+| Campo | Descrição |
+|---|---|
+| **Procedimento** | 1. Acessar a página `listar-ordens.html`. <br>2. Selecionar a ordem desejada.
+| **Requisitos associados** | RF-10 - O sistema deve permitir visualizar os detalhes completos de uma ordem de serviço. |
+| **Resultado esperado** | O usuário será direcionado para a ordem escolhida e visualizará todos os detalhes da ordem.|
+| **Dados de entrada** | ID da Ordem de serviço |
+| **Resultado obtido** | A ordem escolhida foi mostrada corretamente com todos seus detalhes.|
 
+## RF-11 - Registrar Data de Ralização do Serviço
 
-## Cenários de Teste de Usabilidade
+| Campo | Descrição |
+|---|---|
+| **Procedimento** | 1. Acessar a página `ordem?id=.html`. <br>2. Selecionar a ordem desejada.
+| **Requisitos associados** | RF-11 - O sistema deve permitir registrar a data de realização do serviço automaticamente ou manualmente. |
+| **Resultado esperado** | Após alterar o status da ordem, será salvo automaticamento no seu histórico.|
+| **Dados de entrada** | Status da ordem de serviço |
+| **Resultado obtido** | A ordem escolhida teve sua alteração salvo e disponível em seu histórico.|
+
+## RF-05 — Consultar Histórico de Serviço
+
+| Campo | Descrição |
+|---|---|
+| **Procedimento** | 1. Acessar a página `listar-veículos.html`. <br>2. Selecionar o veículo desejado.|
+| **Requisitos associados** | RF-12 - O sistema deve permitir visualizar o histórico completo de manutenções de um veículo. |
+| **Resultado esperado** | O usuário será direcionado para a página `veiculo?id=.html` e visualizará todo o histórico de ordens do veículo na empresa.|
+| **Dados de entrada** | ID do veículo |
+| **Resultado obtido** | O veículo teve seu histórico completo disponibilizado.|
+
+# Teste de Usabilidade
+
+O plano de testes de usabilidade tem como finalidade avaliar a experiência dos usuários ao interagir com a aplicação, identificando se as funcionalidades atendem às expectativas e se podem ser utilizadas de forma intuitiva.
+
+Para essa avaliação, foram definidos cenários de teste com base nas histórias de usuário levantadas durante a etapa de especificação do projeto. Cada cenário representa uma situação prática de uso das principais funcionalidades do sistema.
+
+Participaram dos testes quatro usuários com perfis compatíveis com o público-alvo definido na documentação do projeto. Durante a execução das tarefas, foram analisados os seguintes critérios:
+
+* **Taxa de sucesso:** verifica se o usuário conseguiu concluir a tarefa proposta corretamente;
+
+* **Satisfação do usuário:** mede a percepção do usuário em relação à facilidade de uso do sistema;
+
+* **Tempo de execução:** contabiliza o tempo necessário para finalizar cada tarefa, em segundos, permitindo comparação com o tempo médio de execução de um especialista da equipe de desenvolvimento.
+
+## Cenários Utilizados
 
 | Nº do Cenário | Descrição do cenário |
 |---------------|----------------------|
-| 1             | Você é uma pessoa que deseja comprar um iphone. Encontre no site um iphone e veja detalhes de localização e contato da loja que anunciando. |
-| 2             | Você é uma pessoa que deseja comprar um smartphone até R$ 2.000,00. Encontre no site smartphone's nessa faixa de preço. |
+| 1             | Você é dono de uma oficina e deseja ter um um relatório da renda do empreendimento. |
+| 2             | Você é um administrador e deseja ter uma maior facilidade em mostrar informações aos clientes dos serviços prestados. |
+|3              | Você é um mecânico e deseja ter uma rápida visualização das ordens de serviço. |
 
+## Registro de Teste de Usabilidade
 
+### Cenário 1 - Relatório de finanças
 
-## Registro de Testes de Usabilidade
+| Métrica | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
+| :---- | :---- | :---- | :---- |
+| **Usuário 1** | SIM | 5 (Ótimo) | 56.1 segundos |
+| **Usuário 2** | SIM | 4 (Bom) | 53.7 segundos |
+| **Usuário 3** | SIM | 5 (Ótimo) | 57.2 segundos |
+| **Média** | **100%** | **4.67** | **55.6 segundos** |
+| **Tempo Especialista** | SIM | 5 (Ótimo) | 16.1 segundos |
+| **Comentários dos Usuários:** | A navegação pelos painéis é boa demais. A página é intuitiva e é fácil para achar a informação. |  |  |
 
-Cenário 1: Você é uma pessoa que deseja comprar um iphone. Encontre no site um iphone e veja detalhes de localização e contato da loja que anunciando.
+### Cenário 2 - Exibição de informações do serviço solicitado ao cliente
 
-| Usuário | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
-|---------|-----------------|----------------------|---------------------------------|
-| 1       | SIM             | 5                    | 27.87 segundos                  |
-| 2       | SIM             | 5                    | 17.11 segundos                  |
-| 3       | SIM             | 5                    | 39.09 segundos                  |
-|  |  |  |  |
-| **Média**     | 100%           | 5                | 28.02 segundos                           |
-| **Tempo para conclusão pelo especialista** | SIM | 5 | 8.66 segundos |
+| Métrica | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
+| :---- | :---- | :---- | :---- |
+| **Usuário 1** | SIM | 5 (Ótimo) | 45.6 segundos |
+| **Usuário 2** | SIM | 5 (Ótimo) | 43.9 segundos |
+| **Usuário 3** | SIM | 5 (Ótimo) | 46.4 segundos |
+| **Média** | **100%** | **5** | **45.3 segundos** |
+| **Tempo Especialista** | SIM | 5 (Ótimo) | 13.4 segundos |
+| **Comentários dos Usuários:** | A facilidade em mostrar ao cliente é um fator importante, ótima para encontrar no dia a dia corrido. |
 
+### Cenário 3 - Visualização das Ordens de Serviço
 
-    Comentários dos usuários: Achei o site muito bom e intuitivo. 
-    Não tive dificuldades e acho que ficou bem intuitivo.
+| Métrica | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
+| :---- | :---- | :---- | :---- |
+| **Usuário 1** | SIM | 5 (Ótimo) | 35.4 segundos |
+| **Usuário 2** | SIM | 5 (Ótimo) | 40.4 segundos |
+| **Usuário 3** | SIM | 4 (Bom) | 37.2 segundos |
+| **Média** | **100%** | **4.67** | **37.6 segundos** |
+| **Tempo Especialista** | SIM | 5 (Ótimo) | 15.2 segundos |
+| **Comentários dos Usuários:** |  navegação pelas ordens de serviço é de fácil compreensão, ótima para encontrar no dia a dia corrido. |  |  |
 
-
-Cenário 2: Você é uma pessoa que deseja comprar um smartphone até R$ 2.000,00. Encontre no site smartphone's nessa faixa de preço.
-
-| Usuário | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
-|---------|-----------------|----------------------|---------------------------------|
-| 1       | SIM             | 5                    | 22.54 segundos                          |
-| 2       | SIM             | 5                    | 31.42 segundos                          |
-| 3       | SIM             | 4                    | 36.21 segundos                          |
-|  |  |  |  |
-| **Média**     | 100%           | 4.67                | 30.05 segundos                           |
-| **Tempo para conclusão pelo especialista** | SIM | 5 | 13.57 segundos |
-
-
-    Comentários dos usuários: O site é fácil de acessar, mas algumas páginas poderiam 
-    redirecionar a gente automaticamente para outras. Senti a falta de mais opções de filtros, 
-    tanto na hora da pesquisa, quanto depois dela, nos resultados.
-
-## Avaliação dos Testes de Usabilidade
+## Avalição dos Testes de Usabilidade
 
 Tomando como base os resultados obtidos, foi possível verificar que a aplicação web apresenta bons resultados quanto à taxa de sucesso na interação dos usuários, tendo em vista que os cenários propostos foram concluídos com sucesso.
 
@@ -142,7 +191,4 @@ Além disso, a aplicação obteve também uma elevada satisfação subjetiva dos
 
 Com relação ao tempo para conclusão de cada tarefa/cenário, notamos discrepância entre a média de tempo dos usuários e o tempo do especialista/desenvolvedor em todos os cenários. Tal discrepância, em certa medida, é esperada, tendo em vista que o desenvolvedor já tem prévio conhecimento de toda a interface da aplicação, do posicionamento dos elementos, lógica de organização das páginas, etc.
 
-Contudo, tendo em vista que a diferença foi relevante (por exemplo, 113 segundos — média usuários — contra 25 segundos — especialista — no cenário três), e ainda os comentários feitos por alguns usuários, entendemos haver oportunidades de melhoria na usabilidade da aplicação.
-
-
-
+Contudo, tendo em vista que a diferença foi relevante (por exemplo, 37.6 segundos — média usuários — contra 15.2 segundos — especialista — no cenário três), e ainda os comentários feitos por alguns usuários, entendemos haver oportunidades de melhoria na usabilidade da aplicação.
