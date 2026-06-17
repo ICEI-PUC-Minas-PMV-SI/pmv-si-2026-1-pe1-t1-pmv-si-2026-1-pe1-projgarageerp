@@ -1,12 +1,12 @@
-# Teste Sistema Garage ERP
+# Testes GarageERP
 
 ## Introdução
 
-O sistema Garage ERP foi pensado para ser aplicado em oficinas e centros automotivos com o objetivo de facilitar na gestão de seu négocio. Sendo assim, os testes do sistema visaram verificar se as funções cruciais de projeto web estão funcionando de acordo com o proposto.
+O GarageERP foi pensado para ser aplicado em oficinas e centros automotivos com o objetivo de facilitar na gestão de seu négocio. Sendo assim, os testes do sistema visaram verificar se as funções cruciais de projeto web estão funcionando de acordo com o proposto.
 
 Os testes de software seguiram a abordagem de caixa-preta, avaliando o comportamento da aplicação com base nas entradas realizadas pela interface e nas saídas apresentadas ao usuário, sem considerar detalhes da implementação. Adicionalmente, foram definidos testes de usabilidade para medir a capacidade do público-alvo de operar as funções principais com clareza e independência.
 
-## RF-01 — Cadastrar clientes
+## RF-01 — Cadastrar Clientes
 
 | Campo | Descrição |
 |---|---|
@@ -15,6 +15,7 @@ Os testes de software seguiram a abordagem de caixa-preta, avaliando o comportam
 | **Resultado esperado** | O cliente será cadastrado e estará já disponível  para o cadastro de veículo.|
 | **Dados de entrada** | Informações do cliente. |
 | **Resultado obtido** | O cliente foi cadastrado no sistema. |
+| **Evidência em vídeo** | 🎬[RF-01 - Cadastrar Clientes](https://github.com/user-attachments/assets/6009eaf6-05c3-43d0-ab0e-68f6d888c499) |
 
 ## RF-02 — Cadastrar Veículos
 
@@ -25,6 +26,7 @@ Os testes de software seguiram a abordagem de caixa-preta, avaliando o comportam
 | **Resultado esperado** | O veículo será cadastrado e vinculado a um cliente já existente no sistema e estará disponível para criação de ordem de serviços.|
 | **Dados de entrada** | Informações do veículo. |
 | **Resultado obtido** | O veículo foi cadastrado no sistema. |
+| **Evidência em vídeo** | 🎬[RF-02 - Cadastrar Veículos](https://github.com/user-attachments/assets/c501ad5c-8b4f-482c-9a0d-f6d0841b8b5e) |
 
 ## RF-03 — Abertura de Ordem de Serviço
 
@@ -35,6 +37,7 @@ Os testes de software seguiram a abordagem de caixa-preta, avaliando o comportam
 | **Resultado esperado** | A ordem será criada e já aparecerá tanto na listagem na página `listar-ordem.html`, quanto na página `dashboard.html` de todos os perfis.|
 | **Dados de entrada** | Informações da solicitação da ordem. |
 | **Resultado obtido** | A ordem de serviço foi cadastrada e disponível para ser iniciada. |
+| **Evidência em vídeo** | 🎬[RF-03 - Abertura de Ordem de Serviço](https://github.com/user-attachments/assets/13c97208-06c0-4d5b-a7cc-1cb7180604a0) |
 
 ## RF-04 — Filtrar Ordens de Serviço
 
@@ -45,6 +48,7 @@ Os testes de software seguiram a abordagem de caixa-preta, avaliando o comportam
 | **Resultado esperado** | A lista será filtrada de acordo com a opção selecionada.|
 | **Dados de entrada** | Tipo de status da solicitação |
 | **Resultado obtido** | A lista foi filtrada de acordo com a seleção. |
+| **Evidência em vídeo** | 🎬[RF-04 - Filtrar Ordens de Serviço](https://github.com/user-attachments/assets/ca37fda6-fa5f-429a-9180-298b359c6d32) |
 
 ## RF-05 — Consultar Histórico de Serviço
 
@@ -55,6 +59,7 @@ Os testes de software seguiram a abordagem de caixa-preta, avaliando o comportam
 | **Resultado esperado** | O usuário será direcionado para a página `veiculo?id=.html` e visualizará todo o histórico de ordens na empresa.|
 | **Dados de entrada** | ID do veículo |
 | **Resultado obtido** | O veículo teve seu histórico disponibilizado.|
+| **Evidência em vídeo** | 🎬[RF-05 - Consultar Histórico de Serviço](https://github.com/user-attachments/assets/03824476-a132-4ce4-adf4-532f0e86cd86) |
 
 ## RF-06 — Detalhar Ordem de Serviço
 
@@ -65,6 +70,7 @@ Os testes de software seguiram a abordagem de caixa-preta, avaliando o comportam
 | **Resultado esperado** | O usuário conseguirá registrar o serviço realizado, valor do serviço, além de fotos sobre trabalho prestado.|
 | **Dados de entrada** | Informações do serviço |
 | **Resultado obtido** | A **Ordem de Serviço** foi atualizada.|
+| **Evidência em vídeo** | 🎬[RF-06 - Detalhar Ordem de Serviço](https://github.com/user-attachments/assets/6a3b5a06-175b-472b-a32b-df0c92e14bac) |
 
 ## RF-07 — Atualizar Status da Ordem
 
@@ -75,6 +81,7 @@ Os testes de software seguiram a abordagem de caixa-preta, avaliando o comportam
 | **Resultado esperado** | O usuário conseguirá alterar o status da ordem.|
 | **Dados de entrada** | Status da ordem de serviço |
 | **Resultado obtido** | O **Status da ordem de serviço** foi atualizada.|
+| **Evidência em vídeo** | 🎬[RF-07 - Atualizar Status da Ordem](https://github.com/user-attachments/assets/58333df4-ed6b-4c2e-9e40-7f849acfc5bb) |
 
 ## RF-08 — Buscar Cliente
 
@@ -85,6 +92,7 @@ Os testes de software seguiram a abordagem de caixa-preta, avaliando o comportam
 | **Resultado esperado** | O usuário conseguirá filtrar a lista de cliente por nome, telefone ou email.|
 | **Dados de entrada** | Dados do cliente |
 | **Resultado obtido** | A lista de clientes foi filtrada de acordo com o pesquisado.|
+| **Evidência em vídeo** | 🎬[RF-08 - Buscar Cliente](https://github.com/user-attachments/assets/61f24e9a-a972-4fdc-b3e2-3b3e38627fee) |
 
 ## RF-09 — Buscar Veículo
 
@@ -95,6 +103,7 @@ Os testes de software seguiram a abordagem de caixa-preta, avaliando o comportam
 | **Resultado esperado** | O usuário conseguirá filtrar a lista de veículos por placa, modelo ou proprietário.|
 | **Dados de entrada** | Dados do veículo |
 | **Resultado obtido** | A lista de veículos foi filtrada de acordo com o pesquisado.|
+| **Evidência em vídeo** | 🎬[RF-09 - Buscar Veículo](https://github.com/user-attachments/assets/9818da85-0678-4c3e-9ab6-0008b0097fcc) |
 
 ## RF-10 — Visualizar Dados de uma Ordem de Serviço
 
@@ -105,8 +114,9 @@ Os testes de software seguiram a abordagem de caixa-preta, avaliando o comportam
 | **Resultado esperado** | O usuário será direcionado para a ordem escolhida e visualizará todos os detalhes da ordem.|
 | **Dados de entrada** | ID da Ordem de serviço |
 | **Resultado obtido** | A ordem escolhida foi mostrada corretamente com todos seus detalhes.|
+| **Evidência em vídeo** | 🎬[RF-10 - Visualizar Dados de uma Ordem de Serviço](https://github.com/user-attachments/assets/e81a07de-8a86-47dc-aa76-ee3775c4b673) |
 
-## RF-11 - Registrar Data de Ralização do Serviço
+## RF-11 — Registrar Data de Ralização do Serviço
 
 | Campo | Descrição |
 |---|---|
@@ -115,8 +125,9 @@ Os testes de software seguiram a abordagem de caixa-preta, avaliando o comportam
 | **Resultado esperado** | Após alterar o status da ordem, será salvo automaticamento no seu histórico.|
 | **Dados de entrada** | Status da ordem de serviço |
 | **Resultado obtido** | A ordem escolhida teve sua alteração salvo e disponível em seu histórico.|
+| **Evidência em vídeo** | 🎬[RF-11 - Registrar Data de Ralização do Serviço](https://github.com/user-attachments/assets/c844d732-3df5-4ed8-bee8-cd30dccbcaca) |
 
-## RF-05 — Consultar Histórico de Serviço
+## RF-12 — Consultar Histórico de Serviço
 
 | Campo | Descrição |
 |---|---|
@@ -125,8 +136,11 @@ Os testes de software seguiram a abordagem de caixa-preta, avaliando o comportam
 | **Resultado esperado** | O usuário será direcionado para a página `veiculo?id=.html` e visualizará todo o histórico de ordens do veículo na empresa.|
 | **Dados de entrada** | ID do veículo |
 | **Resultado obtido** | O veículo teve seu histórico completo disponibilizado.|
+| **Evidência em vídeo** | 🎬[RF-12 - Consultar Histórico de Serviço](https://github.com/user-attachments/assets/0d2965f3-59ec-47c2-ab63-8dfa3386f5ad) |
 
-# Teste de Usabilidade
+<br>
+
+# Testes de Usabilidade
 
 O plano de testes de usabilidade tem como finalidade avaliar a experiência dos usuários ao interagir com a aplicação, identificando se as funcionalidades atendem às expectativas e se podem ser utilizadas de forma intuitiva.
 
@@ -146,7 +160,7 @@ Participaram dos testes quatro usuários com perfis compatíveis com o público-
 |---------------|----------------------|
 | 1             | Você é dono de uma oficina e deseja ter um um relatório da renda do empreendimento. |
 | 2             | Você é um administrador e deseja ter uma maior facilidade em mostrar informações aos clientes dos serviços prestados. |
-|3              | Você é um mecânico e deseja ter uma rápida visualização das ordens de serviço. |
+| 3              | Você é um mecânico e deseja ter uma rápida visualização das ordens de serviço. |
 
 ## Registro de Teste de Usabilidade
 
