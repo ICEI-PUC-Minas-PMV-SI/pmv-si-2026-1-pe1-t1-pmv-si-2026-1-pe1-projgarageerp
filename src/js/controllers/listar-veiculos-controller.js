@@ -11,11 +11,25 @@ document.addEventListener("DOMContentLoaded", () => {
             botao.addEventListener("click", function () {
                 const id = this.dataset.id;
 
+                const listaCompleta = VeiculoStorage.Listar();
+                const veiculo = listaCompleta.find((v) => v.id == id);
+
+                const nomeVeiculoCompleto = veiculo
+                    ? `${veiculo.marca} ${veiculo.modelo}`
+                    : "este veículo";
+
                 window.customConfirm(
-                    "Você realmente deseja excluir?",
+                    `Tem certeza que deseja excluir o veículo "${nomeVeiculoCompleto}"? Esta ação removerá também todas as ordens de serviço atribuídas a ele.`,
                     function () {
                         VeiculoStorage.Excluir(id);
-                        location.reload();
+
+                        window.customAlert(
+                            "Veículo excluído com sucesso!",
+                            "success",
+                        );
+
+                        const veiculosAtualizados = VeiculoStorage.Listar();
+                        RenderizarVeiculos(veiculosAtualizados);
                     },
                 );
             });
@@ -102,13 +116,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (pesquisa) {
         pesquisa.addEventListener("input", function () {
-            const texto = this.value.toLowerCase();
+            const texto = this.value.toLowerCase().trim();
 
             const filtrados = veiculos.filter((veiculo) => {
                 const cliente = ClienteStorage.obterPorId(veiculo.clienteId);
                 const nomeCliente = cliente ? cliente.nome.toLowerCase() : "";
 
                 return (
+                    (veiculo.marca || "").toLowerCase().includes(texto) ||
                     (veiculo.modelo || "").toLowerCase().includes(texto) ||
                     (veiculo.placa || "").toLowerCase().includes(texto) ||
                     nomeCliente.includes(texto)

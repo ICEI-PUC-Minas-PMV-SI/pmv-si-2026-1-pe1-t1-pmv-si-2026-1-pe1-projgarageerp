@@ -11,8 +11,17 @@
         const mobile = document.querySelector(".mobile-only");
         const campoBusca = document.querySelector(".search-input input");
         const filtroStatus = document.querySelector(".filter-select");
+        const filtroTexto = document.querySelector(".filter-text");
 
         dados.inicializar();
+
+        function atualizarTextoFiltro() {
+            if (filtroStatus && filtroTexto) {
+                const textoSelecionado =
+                    filtroStatus.options[filtroStatus.selectedIndex].text;
+                filtroTexto.textContent = textoSelecionado;
+            }
+        }
 
         // Ler o parâmetro da URL
         if (filtroStatus) {
@@ -22,6 +31,7 @@
             if (statusUrl) {
                 filtroStatus.value = statusUrl; // Define o <select> para 'atrasado'
             }
+            atualizarTextoFiltro();
         }
 
         if (!tabela || !mobile) {
@@ -242,9 +252,13 @@
         }
 
         if (filtroStatus) {
-            filtroStatus.addEventListener("change", renderizar);
+            filtroStatus.addEventListener("change", function () {
+                atualizarTextoFiltro();
+                renderizar();
+            });
         }
 
+        atualizarTextoFiltro();
         renderizar();
     });
 })();

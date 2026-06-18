@@ -61,7 +61,9 @@ document.addEventListener("DOMContentLoaded", () => {
         totalServicosHeader.textContent = `${historico.length} serviços registrados`;
     }
 
-    const totalServicosHistorico = document.getElementById("total-servicos-historico");
+    const totalServicosHistorico = document.getElementById(
+        "total-servicos-historico",
+    );
     if (totalServicosHistorico) {
         totalServicosHistorico.textContent = `${historico.length} serviços`;
     }
@@ -103,58 +105,75 @@ document.addEventListener("DOMContentLoaded", () => {
 
     lista.innerHTML = "";
 
-    historico.forEach((ordem) => {
-        const status = statusMap[ordem.status] || statusMap.pendente;
-        const dataFormatada = window.Formatters.formatarDataEHoraPorExtenso(ordem.dataCriacao || ordem.data);
-
-        let avisoHtml = "";
-        if (ordem.status === "atrasado") {
-            avisoHtml = `
-                <div class="aviso aviso-atrasado">
-                    <img src="../../assets/icons/icon-red-warning.svg" alt="" />
-                    Atenção: serviço atrasado
-                </div>
-            `;
-        } else if (ordem.status === "concluido") {
-            const dataConclusao = window.Formatters.formatarDataPorExtenso(ordem.concluidoEm || ordem.dataAtualizacao || ordem.data);
-            avisoHtml = `
-                <div class="aviso aviso-concluido">
-                    <img src="../../assets/icons/icon-green-check-circle.svg" alt="" />
-                    Concluído em ${dataConclusao}
-                </div>
-            `;
-        } else if (ordem.status === "andamento" || ordem.status === "em_andamento") {
-            const dataAndamento = window.Formatters.formatarDataPorExtenso(ordem.dataCriacao || ordem.data);
-            avisoHtml = `
-                <div class="aviso aviso-andamento">
-                    <img src="../../assets/icons/icon-orange-clock.svg" alt="" />
-                    Em andamento desde ${dataAndamento}
-                </div>
-            `;
-        }
-
-        lista.innerHTML += `
-            <a href="ordem.html?id=${ordem.id}" class="history-card ${status.cardClasse}">
-                <div class="icone-status-circular">
-                    <img src="${status.icone}" style="width: 20px; height: 20px;" alt="" />
-                </div>
-                <div class="history-topo">
-                    <div class="history-os">
-                        <div class="history-data">
-                            <img src="../../assets/icons/icon-calendar.svg" alt="Data" />
-                            ${dataFormatada}
-                        </div>
-                        <p class="history-service">
-                            ${ordem.servico || ordem.queixa || "—"}
-                        </p>
-                    </div>
-                    <div class="badge ${status.badgeClasse}">
-                        <img src="${status.icone}" alt="">
-                        ${status.texto}
-                    </div>
-                </div>
-                ${avisoHtml}
-            </a>
+    if (historico.length === 0) {
+        lista.innerHTML = `
+            <div class="sem-dados-container" style="text-align: center; padding: 2rem; color: #666;">
+                <p>Nenhuma ordem de serviço registrada para este veículo.</p>
+            </div>
         `;
-    });
+    } else {
+        historico.forEach((ordem) => {
+            const status = statusMap[ordem.status] || statusMap.pendente;
+            const dataFormatada = window.Formatters.formatarDataEHoraPorExtenso(
+                ordem.dataCriacao || ordem.data,
+            );
+
+            let avisoHtml = "";
+            if (ordem.status === "atrasado") {
+                avisoHtml = `
+                    <div class="aviso aviso-atrasado">
+                        <img src="../../assets/icons/icon-red-warning.svg" alt="" />
+                        Atenção: serviço atrasado
+                    </div>
+                `;
+            } else if (ordem.status === "concluido") {
+                const dataConclusao = window.Formatters.formatarDataPorExtenso(
+                    ordem.concluidoEm || ordem.dataAtualizacao || ordem.data,
+                );
+                avisoHtml = `
+                    <div class="aviso aviso-concluido">
+                        <img src="../../assets/icons/icon-green-check-circle.svg" alt="" />
+                        Concluído em ${dataConclusao}
+                    </div>
+                `;
+            } else if (
+                ordem.status === "andamento" ||
+                ordem.status === "em_andamento"
+            ) {
+                const dataAndamento = window.Formatters.formatarDataPorExtenso(
+                    ordem.dataCriacao || ordem.data,
+                );
+                avisoHtml = `
+                    <div class="aviso aviso-andamento">
+                        <img src="../../assets/icons/icon-orange-clock.svg" alt="" />
+                        Em andamento desde ${dataAndamento}
+                    </div>
+                `;
+            }
+
+            lista.innerHTML += `
+                <a href="ordem.html?id=${ordem.id}" class="history-card ${status.cardClasse}">
+                    <div class="icone-status-circular">
+                        <img src="${status.icone}" style="width: 20px; height: 20px;" alt="" />
+                    </div>
+                    <div class="history-topo">
+                        <div class="history-os">
+                            <div class="history-data">
+                                <img src="../../assets/icons/icon-calendar.svg" alt="Data" />
+                                ${dataFormatada}
+                            </div>
+                            <p class="history-service">
+                                ${ordem.servico || ordem.queixa || "—"}
+                            </p>
+                        </div>
+                        <div class="badge ${status.badgeClasse}">
+                            <img src="${status.icone}" alt="">
+                            ${status.texto}
+                        </div>
+                    </div>
+                    ${avisoHtml}
+                </a>
+            `;
+        });
+    }
 });

@@ -1,6 +1,7 @@
 const formulario = document.getElementById("form-veiculo");
 const selectCliente = document.getElementById("cliente");
 const inputPlaca = document.getElementById("placa");
+const inputAno = document.getElementById("ano");
 
 // Carrega clientes no select
 function carregarClientes() {
@@ -42,6 +43,13 @@ if (inputPlaca) {
     });
 }
 
+// Limitação de 4 dígitos para o Ano (Impede letras e limita comprimento)
+if (inputAno) {
+    inputAno.addEventListener("input", function (e) {
+        e.target.value = e.target.value.replace(/\D/g, "").slice(0, 4);
+    });
+}
+
 formulario.addEventListener("submit", function (evento) {
     evento.preventDefault();
 
@@ -49,14 +57,35 @@ formulario.addEventListener("submit", function (evento) {
     const marca = document.getElementById("marca").value.trim();
     const modelo = document.getElementById("modelo").value.trim();
     const placa = inputPlaca.value.trim();
-    const ano = document.getElementById("ano").value.trim();
+    const ano = inputAno.value.trim();
 
-    if (!clienteId || !marca || !modelo || !placa || !ano) {
-        window.customAlert("Preencha todos os campos!", "warning");
+    if (!clienteId) {
+        window.customAlert("Por favor, selecione o cliente proprietário.");
+        selectCliente.focus();
+        return;
+    }
+    if (!marca) {
+        window.customAlert("O campo Marca é obrigatório.");
+        document.getElementById("marca").focus();
+        return;
+    }
+    if (!modelo) {
+        window.customAlert("O campo Modelo é obrigatório.");
+        document.getElementById("modelo").focus();
+        return;
+    }
+    if (!placa) {
+        window.customAlert("O campo Placa é obrigatório.");
+        inputPlaca.focus();
+        return;
+    }
+    if (!ano || ano.length < 4) {
+        window.customAlert("O campo Ano deve conter 4 dígitos válidos.");
+        inputAno.focus();
         return;
     }
 
-    // FIX: VeiculoStorage agora delega para ClienteStorage (storage unificado).
+    // Salva o veículo no storage unificado e captura o retorno para descobrir o ID gerado
     VeiculoStorage.Salvar({
         clienteId,
         marca,

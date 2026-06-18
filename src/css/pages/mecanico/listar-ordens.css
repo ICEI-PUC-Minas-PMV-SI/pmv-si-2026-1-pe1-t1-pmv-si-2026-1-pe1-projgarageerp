@@ -195,12 +195,16 @@ ge-sidebar:not(:defined) {
     min-height: 39.652px;
     display: flex;
     align-items: center;
+    gap: 8px;
     position: relative;
     border: 1.25px solid var(--color-border);
     border-radius: 8px;
-    background-color: #fff;
+    padding: 0 14px;
+    background-color: var(--color-bg-card);
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
     cursor: pointer;
-    flex-shrink: 0;
 }
 
 @media (min-width: 768px) {
@@ -209,12 +213,22 @@ ge-sidebar:not(:defined) {
     }
 }
 
+.filter-dropdown:hover {
+    border-color: #a4b2c6;
+}
+
 .filter-dropdown img {
-    position: absolute;
-    left: 12px;
-    top: 9.83px; /* Posição exata do ícone no Figma node 73:3475 */
-    width: 19.98px;
-    height: 19.98px;
+    width: 19.982px;
+    height: 19.982px;
+    flex-shrink: 0;
+}
+
+.filter-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1e293b;
+    pointer-events: none;
+    user-select: none;
 }
 
 .filter-select {

@@ -5,6 +5,7 @@ const veiculo = VeiculoStorage.Buscar(id);
 
 const selectCliente = document.getElementById("cliente");
 const inputPlaca = document.getElementById("placa");
+const inputAno = document.getElementById("ano");
 const clientes = ClienteStorage.listar();
 
 clientes.forEach((cliente) => {
@@ -17,6 +18,8 @@ clientes.forEach((cliente) => {
 if (veiculo) {
     // FIX: garantir string para o value do select
     selectCliente.value = String(veiculo.clienteId || "");
+
+    selectCliente.disabled = true;
 
     document.getElementById("marca").value = veiculo.marca || "";
     document.getElementById("modelo").value = veiculo.modelo || "";
@@ -43,23 +46,61 @@ if (inputPlaca) {
     });
 }
 
+// Limitação de 4 dígitos para o Ano (Impede letras e limita comprimento)
+if (inputAno) {
+    inputAno.addEventListener("input", function (e) {
+        e.target.value = e.target.value.replace(/\D/g, "").slice(0, 4);
+    });
+}
+
 const formulario = document.getElementById("form-veiculo");
 
 formulario.addEventListener("submit", function (evento) {
     evento.preventDefault();
 
+    const marca = document.getElementById("marca").value.trim();
+    const modelo = document.getElementById("modelo").value.trim();
+    const placa = inputPlaca.value.trim();
+    const ano = document.getElementById("ano").value.trim();
+    const clienteId = selectCliente.value;
+
+    if (!clienteId) {
+        window.customAlert("Selecione um cliente para o veículo.");
+        return;
+    }
+    if (!marca) {
+        window.customAlert("O campo Marca é obrigatório.");
+        document.getElementById("marca").focus(); // Coloca o cursor no campo com erro
+        return;
+    }
+    if (!modelo) {
+        window.customAlert("O campo Modelo é obrigatório.");
+        document.getElementById("modelo").focus();
+        return;
+    }
+    if (!placa) {
+        window.customAlert("O campo Placa é obrigatório.");
+        inputPlaca.focus();
+        return;
+    }
+    if (!ano || ano.length < 4) {
+        window.customAlert("O campo Ano deve conter 4 dígitos válidos.");
+        inputAno.focus();
+        return;
+    }
+
     const veiculoAtualizado = {
         id: veiculo.id,
-        clienteId: document.getElementById("cliente").value,
-        marca: document.getElementById("marca").value,
-        modelo: document.getElementById("modelo").value,
-        placa: inputPlaca.value,
-        ano: document.getElementById("ano").value,
+        clienteId: clienteId,
+        marca: marca,
+        modelo: modelo,
+        placa: placa,
+        ano: ano,
     };
 
     VeiculoStorage.Atualizar(veiculoAtualizado);
 
-    window.customAlert("Veículo atualizado!", "success");
+    window.customAlert("Veículo atualizado com sucesso!", "success");
 
     window.location.href = "listar-veiculos.html";
 });
