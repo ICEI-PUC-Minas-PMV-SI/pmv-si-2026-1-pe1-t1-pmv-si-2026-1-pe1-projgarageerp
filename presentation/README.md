@@ -1,47 +1,58 @@
-# Apresentação
+# 📊 Apresentação do Projeto
 
-Faça uma apresentação de um resumo de todos o processo de desenvolvimento e no final apresente a solução desenvolvida, usando um pequeno vídeo.
+Este repositório centraliza os materiais de comunicação, apresentações executivas e a demonstração prática da solução desenvolvida para o **GarageERP** pela Turma 1 (Grupo 4) do Eixo 1 da PUC Minas (1/2026). Abaixo, você encontra o reprodutor visual do sistema, seguido pelo índice de artefatos oficiais produzidos para a banca avaliadora.
 
-Liste os arquivos produzidos e postados nesta pasta, com suas localizaçãoes e descrição do conteúdo neste arquivo Readme.md.
+---
 
+## 🎥 Vídeo de Demonstração
 
-* [Pitch inicial](./sample-pitch.pdf) -- arquivo com os slides da apresentação inicial
-* [Apresentação final](./sample-presentation.pdf) -- arquivo com os slides da apresentação final
-* [Vídeo de demonstração](./sample-video.mp4) -- arquivo com a demonstração do funcionamento do sistema
+O vídeo a seguir possui duração exata de **2 minutos e 42 segundos**, trazendo uma introdução objetiva sobre o problema do setor e uma navegação prática narrada pelas principais funcionalidades e perfis de acesso do sistema.
 
-O conjunto de slides deve ser apresentado em um arquivo PowerPoint ou PDF. A apresentação do projeto deve contemplar todos os itens trabalhados nos demais artefatos. Alguns aspectos que devem ser contemplados na apresentação são listados a seguir.
+<video src="https://github.com/user-attachments/assets/34c3e8d0-00e0-4086-bf3d-68277977e0bd" controls width="100%">
+  Seu navegador não suporta a reprodução de vídeos nativos. [Clique aqui para assistir direto na Issue](https://github.com/user-attachments/assets/34c3e8d0-00e0-4086-bf3d-68277977e0bd).
+</video>
 
-## Título do Projeto
+_(Nota: Caso o reprodutor acima não carregue devido às restrições do seu navegador, utilize a lista de links na seção abaixo)._
 
-Nome e marca do projeto
+---
 
-## Identidade Visual (Marca, Design)
+## 🗂️ Arquivos Produzidos e Localização
 
-O grupo deve ter o cuidado em utilizar figuras, imagens, e cores dentro do contexto da solução proposta, de forma a manter a temática do problema.
+Todos os documentos oficiais foram consolidados em formato PDF para garantir compatibilidade universal, preservação do design original e leitura direta pelo navegador.
 
-> **Links Úteis**:
-> - [10 dicas de design para slides](https://rockcontent.com/blog/design-para-slides/)
-> - [7 dicas de design para criar apresentações de PowerPoint incríveis e eficientes](https://www.shutterstock.com/pt/blog/7-dicas-de-design-para-criar-apresentacoes-de-powerpoint-incriveis-e-eficientes)
-> - [Especialista do TED dá 10 dicas para criar slides eficazes e bonitos](https://soap.com.br/blog/especialista-do-ted-da-10-dicas-para-criar-slides-eficazes-e-bonitos)
+- 🗃️ **[Pitch Inicial (Apresentação de Ideia)](./GarageERP-Pitch-Inicial.pdf)** — Slides em PDF contendo a defesa do problema, justificativa, público-alvo e escopo inicial do projeto.
+- 📈 **[Apresentação Final (Projeto Consolidado)](./GarageERP-Apresentacao-Final.pdf)** — Slides em PDF detalhando todo o processo de desenvolvimento, personas, engenharia de requisitos (RF-01 ao RF-04) e resultados de testes.
+- 🎥 **[Vídeo de Demonstração Técnica](https://github.com/user-attachments/assets/34c3e8d0-00e0-4086-bf3d-68277977e0bd)** — Arquivo de mídia com a validação prática das funcionalidades e fluxos operacionais mapeados.
 
-## Conjunto de Slides (Estrutura)
+---
 
-O grupo deve distribuir de forma coerente o conteúdo a ser apresentado, dentro do tempo determinado. Importante ressaltar a importância da descrição clara de todo o andamento do projeto, insumos gerados e requisitos atendidos. Os arquivos devem ser postados na pasta [presentation](../presentation)
- 
-> **Links Úteis**:
-> - [A regra 10-20-30 para apresentações de sucesso](https://revistapegn.globo.com/Noticias/noticia/2014/07/regra-10-20-30-para-apresentacoes-de-sucesso.html)
-> - [Top Tips for Effective Presentations](https://www.skillsyouneed.com/present/presentation-tips.html)
-> - [How to make a great presentation](https://www.ted.com/playlists/574/how_to_make_a_great_presentation)
+## 🎯 Detalhes de Escopo dos Materiais
 
-## Vídeo de demonstração
+### 🛠️ Título do Projeto e Identidade Visual
 
-O grupo deverá gravar um vídeo de demonstração do site desenvolvido.
+O **GarageERP** foi projetado com uma identidade visual moderna voltada ao setor mecânico. O ecossistema visa resolver o problema de micro e pequenas oficinas que ainda dependem de métodos manuais e ferramentas inadequadas frente à crescente digitalização de grandes centros automotivos (em um cenário nacional de 2,69 milhões de novos veículos emplacados em 2025).
 
-> **Algumas informações úteis**
-> - O vídeo deve se limitar a 5 minutos e deve apresentar os objetivos do projeto antes de mostrar o sistema desenvolvido.
-> - O vídeo deve possuir uma narração que explica o que está sendo apresentado.
-> - Foque nas principais tarefas que o seu sistema desenvolveu. Não é necessário apresentar cada detalhe implementado.
-> - Não é necessário que todos os integrantes do grupo participem da gravação.
-> - Não é necessário que a face de algum integrante do grupo apareça na gravação.
-> - Uma ótima ferramenta open-source para gravação de vídeos é o [OBS](https://obsproject.com/pt-br/download)
+### 📋 Estrutura e Telas do Sistema
 
+A solução foi apresentada com foco em três perfis de usuários bem definidos, cujas interfaces foram validadas no slide:
+
+1. **Mecânico (Perfil João Lopes):** Focado em visualização de ordens de serviço pendentes, início e conclusão ágil de tarefas.
+2. **Administrativo (Perfil Mário Santos):** Gerenciamento centralizado de painel administrativo, cadastro rápido de clientes e veículos, e emissão de novas O.S.
+3. **Proprietário (Perfil Carlos Silva):** Painel de visão estratégica com relatórios de performance operacional, taxa de conclusão, taxa de atraso e faturamento mensal da oficina.
+
+### 🔬 Testes e Resultados Obtidos
+
+Os testes de usabilidade e desempenho do GarageERP contaram com **4 usuários convidados** compatíveis com o público-alvo, atingindo métricas de excelência:
+
+- **100%** de sucesso na execução dos cenários de teste (cadastros e fluxos de O.S.).
+- **83%** dos participantes classificaram o sistema como fácil de usar.
+- **4,5 / 5** de média na satisfação geral das avaliações.
+- Impacto operacional estimado de **-85% no uso de papel** e **+70% em maior controle e organização** interna.
+
+---
+
+### ⚖️ Licença e Direitos Autorais
+
+Este projeto foi desenvolvido como objeto de estudo acadêmico para o curso de Sistemas de Informação da PUC Minas.
+
+Copyright © 2026 GarageERP. Todos os direitos reservados.
