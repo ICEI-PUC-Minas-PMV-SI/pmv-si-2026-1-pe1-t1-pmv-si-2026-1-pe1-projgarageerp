@@ -1,5 +1,9 @@
 # 📊 Apresentação do Projeto
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/42bbfd7c-4f3c-44ec-9cd8-5e894969879b" alt="GarageERP Logo" width="180">
+</p>
+
 Este repositório centraliza os materiais de comunicação, apresentações executivas e a demonstração prática da solução desenvolvida para o **GarageERP** pela Turma 1 (Grupo 4) do Eixo 1 da PUC Minas (1/2026). Abaixo, você encontra o reprodutor visual do sistema, seguido pelo índice de artefatos oficiais produzidos para a banca avaliadora.
 
 ---
@@ -20,8 +24,8 @@ _(Nota: Caso o reprodutor acima não carregue devido às restrições do seu nav
 
 Todos os documentos oficiais foram consolidados em formato PDF para garantir compatibilidade universal, preservação do design original e leitura direta pelo navegador.
 
-- 🗃️ **[Pitch Inicial (Apresentação de Ideia)](./GarageERP-Pitch-Inicial.pdf)** — Slides em PDF contendo a defesa do problema, justificativa, público-alvo e escopo inicial do projeto.
-- 📈 **[Apresentação Final (Projeto Consolidado)](./GarageERP-Apresentacao-Final.pdf)** — Slides em PDF detalhando todo o processo de desenvolvimento, personas, engenharia de requisitos (RF-01 ao RF-04) e resultados de testes.
+- 🗃️ **[Pitch Inicial (Apresentação de Ideia)](./GarageERP-Pitch-Inicial.pdf)** — Slides em PDF contendo a defesa do problema, justificativa, público-alvo e engenharia de requisitos (RF-01 ao RF-04).
+- 📈 **[Apresentação Final (Projeto Consolidado)](./GarageERP-Apresentacao-Final.pdf)** — Slides em PDF detalhando todo o processo de desenvolvimento, personas e resultados de testes.
 - 🎥 **[Vídeo de Demonstração Técnica](https://github.com/user-attachments/assets/34c3e8d0-00e0-4086-bf3d-68277977e0bd)** — Arquivo de mídia com a validação prática das funcionalidades e fluxos operacionais mapeados.
 
 ---
