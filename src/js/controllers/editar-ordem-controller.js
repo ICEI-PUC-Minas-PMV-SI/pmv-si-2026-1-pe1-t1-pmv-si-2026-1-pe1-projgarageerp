@@ -168,6 +168,13 @@
                     return;
                 }
 
+                sessionStorage.setItem(
+                    "pendingToast",
+                    JSON.stringify({
+                        mensagem: "Ordem de serviço atualizada com sucesso!",
+                        tipo: "success",
+                    }),
+                );
                 window.location.href = "ordem.html?id=" + ordem.id;
             });
         }

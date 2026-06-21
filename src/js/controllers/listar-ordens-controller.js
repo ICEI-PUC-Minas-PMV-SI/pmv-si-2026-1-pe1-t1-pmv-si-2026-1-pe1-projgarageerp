@@ -243,6 +243,10 @@
                 function () {
                     dados.excluirOrdem(id);
                     renderizar();
+                    window.customAlert(
+                        "Ordem de serviço excluída com sucesso!",
+                        "success",
+                    );
                 },
             );
         });

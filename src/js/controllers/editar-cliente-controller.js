@@ -15,6 +15,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const urlParams = new URLSearchParams(window.location.search);
     const clienteId = urlParams.get("id");
 
+    // Detecta de onde o usuário veio para determinar o destino correto
+    const veioDeListagem = document.referrer.includes("listar-clientes");
+
+    // Cancelar: volta para a listagem se veio de lá, senão para o perfil do cliente
+    const urlCancelar = veioDeListagem
+        ? "listar-clientes.html"
+        : `cliente.html?id=${clienteId}`;
+
+    // Salvar: sempre vai para o perfil do cliente
+    const urlSalvar = `cliente.html?id=${clienteId}`;
+
     if (!clienteId) {
         sessionStorage.setItem(
             "pendingToast",
@@ -151,15 +162,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 tipo: "success",
             }),
         );
-        // Redireciona de volta para a tela de detalhes do cliente
-        window.location.href = `cliente.html?id=${clienteId}`;
+        // Redireciona para o perfil do cliente com as alterações aplicadas
+        window.location.href = urlSalvar;
     });
 
     // Acao do botao cancelar
     if (btnCancelar) {
         btnCancelar.addEventListener("click", (e) => {
             e.preventDefault();
-            window.location.href = `cliente.html?id=${clienteId}`;
+            window.location.href = urlCancelar;
         });
     }
 });

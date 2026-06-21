@@ -34,6 +34,30 @@
         const params = new URLSearchParams(window.location.search);
         const clienteIdUrl = params.get("clienteId");
         const veiculoIdUrl = params.get("veiculoId");
+
+        // Determina para onde redirecionar ao cancelar, com base nos params da URL:
+        function obterUrlCancelarOrdem() {
+            // Verifica se a página anterior era o dashboard
+            if (
+                document.referrer &&
+                document.referrer.includes("dashboard.html")
+            ) {
+                return "dashboard.html";
+            }
+
+            if (veiculoIdUrl) return `veiculo.html?id=${veiculoIdUrl}`;
+            if (clienteIdUrl) return `cliente.html?id=${clienteIdUrl}`;
+            return "listar-ordens.html";
+        }
+
+        const botaoCancelar = document.querySelector(".btn-cancelar");
+        if (botaoCancelar) {
+            botaoCancelar.addEventListener("click", function (e) {
+                e.preventDefault();
+                window.location.href = obterUrlCancelarOrdem();
+            });
+        }
+
         if (clienteIdUrl) {
             campoCliente.value = clienteIdUrl;
             popularVeiculos(clienteIdUrl);
@@ -165,6 +189,13 @@
                 return;
             }
 
+            sessionStorage.setItem(
+                "pendingToast",
+                JSON.stringify({
+                    mensagem: "Ordem de serviço criada com sucesso!",
+                    tipo: "success",
+                }),
+            );
             window.location.href = "ordem.html?id=" + ordem.id;
         }
     });

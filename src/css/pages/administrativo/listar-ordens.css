@@ -5,7 +5,7 @@
 
 :root {
     /* Superfícies e Componentes Plásticos */
-    --color-bg-body: #f3f4f6;
+    --color-bg-body: #f8f9fa;
     --color-bg-card: #ffffff;
     --color-bg-sidebar-mobile: #f8f9fa;
 
@@ -25,9 +25,9 @@
 }
 
 * {
-    box-sizing: border-box;
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 html,
@@ -148,7 +148,7 @@ ge-sidebar:not(:defined) {
 
 .card {
     background-color: var(--color-bg-card);
-    border: 1px solid var(--color-border);
+    border: 1.246px solid var(--color-border);
     border-radius: 8px;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
     display: flex;

@@ -3,6 +3,10 @@ const selectCliente = document.getElementById("cliente");
 const inputPlaca = document.getElementById("placa");
 const inputAno = document.getElementById("ano");
 
+// Lê a origem da URL uma única vez — reutilizada no cancelar e no submit
+const urlParams = new URLSearchParams(window.location.search);
+const clienteIdUrl = urlParams.get("clienteId");
+
 // Carrega clientes no select
 function carregarClientes() {
     selectCliente.innerHTML = '<option value="">Selecione...</option>';
@@ -13,9 +17,6 @@ function carregarClientes() {
         option.textContent = cliente.nome;
         selectCliente.appendChild(option);
     });
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const clienteIdUrl = urlParams.get("clienteId");
 
     if (clienteIdUrl && selectCliente) {
         selectCliente.value = clienteIdUrl;
@@ -86,7 +87,7 @@ formulario.addEventListener("submit", function (evento) {
     }
 
     // Salva o veículo no storage unificado e captura o retorno para descobrir o ID gerado
-    VeiculoStorage.Salvar({
+    const novoVeiculo = VeiculoStorage.Salvar({
         clienteId,
         marca,
         modelo,
@@ -94,11 +95,18 @@ formulario.addEventListener("submit", function (evento) {
         ano,
     });
 
-    window.customAlert("Veículo cadastrado com sucesso!", "success");
-
-    setTimeout(() => {
-        window.location.href = `cliente.html?id=${clienteId}`;
-    }, 500);
+    sessionStorage.setItem(
+        "pendingToast",
+        JSON.stringify({
+            mensagem: "Veículo cadastrado com sucesso!",
+            tipo: "success",
+        }),
+    );
+    // Redireciona para a página de detalhes do veículo recém-cadastrado
+    window.location.href =
+        novoVeiculo && novoVeiculo.id
+            ? `veiculo.html?id=${novoVeiculo.id}`
+            : "listar-veiculos.html";
 });
 
 // Ação do botão cancelar
@@ -106,6 +114,9 @@ const btnCancelar = document.querySelector(".btn-cancelar");
 if (btnCancelar) {
     btnCancelar.addEventListener("click", function (evento) {
         evento.preventDefault();
-        window.location.href = "listar-veiculos.html";
+        // Se veio do perfil de um cliente, retorna para lá; senão vai para a listagem
+        window.location.href = clienteIdUrl
+            ? `cliente.html?id=${clienteIdUrl}`
+            : "listar-veiculos.html";
     });
 }

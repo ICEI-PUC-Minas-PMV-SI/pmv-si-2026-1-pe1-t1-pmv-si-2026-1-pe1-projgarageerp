@@ -24,6 +24,13 @@ window.customAlert = function (mensagem, tipo = "warning", duracao = 5000) {
         document.body.appendChild(container);
     }
 
+    // Se já existir um aviso na tela, remove ele na hora antes de mostrar o novo
+    if (container.children.length > 0) {
+        Array.from(container.children).forEach((oldToast) => {
+            oldToast.remove(); // Limpa imediatamente sem esperar a transição acabar
+        });
+    }
+
     const toast = document.createElement("div");
     toast.style.pointerEvents = "auto";
     toast.style.display = "flex";

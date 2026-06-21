@@ -9,7 +9,7 @@ body {
     height: 100vh;
     overflow: hidden;
     font-family: "Inter", sans-serif;
-    background-color: #f3f4f6;
+    background-color: #f8f9fa;
 }
 
 /*
@@ -92,11 +92,9 @@ ge-sidebar:not(:defined) {
 /* Card do Formulário */
 .form-card {
     background-color: var(--color-white);
-    border: 1px solid var(--color-border);
+    border: 1.246px solid var(--color-border);
     border-radius: 8px;
-    box-shadow:
-        0px 1px 1.5px rgba(0, 0, 0, 0.1),
-        0px 1px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .form-header {
@@ -237,7 +235,7 @@ textarea.form-control {
 }
 
 /* Botão Secundário (Cancelar) */
-.btn-cancel {
+.btn-cancelar {
     background-color: var(--color-btn-cancel);
     color: var(--color-text-main);
     border: 1px solid transparent;
@@ -252,7 +250,7 @@ textarea.form-control {
         border-color 0.2s;
 }
 
-.btn-cancel:hover {
+.btn-cancelar:hover {
     background-color: var(
         --color-btn-cancel-hover
     ); /* Fica mais claro que o original */

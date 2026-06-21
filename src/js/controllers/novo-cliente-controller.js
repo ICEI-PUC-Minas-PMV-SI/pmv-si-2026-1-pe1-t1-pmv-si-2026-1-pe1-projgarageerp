@@ -108,7 +108,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Cria o cliente no localStorage
-        window.ClienteStorage.criar({ nome, telefone, email });
+        const novoCliente = window.ClienteStorage.criar({
+            nome,
+            telefone,
+            email,
+        });
 
         // Salva notificação de sucesso pendente no sessionStorage e redireciona
         sessionStorage.setItem(
@@ -118,14 +122,25 @@ document.addEventListener("DOMContentLoaded", () => {
                 tipo: "success",
             }),
         );
-        window.location.href = "listar-clientes.html";
+        window.location.href =
+            novoCliente && novoCliente.id
+                ? `cliente.html?id=${novoCliente.id}`
+                : "listar-clientes.html";
     });
 
     // Acao do botao cancelar
     if (btnCancelar) {
         btnCancelar.addEventListener("click", (e) => {
             e.preventDefault();
-            window.location.href = "listar-clientes.html";
+            // Se a página anterior for o dashboard, volta para lá. Caso contrário, vai para a listagem.
+            if (
+                document.referrer &&
+                document.referrer.includes("dashboard.html")
+            ) {
+                window.location.href = "dashboard.html";
+            } else {
+                window.location.href = "listar-clientes.html";
+            }
         });
     }
 });

@@ -35,6 +35,7 @@
             const ordem = dados.obterOrdem(id);
 
             if (!ordem) {
+                window.customAlert("Ordem de Serviço não encontrada!", "error");
                 mostrarOrdemNaoEncontrada();
                 return;
             }
@@ -806,6 +807,7 @@
                     removerFotoSelecionada(
                         botaoRemoverFoto.dataset.removerFoto,
                     );
+                    window.customAlert("Foto removida!", "success");
                     return;
                 }
 
@@ -822,6 +824,10 @@
                 if (botaoStatus) {
                     dados.alterarStatus(id, botaoStatus.dataset.alterarStatus);
                     renderizar();
+                    window.customAlert(
+                        "Status da ordem atualizado!",
+                        "success",
+                    );
                     return;
                 }
 
@@ -914,7 +920,7 @@
                 }
 
                 if (arquivo.size > LIMITE_TAMANHO_FOTO) {
-                    mensagens.push(arquivo.name + ": tamanho acima de 500 KB.");
+                    mensagens.push(arquivo.name + ": tamanho acima de 5 MB.");
                     return;
                 }
 
@@ -996,6 +1002,13 @@
                 "Deseja excluir a ordem de serviço #" + ordemId + "?",
                 function () {
                     dados.excluirOrdem(ordemId);
+                    sessionStorage.setItem(
+                        "pendingToast",
+                        JSON.stringify({
+                            mensagem: "Ordem de serviço excluída com sucesso!",
+                            tipo: "success",
+                        }),
+                    );
                     window.location.href = "listar-ordens.html";
                 },
             );
@@ -1059,6 +1072,7 @@
                 return;
             }
 
+            window.customAlert("Serviço adicionado com sucesso!", "success");
             fotosSelecionadas = [];
             renderizar();
         }
@@ -1069,6 +1083,10 @@
                 function () {
                     dados.excluirServico(id, servicoId);
                     renderizar();
+                    window.customAlert(
+                        "Serviço excluído com sucesso!",
+                        "success",
+                    );
                 },
             );
         }
@@ -1161,6 +1179,7 @@
                 return;
             }
 
+            window.customAlert("Serviço atualizado com sucesso!", "success");
             servicoSendoEditadoId = null;
             fotosSelecionadas = [];
             renderizar();

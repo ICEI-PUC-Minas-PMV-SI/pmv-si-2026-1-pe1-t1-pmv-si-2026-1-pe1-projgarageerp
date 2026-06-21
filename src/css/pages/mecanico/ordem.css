@@ -8,7 +8,7 @@
     /* Design Tokens de Espaçamento */
     --main-padding-desktop: 32px;
     --main-padding-mobile: 16px;
-    
+
     /* Altura do cabeçalho global do sistema */
     --global-header-height: 60px;
 }
@@ -20,7 +20,7 @@ body {
     padding: 0;
     height: 100vh;
     overflow: hidden;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     background-color: var(--cor-background);
 }
 
@@ -42,7 +42,9 @@ body {
 }
 
 .main-content {
-    padding: var(--main-padding-mobile); /* 16px no mobile conforme dashboard/OS */
+    padding: var(
+        --main-padding-mobile
+    ); /* 16px no mobile conforme dashboard/OS */
     overflow-y: auto;
 }
 
@@ -79,7 +81,9 @@ ge-sidebar:not(:defined) {
 
 @media (min-width: 1024px) {
     .main-content {
-        padding: var(--main-padding-desktop); /* 32px no desktop conforme dashboard/OS */
+        padding: var(
+            --main-padding-desktop
+        ); /* 32px no desktop conforme dashboard/OS */
     }
 }
 
@@ -109,7 +113,7 @@ h3 {
     border-radius: 8px;
     padding: 24px;
     margin-bottom: 24px;
-    box-shadow: 0px 1px 1.5px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .cartao h2 {
@@ -274,8 +278,10 @@ h3 {
 .servico-registrado {
     border: 1.246px solid var(--border-color);
     border-radius: 8px;
-    padding: 16px 24px;
-    box-shadow: 0px 1px 1.5px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.1);
+    padding: 22px 24px;
+    box-shadow:
+        0px 1px 1.5px rgba(0, 0, 0, 0.1),
+        0px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .servico-cabecalho {
@@ -304,10 +310,19 @@ h3 {
     font-size: 12px;
 }
 
+.acoes-servico {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icone-titulo-img,
+.icone-status-img,
 .icone-acao {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
     cursor: pointer;
-    width: 16px;
-    height: 16px;
 }
 
 .titulo-servico {
@@ -427,7 +442,9 @@ h3 {
     color: var(--cor2);
     margin-bottom: 24px;
     cursor: pointer;
-    transition: border-color 0.2s, background-color 0.2s;
+    transition:
+        border-color 0.2s,
+        background-color 0.2s;
 }
 
 .area-upload:hover,
@@ -508,7 +525,7 @@ h3 {
 
 .botao {
     width: 100%;
-    height: 56px;
+    height: 52px;
     background: var(--cor-default);
     color: #ffffff;
     border: none;
@@ -520,7 +537,9 @@ h3 {
     justify-content: center;
     gap: 8px;
     cursor: pointer;
-    box-shadow: 0px 1px 1.5px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.1);
+    box-shadow:
+        0px 1px 1.5px rgba(0, 0, 0, 0.1),
+        0px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .botao-concluido {
@@ -532,9 +551,22 @@ h3 {
 }
 
 .botao-secundario {
-    background: #ffffff;
-    color: var(--cor1);
-    border: 1.25px solid var(--border-color);
+    background: #e5e7eb;
+    color: #1f2937;
+    height: 52px;
+    border: none;
+    border-radius: 8px;
+    padding: 0 22px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow:
+        0px 1px 1.5px rgba(0, 0, 0, 0.1),
+        0px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .botao-secundario:hover {
@@ -556,11 +588,6 @@ h3 {
     padding: 12px;
     margin-top: 12px;
     background: rgba(219, 234, 254, 0.5);
-}
-
-.icone-status-img {
-    width: 20px;
-    height: 20px;
 }
 
 .bloco-status p {

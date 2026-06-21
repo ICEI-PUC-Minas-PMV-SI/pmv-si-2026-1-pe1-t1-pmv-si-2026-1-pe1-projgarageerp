@@ -3,6 +3,22 @@ const id = parametros.get("id");
 
 const veiculo = VeiculoStorage.Buscar(id);
 
+// Detecta a origem para definir o destino correto ao cancelar e ao salvar
+const veioDeListagem = document.referrer.includes("listar-veiculos");
+
+function obterUrlCancelar() {
+    // Veio direto da listagem de veículos
+    if (veioDeListagem) return "listar-veiculos.html";
+    if (veiculo && veiculo.clienteId)
+        return `cliente.html?id=${veiculo.clienteId}`;
+    return "listar-veiculos.html";
+}
+
+function obterUrlSalvar() {
+    // Após editar, sempre exibe os detalhes do veículo
+    return veiculo ? `veiculo.html?id=${veiculo.id}` : "listar-veiculos.html";
+}
+
 const selectCliente = document.getElementById("cliente");
 const inputPlaca = document.getElementById("placa");
 const inputAno = document.getElementById("ano");
@@ -100,9 +116,15 @@ formulario.addEventListener("submit", function (evento) {
 
     VeiculoStorage.Atualizar(veiculoAtualizado);
 
-    window.customAlert("Veículo atualizado com sucesso!", "success");
+    sessionStorage.setItem(
+        "pendingToast",
+        JSON.stringify({
+            mensagem: "Veículo atualizado com sucesso!",
+            tipo: "success",
+        }),
+    );
 
-    window.location.href = "listar-veiculos.html";
+    window.location.href = obterUrlSalvar();
 });
 
 // Ação do botão cancelar
@@ -110,6 +132,6 @@ const btnCancelar = document.querySelector(".btn-cancelar");
 if (btnCancelar) {
     btnCancelar.addEventListener("click", function (evento) {
         evento.preventDefault();
-        window.location.href = "listar-veiculos.html";
+        window.location.href = obterUrlCancelar();
     });
 }

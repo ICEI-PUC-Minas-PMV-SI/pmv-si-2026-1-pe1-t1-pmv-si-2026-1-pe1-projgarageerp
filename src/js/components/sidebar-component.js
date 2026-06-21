@@ -741,6 +741,14 @@ class GarageErpSidebar extends HTMLElement {
             logoutBtn.addEventListener("click", () => {
                 // Limpa os tokens/status de perfil logado
                 localStorage.removeItem("perfilLogado");
+                // Guarda o aviso para a tela de login capturar
+                sessionStorage.setItem(
+                    "pendingToast",
+                    JSON.stringify({
+                        mensagem: "Até logo! Você saiu do sistema.",
+                        tipo: "success",
+                    }),
+                );
                 // Redireciona para o login
                 window.location.href = "../../index.html";
             });
