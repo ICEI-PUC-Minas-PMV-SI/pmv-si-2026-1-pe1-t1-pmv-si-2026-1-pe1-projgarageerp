@@ -15,7 +15,7 @@ Os testes de software seguiram a abordagem de caixa-preta, avaliando o comportam
 | **Resultado esperado** | O cliente será cadastrado e estará já disponível para o cadastro de veículo. |
 | **Dados de entrada** | Informações do cliente. |
 | **Resultado obtido** | O cliente foi cadastrado no sistema. |
-| **Evidência em vídeo** | 🎬[RF-01 - Cadastrar Clientes](https://github.com/user-attachments/assets/6009eaf6-05c3-43d0-ab0e-68f6d888c499) |
+| **Evidência em vídeo** | <video src="https://github.com/user-attachments/assets/6009eaf6-05c3-43d0-ab0e-68f6d888c499" controls width="300" preload="none">Seu navegador não suporta vídeos.</video><br>🎬 _[Caso não carregue, clique aqui para assistir direto](https://github.com/user-attachments/assets/6009eaf6-05c3-43d0-ab0e-68f6d888c499)_ |
 
 ## RF-02 — Cadastrar Veículos
 
@@ -26,7 +26,7 @@ Os testes de software seguiram a abordagem de caixa-preta, avaliando o comportam
 | **Resultado esperado** | O veículo será cadastrado e vinculado a um cliente já existente no sistema e estará disponível para criação de ordem de serviços. |
 | **Dados de entrada** | Informações do veículo. |
 | **Resultado obtido** | O veículo foi cadastrado no sistema. |
-| **Evidência em vídeo** | 🎬[RF-02 - Cadastrar Veículos](https://github.com/user-attachments/assets/c501ad5c-8b4f-482c-9a0d-f6d0841b8b5e) |
+| **Evidência em vídeo** | <video src="https://github.com/user-attachments/assets/c501ad5c-8b4f-482c-9a0d-f6d0841b8b5e" controls width="300" preload="none">Seu navegador não suporta vídeos.</video><br>🎬 _[Caso não carregue, clique aqui para assistir direto](https://github.com/user-attachments/assets/c501ad5c-8b4f-482c-9a0d-f6d0841b8b5e)_ |
 
 ## RF-03 — Abertura de Ordem de Serviço
 
@@ -37,7 +37,7 @@ Os testes de software seguiram a abordagem de caixa-preta, avaliando o comportam
 | **Resultado esperado** | A ordem será criada e já aparecerá tanto na listagem na página `listar-ordem.html`, quanto na página `dashboard.html` de todos os perfis. |
 | **Dados de entrada** | Informações da solicitação da ordem. |
 | **Resultado obtido** | A ordem de serviço foi cadastrada e disponível para ser iniciada. |
-| **Evidência em vídeo** | 🎬[RF-03 - Abertura de Ordem de Serviço](https://github.com/user-attachments/assets/13c97208-06c0-4d5b-a7cc-1cb7180604a0) |
+| **Evidência em vídeo** | <video src="https://github.com/user-attachments/assets/13c97208-06c0-4d5b-a7cc-1cb7180604a0" controls width="300" preload="none">Seu navegador não suporta vídeos.</video><br>🎬 _[Caso não carregue, clique aqui para assistir direto](https://github.com/user-attachments/assets/13c97208-06c0-4d5b-a7cc-1cb7180604a0)_ |
 
 ## RF-04 — Filtrar Ordens de Serviço
 
@@ -48,7 +48,7 @@ Os testes de software seguiram a abordagem de caixa-preta, avaliando o comportam
 | **Resultado esperado** | A lista será filtrada de acordo com a opção selecionada. |
 | **Dados de entrada** | Tipo de status da solicitação |
 | **Resultado obtido** | A lista foi filtrada de acordo com a seleção. |
-| **Evidência em vídeo** | 🎬[RF-04 - Filtrar Ordens de Serviço](https://github.com/user-attachments/assets/ca37fda6-fa5f-429a-9180-298b359c6d32) |
+| **Evidência em vídeo** | <video src="https://github.com/user-attachments/assets/ca37fda6-fa5f-429a-9180-298b359c6d32" controls width="300" preload="none">Seu navegador não suporta vídeos.</video><br>🎬 _[Caso não carregue, clique aqui para assistir direto](https://github.com/user-attachments/assets/ca37fda6-fa5f-429a-9180-298b359c6d32)_ |
 
 ## RF-05 — Consultar Histórico de Serviço
 
@@ -59,7 +59,7 @@ Os testes de software seguiram a abordagem de caixa-preta, avaliando o comportam
 | **Resultado esperado** | O usuário será direcionado para a página `veiculo?id=.html` e visualizará todo o histórico de ordens na empresa. |
 | **Dados de entrada** | ID do veículo |
 | **Resultado obtido** | O veículo teve seu histórico disponibilizado. |
-| **Evidência em vídeo** | 🎬[RF-05 - Consultar Histórico de Serviço](https://github.com/user-attachments/assets/03824476-a132-4ce4-adf4-532f0e86cd86) |
+| **Evidência em vídeo** | <video src="https://github.com/user-attachments/assets/03824476-a132-4ce4-adf4-532f0e86cd86" controls width="300" preload="none">Seu navegador não suporta vídeos.</video><br>🎬 _[Caso não carregue, clique aqui para assistir direto](https://github.com/user-attachments/assets/03824476-a132-4ce4-adf4-532f0e86cd86)_ |
 
 ## RF-06 — Detalhar Ordem de Serviço
 
@@ -70,7 +70,7 @@ Os testes de software seguiram a abordagem de caixa-preta, avaliando o comportam
 | **Resultado esperado** | O usuário conseguirá registrar o serviço realizado, valor do serviço, além de fotos sobre trabalho prestado. |
 | **Dados de entrada** | Informações do serviço |
 | **Resultado obtido** | A **Ordem de Serviço** foi atualizada. |
-| **Evidência em vídeo** | 🎬[RF-06 - Detalhar Ordem de Serviço](https://github.com/user-attachments/assets/6a3b5a06-175b-472b-a32b-df0c92e14bac) |
+| **Evidência em vídeo** | <video src="https://github.com/user-attachments/assets/6a3b5a06-175b-472b-a32b-df0c92e14bac" controls width="300" preload="none">Seu navegador não suporta vídeos.</video><br>🎬 _[Caso não carregue, clique aqui para assistir direto](https://github.com/user-attachments/assets/6a3b5a06-175b-472b-a32b-df0c92e14bac)_ |
 
 ## RF-07 — Atualizar Status da Ordem
 
@@ -81,7 +81,7 @@ Os testes de software seguiram a abordagem de caixa-preta, avaliando o comportam
 | **Resultado esperado** | O usuário conseguirá alterar o status da ordem. |
 | **Dados de entrada** | Status da ordem de serviço |
 | **Resultado obtido** | O **Status da ordem de serviço** foi atualizada. |
-| **Evidência em vídeo** | 🎬[RF-07 - Atualizar Status da Ordem](https://github.com/user-attachments/assets/58333df4-ed6b-4c2e-9e40-7f849acfc5bb) |
+| **Evidência em vídeo** | <video src="https://github.com/user-attachments/assets/58333df4-ed6b-4c2e-9e40-7f849acfc5bb" controls width="300" preload="none">Seu navegador não suporta vídeos.</video><br>🎬 _[Caso não carregue, clique aqui para assistir direto](https://github.com/user-attachments/assets/58333df4-ed6b-4c2e-9e40-7f849acfc5bb)_ |
 
 ## RF-08 — Buscar Cliente
 
@@ -92,7 +92,7 @@ Os testes de software seguiram a abordagem de caixa-preta, avaliando o comportam
 | **Resultado esperado** | O usuário conseguirá filtrar a lista de cliente por nome, telefone ou email. |
 | **Dados de entrada** | Dados do cliente |
 | **Resultado obtido** | A lista de clientes foi filtrada de acordo com o pesquisado. |
-| **Evidência em vídeo** | 🎬[RF-08 - Buscar Cliente](https://github.com/user-attachments/assets/61f24e9a-a972-4fdc-b3e2-3b3e38627fee) |
+| **Evidência em vídeo** | <video src="https://github.com/user-attachments/assets/61f24e9a-a972-4fdc-b3e2-3b3e38627fee" controls width="300" preload="none">Seu navegador não suporta vídeos.</video><br>🎬 _[Caso não carregue, clique aqui para assistir direto](https://github.com/user-attachments/assets/61f24e9a-a972-4fdc-b3e2-3b3e38627fee)_ |
 
 ## RF-09 — Buscar Veículo
 
@@ -103,7 +103,7 @@ Os testes de software seguiram a abordagem de caixa-preta, avaliando o comportam
 | **Resultado esperado** | O usuário conseguirá filtrar a lista de veículos por placa, modelo ou proprietário. |
 | **Dados de entrada** | Dados do veículo |
 | **Resultado obtido** | A lista de veículos foi filtrada de acordo com o pesquisado. |
-| **Evidência em vídeo** | 🎬[RF-09 - Buscar Veículo](https://github.com/user-attachments/assets/9818da85-0678-4c3e-9ab6-0008b0097fcc) |
+| **Evidência em vídeo** | <video src="https://github.com/user-attachments/assets/9818da85-0678-4c3e-9ab6-0008b0097fcc" controls width="300" preload="none">Seu navegador não suporta vídeos.</video><br>🎬 _[Caso não carregue, clique aqui para assistir direto](https://github.com/user-attachments/assets/9818da85-0678-4c3e-9ab6-0008b0097fcc)_ |
 
 ## RF-10 — Visualizar Dados de uma Ordem de Serviço
 
@@ -114,7 +114,7 @@ Os testes de software seguiram a abordagem de caixa-preta, avaliando o comportam
 | **Resultado esperado** | O usuário será direcionado para a ordem escolhida e visualizará todos os detalhes da ordem. |
 | **Dados de entrada** | ID da Ordem de serviço |
 | **Resultado obtido** | A ordem escolhida foi mostrada corretamente com todos seus detalhes. |
-| **Evidência em vídeo** | 🎬[RF-10 - Visualizar Dados de uma Ordem de Serviço](https://github.com/user-attachments/assets/e81a07de-8a86-47dc-aa76-ee3775c4b673) |
+| **Evidência em vídeo** | <video src="https://github.com/user-attachments/assets/e81a07de-8a86-47dc-aa76-ee3775c4b673" controls width="300" preload="none">Seu navegador não suporta vídeos.</video><br>🎬 _[Caso não carregue, clique aqui para assistir direto](https://github.com/user-attachments/assets/e81a07de-8a86-47dc-aa76-ee3775c4b673)_ |
 
 ## RF-11 — Registrar Data de Ralização do Serviço
 
@@ -125,9 +125,9 @@ Os testes de software seguiram a abordagem de caixa-preta, avaliando o comportam
 | **Resultado esperado** | Após alterar o status da ordem, será salvo automaticamento no seu histórico. |
 | **Dados de entrada** | Status da ordem de serviço |
 | **Resultado obtido** | A ordem escolhida teve sua alteração salvo e disponível em seu histórico. |
-| **Evidência em vídeo** | 🎬[RF-11 - Registrar Data de Ralização do Serviço](https://github.com/user-attachments/assets/c844d732-3df5-4ed8-bee8-cd30dccbcaca) |
+| **Evidência em vídeo** | <video src="https://github.com/user-attachments/assets/c844d732-3df5-4ed8-bee8-cd30dccbcaca" controls width="300" preload="none">Seu navegador não suporta vídeos.</video><br>🎬 _[Caso não carregue, clique aqui para assistir direto](https://github.com/user-attachments/assets/c844d732-3df5-4ed8-bee8-cd30dccbcaca)_ |
 
-## RF-12 — Consultar Histórico de Serviço
+## RF-12 — Visualizar Histórico Completo de Manutenções
 
 | Campo | Descrição |
 | --- | --- |
@@ -136,7 +136,7 @@ Os testes de software seguiram a abordagem de caixa-preta, avaliando o comportam
 | **Resultado esperado** | O usuário será direcionado para a página `veiculo?id=.html` e visualizará todo o histórico de ordens do veículo na empresa. |
 | **Dados de entrada** | ID do veículo |
 | **Resultado obtido** | O veículo teve seu histórico completo disponibilizado. |
-| **Evidência em vídeo** | 🎬[RF-12 - Consultar Histórico de Serviço](https://github.com/user-attachments/assets/0d2965f3-59ec-47c2-ab63-8dfa3386f5ad) |
+| **Evidência em vídeo** | <video src="https://github.com/user-attachments/assets/88c52d9e-8388-46de-bb7f-0b79f20c209b" controls width="300" preload="none">Seu navegador não suporta vídeos.</video><br>🎬 _[Caso não carregue, clique aqui para assistir direto](https://github.com/user-attachments/assets/88c52d9e-8388-46de-bb7f-0b79f20c209b)_ |
 
 ## RF-13 — Visualizar Resumo da Operação
 
@@ -147,7 +147,7 @@ Os testes de software seguiram a abordagem de caixa-preta, avaliando o comportam
 | **Resultado esperado** | O usuário é direcionado para a página `dashboard.html`, onde visualizará uma visão consolidada da operação contendo:<br>- **Banner de Alerta:** Aviso destacado no topo caso existam ordens de serviço em atraso;<br>- **Indicadores e Métricas Operacionais:** Cards e contadores informativos resumindo o volume de clientes ativos e o andamento das demandas da oficina;<br>- **Distribuição de Status:** Divisão clara do volume de trabalho segmentado por situações (como pendentes, em andamento, concluídas ou atrasadas);<br>- **Histórico Recente:** Um feed ou listagem cronológica exibindo as últimas movimentações e atualizações das ordens de serviço do estabelecimento. |
 | **Dados de entrada** | Credenciais de acesso do usuário (E-mail e Senha) na tela inicial. |
 | **Resultado obtido** | O usuário foi autenticado com sucesso, redirecionado automaticamente para o painel de controle principal e visualizou o resumo das atividades operacionais atualizado com os respectivos alertas, indicadores e fluxo de ordens recentes. |
-| **Evidência em vídeo** | 🎬[RF-13 - Visualizar Resumo da Operação](https://github.com/user-attachments/assets/e6b86481-b972-4e88-8edd-fc312cc3c873) |
+| **Evidência em vídeo** | <video src="https://github.com/user-attachments/assets/e6b86481-b972-4e88-8edd-fc312cc3c873" controls width="300" preload="none">Seu navegador não suporta vídeos.</video><br>🎬 _[Caso não carregue, clique aqui para assistir direto](https://github.com/user-attachments/assets/e6b86481-b972-4e88-8edd-fc312cc3c873)_ |
 
 <br>
 

@@ -41,7 +41,7 @@ O **GarageERP** foi projetado com uma identidade visual moderna voltada ao setor
 A solução foi apresentada com foco em três perfis de usuários bem definidos, cujas interfaces foram validadas no slide:
 
 1. **Mecânico (Perfil João Lopes):** Focado em visualização de ordens de serviço pendentes, início e conclusão ágil de tarefas.
-2. **Administrativo (Perfil Mário Santos):** Gerenciamento centralizado de painel administrativo, cadastro rápido de clientes e veículos, e emissão de novas O.S.
+2. **Administrativo (Perfil Maria Santos):** Gerenciamento centralizado de painel administrativo, cadastro rápido de clientes e veículos, e emissão de novas O.S.
 3. **Proprietário (Perfil Carlos Silva):** Painel de visão estratégica com relatórios de performance operacional, taxa de conclusão, taxa de atraso e faturamento mensal da oficina.
 
 ### 🔬 Testes e Resultados Obtidos
